@@ -9,19 +9,51 @@
     <!-- 오픈그래프 -->
     <!-- 파비콘 --><link rel="icon" href="./LG_Display/favicon.ico">
     <!-- 각 종 플러그인과 설정 파일 (선택)-->
+    <link rel="stylesheet" href="./css/reset2.css">
     <style>
-
+        .hd { width: 100%; position:fixed; top: 0; left: 0; z-index:999; background-color: #fff; height: 142px; }
+        .hd:hover { background-color: transparent; }
+        .hd_wrap { width: 1200px; margin: 0 auto;}
+        .logo { display:block; width:140px; height:auto; margin-top:40px; margin-bottom: 40px; float:left; }
+        .logo img { display:block; width: 100%; }
+        .tnb { float:right; margin-top: 40px; margin-bottom: 40px; }
+        .tnb a { font-size:14px; color:#333; padding: 14px; font-weight:300; }
+        .tnb a:hover { font-weight:700; text-decoration: underline; }
+        .gnb { clear:both; }
+        .gnb li { float:left; }
+        .gnb li:hover .dp1 { background-color: slategray; color: red;}
+        .gnb .sub { display: none; width: 100%; height: auto; position: absolute; }
+        .gnb li .sub { display:none; }
+        /* clear fix 처리 */
+        .gnb:after { content: ""; display: block; clear: both; }
+        .gnb > ul:after { content: ""; display: block; clear: both; }
+        .gnb > ul > li { width: 20%; width: 20%; height: 40px; line-height: 40px; position: relative ; }
+        .gnb .dp1 { display:block; height:40px; line-height: 40px; background-color: #333; color:#fff; text-align: center; font-size: 16px; }
+        .gnb .sub { display: none; width: 100%; height: auto; position: absolute; top: 40px; background-color: #333;}
+        .gnb:hover li .sub { display: block; color: #fff;}
+        .gnb li .sub li { clear: both; height: 30px; line-height: 30px; border-bottom: 1px; stroke-linecap: #fff; }
+        .gnb li .sub li a { background-color: #333; color: #fff; font-size: 14px; display: block; text-indent: 2em; overflow: hidden; }        
+        .page_tit { text-align: center; }
+        .wrap { text-align: center; }
+        .ft_logo { display:block; width:140px; height:auto; margin-top:40px; margin-bottom: 40px; float:left; }
+        .ft_logo img { display:block; width: 100%; }
+        .vs { clear: both; width: 100%; }
     </style>
+    <script>
+    $(document).ready(function(){
+
+    })
+    </script>
 </head>
 <body>
 <div class="wrap">
     <header class="hd">
         <div class="hd_wrap">
-            <img src="" width="50" alt="">LG DISPLAY<a href="" class="logo"></a>
+           <a href="" class="logo"><img src="./LG_Display/lg_logo2.png" alt=""></a>
             <nav class="tnb">
                 <a href="login.html">로그인</a>
                 <a href="register.html">회원가입</a>
-                <a href="" class="site map"><img src="./LG_Display/sitemap.png" width="25" alt=""></a>
+                <a href="sitemap.html" class="site map"><img src="./LG_Display/sitemap.png" width="25" alt=""></a>
             </nav>
             <nav class="gnb">
                 <ul>
@@ -71,11 +103,16 @@
     </header>
     <div class="content">
         <figure class="vs">
-            <video src="" class="vdo"></video>
+            <video src="./LG_Display_videos/mainv.mp4" class="vdo" autoplay muted loop></video>
         </figure>
+        <!--<section class="page" id="page0">
+            <div class="page_wrap">
+                <h2 class="page_tit"><img src="./LG_Display/mainv.gif" width="100%" alt=""></h2>
+            </div>
+        </section>-->
         <section class="page" id="page1">
             <div class="page_wrap">
-                <h2 class="page_tit">ESG Impact<br><img src="./LG_Display/ESGImpact.png" width="600" alt=""></h2>
+                <h2 class="page_tit">ESG Impact<br><img src="./LG_Display/LG_ESG.gif" width="600" alt=""></h2>
                 <ul class="lst">
                     <li class="left">
                         <iframe name="vdo2" id="vdo2" width="560" height="315" src="https://www.youtube.com/embed/XWB25P8sm4Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -92,13 +129,13 @@
                             <li>
                                 <a href="https://www.youtube.com/embed/KbAxfKlcG8Q" target="vdo2" class="icon2"> 
                                     <h3 class="cate_tit">Social</h3>
-                                    <p class="cate_com">함께 나눌수록 기쁨은 커지니까! 나눔을 실천하는 LG디스플레이의 사회공헌 이야기</p>
+                                    <p class="cate_com">함께 나눌수록 기쁨은 커지니까! 나눔을 실천하는 LG 디스플레이의 사회공헌 이야기</p>
                                 </a>
                             </li>
                             <li>
                                 <a href="https://www.youtube.com/embed/gHT2D7INnuk" target="vdo2" class="icon3">
                                     <h3 class="cate_tit">Governance</h3>
-                                    <p class="cate_com">고객가치를 최우선에 두고 흔들림 없이 지속가능경영을 펼치고 있는 LG디스플레이</p>
+                                    <p class="cate_com">고객가치를 최우선에 두고 흔들림 없이 지속가능경영을 펼치고 있는 LG 디스플레이</p>
                                 </a>
                             </li>
                         </ul>
@@ -184,7 +221,7 @@
     </div>
     <footer class="ft">
         <div class="ft_wrap">
-            <div class="ft_logo"><img src="" alt=""></div>
+            <div class="ft_logo"><img src="./LG_Display/lg_logo2.png" alt=""></div>
             <div class="mid_box">
                 <nav class="fnb">
                     <a href="">개인정보 처리 방침</a>
@@ -192,9 +229,7 @@
                     <a href="">이메일무단수집거부</a>
                 </nav>
                 <p class="addr">
-                    <img src="./LG_Display/LGROGO.jpg" width="50" alt="">LG DISPLAY 
-                    <br>e-VOS/협력사 등록 개인정보처리방침 문의/제안 SITEMAP  
-                    <br>대표전화02-3773-1114
+                    e-VOS/협력사  등록  개인정보처리방침  문의/제안  SITEMAP   대표전화 02-3773-1114
                 </p>
                 <p class="copyright">COPYRIGHT ⓒ LG DISPLAY CO., LTD. ALL RIGHTS RESERVED.</p>
             </div>
