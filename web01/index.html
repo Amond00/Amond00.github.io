@@ -17,8 +17,8 @@
         .logo { display:block; width: 144px; height: auto; float:left; margin:30px 0px; }
         .logo img { display:block; width: 100%; height: auto; }
         .tnb { float:right; margin: 30px 0px; }
-        .tnb a { padding: 1.5em; font-size:12px; color:#333; }
-        .tnb a:hover { color:deepskyblue; font-weight:700; text-decoration: underline; text-decoration-style:dotted; }
+        .tnb a { padding: 1.5em; font-size:12px; color:gray; }
+        .tnb a:hover { color:red; font-weight:700; text-decoration: underline; text-decoration-style:dotted; }
         /* 방법1 : logo/tnb/gnb 한 줄로 배치 */
         /* .gnb { float:left;  width: 704px; margin-left: 50px; margin-top: 16px; } */
         /* 방법2 : gnb만 밑으로 내릴 경우 */
@@ -27,13 +27,13 @@
         .gnb:after { content:""; display:block; clear:both; } 
         .gnb > ul:after { content:""; display:block; clear:both; }
         .gnb > ul > li { float:left; width: 20%; height:40px; line-height: 40px; position:relative; }
-        .gnb .dp1 { display:block; color:#333; text-align: center; background-color:#eee; font-size:16px; }
-        .gnb li:hover .dp1 { color:#fff; background-color:#333; }
-        .gnb .sub { display:none; width: 100%; height:auto; position:absolute; top:40px; background-color:#ccc; left: 0; z-index:90; height: 124px; }
+        .gnb .dp1 { display:block; color:#fff; text-align: center; background-color:#333; font-size:16px; }
+        .gnb li:hover .dp1 { color:#fff; background-color:#333; color: red;}
+        .gnb .sub { display:none; width: 100%; height:auto; position:absolute; top:40px; background-color:#333; left: 0; z-index:90; height: 124px; }
         .gnb:hover li .sub { display:block;  }
         .gnb li .sub li { clear:both; height: 30px; line-height: 30px;}
-        .gnb li .sub li a { background-color:#ccc; color:#111; font-size:14px; display:block; text-indent:2em; overflow: hidden; white-space:nowrap; text-overflow: ellipsis; }
-        .gnb li .sub li:hover a { color:deepskyblue; }
+        .gnb li .sub li a { background-color:#333; color:#fff; font-size:14px; display:block; text-indent:2em; overflow: hidden; white-space:nowrap; text-overflow: ellipsis; }
+        .gnb li .sub li:hover a { color:red; }
         .content { clear: both; width: 100%; }
         .vs { clear:both; width: 100%; height:100vh; overflow:hidden; }
         .vdo { display:block; width:100%; height:auto; }
@@ -46,13 +46,10 @@
         .lst { clear:both; width: 1200px; }
         .lst:after { content:""; display:block; clear: both;}
         .lst li { margin-bottom: 40px; }
-        .lst li.left { float:left; width: 816px; height: 459px; }
+        .lst li.left { float:left; width: 816px; height: 459px;}
         .lst li.right { float:right; width:350px; height: 459px; }
         .ico_lst { clear:both; width: 100%; overflow:hidden; }
         .ico_lst li a { display:block; background-repeat: no-repeat; background-position:0px center; background-size:auto 80%; padding-left: 55px; }
-        .ico_lst li a.icon1 { background-image: url("./img/icon/ico_service_01.svg"); }
-        .ico_lst li a.icon2 { background-image: url("./img/icon/ico_service_02.svg");}
-        .ico_lst li a.icon3 { background-image: url("./img/icon/ico_service_03.svg"); }
         .cate_tit { color:#222; font-size:20px; padding-bottom: 0.5em; }
         .cate_com { color:#222; font-size:14px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
     
@@ -68,7 +65,7 @@
         .pic_tit { position:absolute; top:30px; left: 30px; text-shadow:0px 0px 3px red; }
         .pic_com { position:absolute; right:30px; bottom:30px; text-shadow:0px 0px 3px blue; }
     
-        #page3 { background-repeat: no-repeat; background-size: cover; background-position:center center; height: 100vh; background-image:url("./img/bg_partners.jpg"); overflow:hidden; }
+        #page3 { background-repeat: no-repeat; background-size: cover; background-position:center center; height: 100vh; background-image:url("./lg_display_picture/bg_partners.jpg"); overflow:hidden; }
         #page3 .page_wrap { width: 100%; }
         .circle_lst { clear:both; width: 4455px; }
         .circle_lst li { width: 200px; height: 200px; position:relative; border-radius:120px; overflow:hidden; background-color: #fff; float:left; margin:28px;  }
@@ -107,7 +104,7 @@
             $lst1_obj = $(".circle_lst li").clone();
             $(".circle_lst.lst2").append($lst1_obj);
         });    
-        </script>
+    </script>
 </head>
 <body>
 <div class="wrap">
@@ -293,7 +290,7 @@
     </div>
     <section class="page" id="page3">
         <div class="page_wrap">
-            <h2 class="page_tit">LG PARTNER</h2>
+            <h2 class="page_tit"><img src="./lg_display_picture/lg_partner.png" width="" alt=""></h2>
             <ul class="circle_lst lst1">
                 <li><a href=""><img src="./lg_display_picture/page3.PNG" alt="" class="thumb"></a></li>
                 <li><a href=""><img src="./lg_display_picture/page3_1.jpg" alt="" class="thumb"></a></li>
