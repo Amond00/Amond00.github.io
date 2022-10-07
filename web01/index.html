@@ -7,53 +7,117 @@
     <title>LG DISPLAY</title>
     <!-- 메타포 -->
     <!-- 오픈그래프 -->
-    <!-- 파비콘 --><link rel="icon" href="./LG_Display/favicon.ico">
+    <!-- 파비콘 --><link rel="icon" href="./lg_display_picture/favicon.ico">
     <!-- 각 종 플러그인과 설정 파일 (선택)-->
     <link rel="stylesheet" href="./css/reset2.css">
     <style>
-        .hd { width: 100%; position:fixed; top: 0; left: 0; z-index:999; background-color: #fff; height: 142px; }
-        .hd:hover { background-color: transparent; }
-        .hd_wrap { width: 1200px; margin: 0 auto;}
-        .logo { display:block; width:140px; height:auto; margin-top:40px; margin-bottom: 40px; float:left; }
-        .logo img { display:block; width: 100%; }
-        .tnb { float:right; margin-top: 40px; margin-bottom: 40px; }
-        .tnb a { font-size:14px; color:#333; padding: 14px; font-weight:300; }
-        .tnb a:hover { font-weight:700; text-decoration: underline; }
-        .gnb { clear:both; }
-        .gnb li { float:left; }
-        .gnb li:hover .dp1 { background-color: slategray; color: red;}
-        .gnb .sub { display: none; width: 100%; height: auto; position: absolute; }
-        .gnb li .sub { display:none; }
-        /* clear fix 처리 */
-        .gnb:after { content: ""; display: block; clear: both; }
-        .gnb > ul:after { content: ""; display: block; clear: both; }
-        .gnb > ul > li { width: 20%; width: 20%; height: 40px; line-height: 40px; position: relative ; }
-        .gnb .dp1 { display:block; height:40px; line-height: 40px; background-color: #333; color:#fff; text-align: center; font-size: 16px; }
-        .gnb .sub { display: none; width: 100%; height: auto; position: absolute; top: 40px; background-color: #333;}
-        .gnb:hover li .sub { display: block; color: #fff;}
-        .gnb li .sub li { clear: both; height: 30px; line-height: 30px; border-bottom: 1px; stroke-linecap: #fff; }
-        .gnb li .sub li a { background-color: #333; color: #fff; font-size: 14px; display: block; text-indent: 2em; overflow: hidden; }        
-        .page_tit { text-align: center; }
-        .wrap { text-align: center; }
-        .ft_logo { display:block; width:140px; height:auto; margin-top:40px; margin-bottom: 40px; float:left; }
-        .ft_logo img { display:block; width: 100%; }
-        .vs { clear: both; width: 100%; }
-    </style>
+        /* header.css */
+        .hd { width: 100%; height:122px; position:absolute; top: 0; left: 0; z-index:91; }
+        .hd_wrap { width: 1200px; margin: 0 auto; }
+        .logo { display:block; width: 144px; height: auto; float:left; margin:30px 0px; }
+        .logo img { display:block; width: 100%; height: auto; }
+        .tnb { float:right; margin: 30px 0px; }
+        .tnb a { padding: 1.5em; font-size:12px; color:#333; }
+        .tnb a:hover { color:deepskyblue; font-weight:700; text-decoration: underline; text-decoration-style:dotted; }
+        /* 방법1 : logo/tnb/gnb 한 줄로 배치 */
+        /* .gnb { float:left;  width: 704px; margin-left: 50px; margin-top: 16px; } */
+        /* 방법2 : gnb만 밑으로 내릴 경우 */
+        .gnb { clear:both; width: 100%; }
+        /* clear-fix 처리 */
+        .gnb:after { content:""; display:block; clear:both; } 
+        .gnb > ul:after { content:""; display:block; clear:both; }
+        .gnb > ul > li { float:left; width: 20%; height:40px; line-height: 40px; position:relative; }
+        .gnb .dp1 { display:block; color:#333; text-align: center; background-color:#eee; font-size:16px; }
+        .gnb li:hover .dp1 { color:#fff; background-color:#333; }
+        .gnb .sub { display:none; width: 100%; height:auto; position:absolute; top:40px; background-color:#ccc; left: 0; z-index:90; height: 124px; }
+        .gnb:hover li .sub { display:block;  }
+        .gnb li .sub li { clear:both; height: 30px; line-height: 30px;}
+        .gnb li .sub li a { background-color:#ccc; color:#111; font-size:14px; display:block; text-indent:2em; overflow: hidden; white-space:nowrap; text-overflow: ellipsis; }
+        .gnb li .sub li:hover a { color:deepskyblue; }
+        .content { clear: both; width: 100%; }
+        .vs { clear:both; width: 100%; height:100vh; overflow:hidden; }
+        .vdo { display:block; width:100%; height:auto; }
+    
+        /* content */
+        .page { clear:both; width: 100%; }
+        .page_wrap { width: 1200px; margin: 0 auto; }
+        #page1, #page3 { background-color:#ececec; }
+        .page_tit { text-align: center; font-size:32px; padding-top:1.2em; padding-bottom: 0.8em; }
+        .lst { clear:both; width: 1200px; }
+        .lst:after { content:""; display:block; clear: both;}
+        .lst li { margin-bottom: 40px; }
+        .lst li.left { float:left; width: 816px; height: 459px; }
+        .lst li.right { float:right; width:350px; height: 459px; }
+        .ico_lst { clear:both; width: 100%; overflow:hidden; }
+        .ico_lst li a { display:block; background-repeat: no-repeat; background-position:0px center; background-size:auto 80%; padding-left: 55px; }
+        .ico_lst li a.icon1 { background-image: url("./img/icon/ico_service_01.svg"); }
+        .ico_lst li a.icon2 { background-image: url("./img/icon/ico_service_02.svg");}
+        .ico_lst li a.icon3 { background-image: url("./img/icon/ico_service_03.svg"); }
+        .cate_tit { color:#222; font-size:20px; padding-bottom: 0.5em; }
+        .cate_com { color:#222; font-size:14px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+    
+        #page2 { background-color: rgba(230, 248, 255, 0.5); }
+        .pic_lst { clear:both; width: 100%; padding-bottom: 80px; }
+        .pic_lst:after { content:""; display:block; clear:both; }
+        .pic_lst li { float:left; position:relative; margin-bottom: 40px; }
+        .pic_lst li a { display:block; width: 360px; margin-right: 40px;overflow: hidden; height: 300px; }
+        .pic_lst li a img { display:block; width:600px; margin-left: -120px; transition-duration:0.8s; }
+        .pic_lst li a:hover img { margin-left: 0; }
+        .pic_lst li a .hv_box { width: 360px; height: 300px; color:#fff; opacity:0; position:absolute; top:0; left: 0; z-index:10; transition-duration:0.8s; background-color:transparent; }
+        .pic_lst li a:hover .hv_box { opacity:1; }
+        .pic_tit { position:absolute; top:30px; left: 30px; text-shadow:0px 0px 3px red; }
+        .pic_com { position:absolute; right:30px; bottom:30px; text-shadow:0px 0px 3px blue; }
+    
+        #page3 { background-repeat: no-repeat; background-size: cover; background-position:center center; height: 100vh; background-image:url("./img/bg_partners.jpg"); overflow:hidden; }
+        #page3 .page_wrap { width: 100%; }
+        .circle_lst { clear:both; width: 4455px; }
+        .circle_lst li { width: 200px; height: 200px; position:relative; border-radius:120px; overflow:hidden; background-color: #fff; float:left; margin:28px;  }
+        .circle_lst.lst2 li { float:right; }
+        .circle_lst li a { display:block; width: 100%; height: 100%; }
+        .circle_lst li a img { display:block; width:160px; height:auto; position:absolute; top:50%; left: 20px; z-index:11; margin-top: -28px; }
+    
+        /* footer */
+        .ft { clear:both; width: 100%; height: 200px; background-color: #333; padding-bottom: 50px; }
+        .ft_wrap { clear:both; width: 1200px; margin: 0 auto; padding-top: 50px;  }
+        .ft_wrap:after { content:""; display:block; clear:both; }
+        .ft_logo { float:left; width: 150px; }
+        .mid_box { float:left; width: 760px; padding-left: 100px; }
+        .fnb { clear:both; }
+        .fnb a { color:#fff; font-size:16px; padding: 24px; }
+        .fnb a.dpc { color:deeppink; }
+        .addr { padding-left: 24px; color:#ececec; padding-top: 20px; font-size:14px; line-height: 2; }
+        .copyright { padding-left: 24px; color:#fff; padding-top: 10px; }
+        .sel_box { float:right; border-bottom:1px solid #fff;height: 44px; line-height: 44px; text-align:center; width: 140px; }
+        #sel { border:none; outline: none; background-color: transparent; color:#fff; }
+        #sel option { color:#333; }
+        </style>
     <script>
-    $(document).ready(function(){
-
-    })
-    </script>
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                var ht = $(window).height();
+                var tp = $(this).scrollTop();
+                if(tp>=600){
+                    $(".hd").css("position","fixed");
+                } else {
+                    $(".hd").css("position","absolute");
+                }
+            });
+            $
+            $("<ul class='circle_lst lst2'></ul>").insertAfter($(".circle_lst"));
+            $lst1_obj = $(".circle_lst li").clone();
+            $(".circle_lst.lst2").append($lst1_obj);
+        });    
+        </script>
 </head>
 <body>
 <div class="wrap">
     <header class="hd">
         <div class="hd_wrap">
-           <a href="" class="logo"><img src="./LG_Display/lg_logo2.png" alt=""></a>
+           <a href="" class="logo"><img src="./lg_display_picture/lg_logo2.png" alt=""></a>
             <nav class="tnb">
                 <a href="login.html">로그인</a>
                 <a href="register.html">회원가입</a>
-                <a href="sitemap.html" class="site map"><img src="./LG_Display/sitemap.png" width="25" alt=""></a>
+                <a href="sitemap.html" class="site map"><img src="./lg_display_picture/sitemap.png" width="25" alt=""></a>
             </nav>
             <nav class="gnb">
                 <ul>
@@ -103,16 +167,11 @@
     </header>
     <div class="content">
         <figure class="vs">
-            <video src="./LG_Display_videos/mainv.mp4" class="vdo" autoplay muted loop></video>
+            <video src="./lg_display_video/mainv.mp4" class="vdo" autoplay muted loop></video>
         </figure>
-        <!--<section class="page" id="page0">
-            <div class="page_wrap">
-                <h2 class="page_tit"><img src="./LG_Display/mainv.gif" width="100%" alt=""></h2>
-            </div>
-        </section>-->
         <section class="page" id="page1">
             <div class="page_wrap">
-                <h2 class="page_tit">ESG Impact<br><img src="./LG_Display/LG_ESG.gif" width="600" alt=""></h2>
+                <h2 class="page_tit">ESG Impact<br><img src="./lg_display_picture/lg_esg.gi" width="600" alt=""></h2>
                 <ul class="lst">
                     <li class="left">
                         <iframe name="vdo2" id="vdo2" width="560" height="315" src="https://www.youtube.com/embed/XWB25P8sm4Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -145,92 +204,129 @@
         </section>
         <section class="page" id="page2">
             <div class="page_wrap">
-                <h2 class="page_tit">혁신적인 LG디스플레이의<br>제품들로 생활을<br>더욱 풍요롭게 합니다.</h2>
+                <h2 class="page_tit">OLED Features</h2>
                 <ul class="pic_lst">
                     <li>
                         <a href="">
+                            <img src="./lg_display_picture/features1.jpg" alt="세계 최대 가전 박람회" class="pic">
                             <div class="hv_box">
-                                <h3 class="pic_tit">TV</h3><img src="./LG_Display/page2-1.png" alt="" width="400" class="pic">
-                                <p class="pic_com">사진설명1</p>
+                                <h3 class="pic_tit">세계 최대 가전 박람회</h3>
+                                <p class="pic_com">IFA 2022 속 LG디스플레이</p>
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="">
+                            <img src="./lg_display_picture/features2.jpg" alt="OLED로 만들어낸 미래도시" class="pic">
                             <div class="hv_box">
-                                <h3 class="pic_tit">COMMERCIAL</h3> <img src="./LG_Display/page2-2.png" alt="" width="400" class="pic">
-                                <p class="pic_com">사진설명2</p>
+                                <h3 class="pic_tit">OLED로 만들어낸 미래도시</h3>
+                                <p class="pic_com">K-Display 2022에서 펼쳐지다</p>
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="">
+                            <img src="./lg_display_picture/features3.jpg" alt="OLED Shelf, 2022 레드닷 디자인 어워드 디자인 컨셉 부문 Winner 수상" class="pic">
                             <div class="hv_box">
-                                <h3 class="pic_tit">IT</h3> <img src="./LG_Display/page2-3.png" alt="" width="400" class="pic">
-                                <p class="pic_com">사진설명3</p>
+                                <h3 class="pic_tit">OLED Shelf, 2022 레드닷 디자인 어워드 디자인 컨셉 부문 Winner 수상</h3>
+                                <p class="pic_com">공간에 제약 받지 않는 Home Display, OLED Shelf</p>
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="">
+                            <img src="./lg_display_picture/features4.jpg" alt="제 2회 OLEDs Go!" class="pic">
                             <div class="hv_box">
-                                <h3 class="pic_tit">MOBILE</h3> <img src="./LG_Display/page2-4.png" alt="" width="400" class="pic">
-                                <p class="pic_com">사진설명4</p>
+                                <h3 class="pic_tit">제 2회 OLEDs Go!</h3>
+                                <p class="pic_com">공모전 수상작 발표 1위 수상작 케일럼</p>
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="">
+                            <img src="./lg_display_picture/features5.jpg" alt="투명 OLED로 변화하는 오피스 인테리어" class="pic">
                             <div class="hv_box">
-                                <h3 class="pic_tit">AUTOMOTIVE</h3> <img src="./LG_Display/page2-5.png" alt="" width="400" class="pic">
-                                <p class="pic_com">사진설명5</p>
+                                <h3 class="pic_tit">투명 OLED로 변화하는 오피스 인테리어</h3>
+                                <p class="pic_com">디지털 환경과 실제 공간이 만나다</p>
                             </div>
                         </a>
-                    <li>    
-                </ul>
-            </div>
-        </section>
-        <section class="page" id="page3">
-            <div class="page_wrap">
-                <h2 class="page_tit">Lastest News</h2>
-                <ul class="circle_lst">
-                    <img src="./LG_Display/Lastest News.jpg" alt="" width="400"><li><a href="">LG디스플레이, 英 왕립예술학교와 OLED 디지털아트展 개최</a></li>
-                    <li>LG디스플레이, 8년 연속 ‘동반성장 최우수 기업’ 선정<a href=""><img src="" alt=""></a></li>
-                    <li>LG디스플레이, 투명 OLED로 철도 모빌리티 시장 공략<a href=""><img src="" alt=""></a></li>
-                </ul>
-            </div>
-        </section>
-        <section class="page" id="page4">
-            <div class="page_wrap">
-                <h2 class="page_tit">OLED Features</h2>
-                <ul class="circle_lst">
-                    <li><a href=""><img src="" alt="">세계 최대 가전 박람회 IFA 2022 속 LG디스플레이∙∙∙ OLED 기술 진화가 한눈에</a></li>
-                    <li><a href=""><img src="" alt="">OLED로 만들어낸 미래도시, K-Display 2022에서 펼쳐지다</a></li>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/SfFnPWxIBQU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <li><a href="">OLED Shelf, 2022 레드닷 디자인 어워드 디자인 컨셉 부문 Winner 수상</a></li>
-                    <li><a href=""><img src="" alt="">제 2회 OLEDs Go! 공모전 수상작 발표</a></li>
-                    <li><a href=""><img src="" alt="">디지털 환경과 실제 공간이 만나다 – 투명 OLED로 변화하는 오피스 인테리어</a></li>
-                    <li><a href=""><img src="" alt="">미래형 매장의 시작, 투명 OLED와 함께한 ‘랩 오브 파리바게뜨’</a></li>
-                    <li><a href=""><img src="" alt="">2022 구겐하임 YCC 파티, 투명 OLED로 더 빛이 난 그 현장 속으로</a></li>
-                    <li><a href=""><img src="" alt="">SBS 방송에서 만난 OLED, 디스플레이의 미래를 엿보다</a></li>
-                    <li><a href=""><img src="" alt="">SID 2022 : 끊임없이 진화하는 OLED의 신기술, 새로운 미래를 열다
-                    </a></li>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./lg_display_picture/features6.jpg" alt="미래형 매장의 시작" class="pic">
+                            <div class="hv_box">
+                                <h3 class="pic_tit">미래형 매장의 시작</h3>
+                                <p class="pic_com">‘랩(Lab) 오브 파리바게뜨’</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./lg_display_picture/features7.jpg" alt="2022 구겐하임 YCC 파티" class="pic">
+                            <div class="hv_box">
+                                <h3 class="pic_tit">2022 구겐하임 YCC 파티</h3>
+                                <p class="pic_com">투명 OLED로 더 빛이 난 그 현장 속으로</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./lg_display_picture/features8.jpg" alt="SBS 방송에서 만난 OLED" class="pic">
+                            <div class="hv_box">
+                                <h3 class="pic_tit">SBS 방송에서 만난 OLED</h3>
+                                <p class="pic_com">디스플레이의 미래를 엿보다</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./lg_display_picture/features9.jpg" alt="SID 2022 : 끊임없이 진화하는 OLED의 신기술" class="pic">
+                            <div class="hv_box">
+                                <h3 class="pic_tit">SID 2022 : 끊임없이 진화하는 OLED의 신기술</h3>
+                                <p class="pic_com">새로운 미래를 열다</p>
+                            </div>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </section>
     </div>
+    <section class="page" id="page3">
+        <div class="page_wrap">
+            <h2 class="page_tit">LG PARTNER</h2>
+            <ul class="circle_lst lst1">
+                <li><a href=""><img src="./lg_display_picture/page3.PNG" alt="" class="thumb"></a></li>
+                <li><a href=""><img src="./lg_display_picture/page3_1.jpg" alt="" class="thumb"></a></li>
+                <li><a href=""><img src="./lg_display_picture/page3_2.jpg" alt="" class="thumb"></a></li>
+                <li><a href=""><img src="./lg_display_picture/page3_3.PNG" alt="" class="thumb"></a></li>
+                <li><a href=""><img src="./lg_display_picture/page3_4.png" alt="" class="thumb"></a></li>
+                <li><a href=""><img src="./lg_display_picture/page3_5.png" alt="" class="thumb"></a></li>
+                <li><a href=""><img src="./lg_display_picture/page3_6.jpg" alt="" class="thumb"></a></li>
+                <li><a href=""><img src="./lg_display_picture/page3_7.png" alt="" class="thumb"></a></li>
+                <li><a href=""><img src="./lg_display_picture/page3_8.png" alt="" class="thumb"></a></li>
+                <li><a href=""><img src="./lg_display_picture/page3_9.png" alt="" class="thumb"></a></li>
+                <li><a href=""><img src="./lg_display_picture/page3_10.jpg" alt="" class="thumb"></a></li>
+                <li><a href=""><img src="./lg_display_picture/page3_11.png" alt="" class="thumb"></a></li>
+                <li><a href=""><img src="./lg_display_picture/page3_12.png" alt="" class="thumb"></a></li>
+                <li><a href=""><img src="./lg_display_picture/page3_13.png" alt="" class="thumb"></a></li>
+                <li><a href=""><img src="./lg_display_picture/page3_14.png" alt="" class="thumb"></a></li>
+                <li><a href=""><img src="./lg_display_picture/page3_15.png" alt="" class="thumb"></a></li>
+                <li><a href=""><img src="./lg_display_picture/page3_16.png" alt="" class="thumb"></a></li>
+                <li><a href=""><img src="./lg_display_picture/page3_17.png" alt="" class="thumb"></a></li>
+            </ul>
+        </div>
+    </section>
     <footer class="ft">
         <div class="ft_wrap">
-            <div class="ft_logo"><img src="./LG_Display/lg_logo2.png" alt=""></div>
+            <div class="ft_logo"><img src="./lg_display_picture/lg_logo2.png" alt="하단로고" width=144px; height=26.04px; ></div>
             <div class="mid_box">
                 <nav class="fnb">
-                    <a href="">개인정보 처리 방침</a>
-                    <a href="">이용약관</a>
-                    <a href="">이메일무단수집거부</a>
+                    <a href="" class="dpc">개인정보 처리 방침</a>
+                    <a href="" class="dpc">이용약관</a>
+                    <a href="" class="dpc">이메일무단수집거부</a>
                 </nav>
-                <p class="addr">
-                    e-VOS/협력사  등록  개인정보처리방침  문의/제안  SITEMAP   대표전화 02-3773-1114
-                </p>
+                <p class="addr">LG_DISPLAY | e-VOS/협력사 | 등록 | 개인정보처리방침 | 문의/제안 | SITEMAP <br>
+                    대표전화 02-3773-1114</p>
                 <p class="copyright">COPYRIGHT ⓒ LG DISPLAY CO., LTD. ALL RIGHTS RESERVED.</p>
             </div>
             <div class="sel_box">
