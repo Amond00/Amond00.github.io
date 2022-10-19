@@ -19,7 +19,7 @@
         .gnb > ul > li { float:left; width: 20%; height:40px; line-height: 40px; position:relative; }
         .gnb .dp1 { display:block; color:#fff; text-align: center; background-color:#333; font-size:16px; }
         .gnb li:hover .dp1 { color:#fff; background-color:#333; color: red;}
-        .gnb .sub { display:none; width: 100%; height:auto; position:absolute; top:40px; background-color:#333; left: 0; z-index:90; height: 124px; }
+        .gnb .sub { display:none; width: 100%; height:auto; position:absolute; top:40px; background-color:#333; left: 0; z-index:90; height: 94px; }
         .gnb:hover li .sub { display:block;  }
         .gnb li .sub li { clear:both; height: 30px; line-height: 30px;}
         .gnb li .sub li a { background-color:#333; color:#fff; font-size:14px; display:block; text-indent:2em; overflow: hidden; white-space:nowrap; text-overflow: ellipsis; }
