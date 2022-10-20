@@ -43,18 +43,20 @@
     .to_top:hover { background-color: deepskyblue; }
     .to_top.on { visibility: visible; }
 
-    .page_aside { width: 200px; min-height:500px; float:left; }
-    .year_fr { width: 1000px; min-height:500px; float:right; }
+    .con_fr { clear:both; margin-top: 40px; margin-bottom: 18px; }
+    .con_fr:after { content:""; display:block; clear:both; }
+    .page_aside { width: 200px;  float:left; }
+    .year_fr { width: 1000px;  float:right; margin-top: 20px; margin-bottom: 20px; }
     .year_lst { clear: both; border-left:1px solid #c10037; }
     .year_lst li { clear:both; height: 90px; position:relative; }
     .year_lst li:before { content:""; display:block; width: 12px; height: 12px; 
-    border-radius:8px; background-color:#c10037; position:absolute; top:0px; left:-6px; z-index:10; }
+    border-radius:8px; background-color:#c10037; position:absolute; top:0px; left:-6px; z-index:10; clear: both;}
     .year_lst li h3, .year_lst li p { padding-left: 30px; }
     .year_tit { color: #c10037; line-height: 30px;}
     .year_com { line-height: 30px;}
 
     /* content 2 */
-    .page_title {font-size: 50px; margin-top: -50px; margin-bottom: 50px;}
+    .page_title {font-size: 50px;  }
     .company_img1 { float: right; margin-left: 50px;}
     .company_img2 { text-align: center; margin: 50px;}
     .company_tit1 { line-height: 50px; font-size: 23px; position: relative; color: gray;}
@@ -64,10 +66,10 @@
     .company_com2 { line-height: 25px; text-align: center;}
     .ceo_mal { color: gray; font-size: 18px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif}
     
-    .company_tit.left {float: left; clear: both; }
-    .company_tit.right { float: right; clear: both;}
-    .left_map { float: left; clear: both;}
-    .right_map {float: right; clear: both; }
+    .company_tit { line-height: 2.4; font-size:32px;  padding-top: 1.5rem; }
+    .map_lst { clear:both; width: 100%; padding-bottom: 60px; }
+    .map_lst:after { content:""; display:block; clear: both; }
+    .map_lst li { float:left; width: 50%; }
 
     </style>
     <link rel="stylesheet" href="footer.css">
@@ -159,7 +161,7 @@
                     <option value="invest.html#page1">투자정보</option>
                 </select> &gt; 
                 <select name="sel2" id="sel2" class="sel">
-                    <option selected>기업개요</option>
+                    <option value="" selected>기업개요</option>
                     <option value="company.html#page2">연혁</option>
                     <option value="company.html#page3">사업장 위치</option>
                 </select>
@@ -224,7 +226,7 @@
                     <option value="invest.html#page1">투자정보</option>
                 </select> &gt; 
                 <select name="sel4" id="sel4" class="sel">
-                    <option selected>연혁</option>
+                    <option value="" selected>연혁</option>
                     <option value="company.html#page1">기업 개요</option>
                     <option value="company.html#page3">사업장 위치</option>
                 </select>
@@ -233,77 +235,113 @@
         <section class="page">
             <div class="page_wrap">
                 <h2 class="page_title">연혁</h2>
-                <div class="page_aside">
-                    <h2 class="aside_tit">2021년</h2>
+                <div class="con_fr">
+                    <div class="page_aside">
+                        <h2 class="aside_tit">2021년</h2>
+                    </div>
+                    <div class="year_fr">
+                        <ul class="year_lst">
+                            <li>
+                                <h3 class="year_tit">12월</h3>
+                                <p class="yesr_com">
+                                    LG디스플레이, 차세대 TV 패널 'OLED.EX' 발표<br>
+                                    LG디스플레이-연세대학교, 차세대 디스플레이 융합인재 육성
+                                </p>
+                            </li>
+                            <li>
+                                <h3 class="year_tit">11월</h3>
+                                <p class="yesr_com">LG디스플레이 ‘Auto용 POLED’ 대한민국 기술대상 ‘대통령상’수상</p>
+                            </li>
+                            <li>
+                                <h3 class="year_tit">9월</h3>
+                                <p class="yesr_com">LG디스플레이, 7년 연속 동반성장 ‘최우수 기업’ 선정</p>
+                            </li>
+                            <li>
+                                <h3 class="year_tit">6월</h3>
+                                <p class="yesr_com">롤러블 OLED TV, 美 SID 선정 '올해의 디스플레이' 수상</p>
+                            </li>
+                            <li>
+                                <h3 class="year_tit">1월</h3>
+                                <p class="yesr_com">48인치 4K 벤더블 CSO(Cinematic Sound OLED) 최초 공개</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="year_fr">
-                    <ul class="year_lst">
-                        <li>
-                            <h3 class="year_tit">12월</h3>
-                            <p class="yesr_com">
-                                LG디스플레이, 차세대 TV 패널 'OLED.EX' 발표<br>
-                                LG디스플레이-연세대학교, 차세대 디스플레이 융합인재 육성
-                            </p>
-                        </li>
-                        <li>
-                            <h3 class="year_tit">11월</h3>
-                            <p class="yesr_com">LG디스플레이 ‘Auto용 POLED’ 대한민국 기술대상 ‘대통령상’수상</p>
-                        </li>
-                        <li>
-                            <h3 class="year_tit">9월</h3>
-                            <p class="yesr_com">LG디스플레이, 7년 연속 동반성장 ‘최우수 기업’ 선정</p>
-                        </li>
-                        <li>
-                            <h3 class="year_tit">6월</h3>
-                            <p class="yesr_com">롤러블 OLED TV, 美 SID 선정 '올해의 디스플레이' 수상</p>
-                        </li>
-                        <li>
-                            <h3 class="year_tit">1월</h3>
-                            <p class="yesr_com">48인치 4K 벤더블 CSO(Cinematic Sound OLED) 최초 공개</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="page_aside">
-                    <h2 class="aside_tit">2020년</h2>
-                </div>
-                <div class="year_fr">
-                    <ul class="year_lst">
-                        <li>
-                            <h3 class="year_tit">12월</h3>
-                            <p class="yesr_com">
-                                L88인치 8K OLED, 2020 대한민국 기술대상 ‘국무총리상’ 수상<br>
-                                CSO(Cinematic Sound OLED), 국가기술표준원 제정 ‘소리 내는 디스플레이’ 국가표준(KS) 등재
-                            </p>
-                        </li>
-                        <li>
-                            <h3 class="year_tit">11월</h3>
-                            <p class="yesr_com">OLED TV 패널, 스위스 SGS社 친환경 제품(Eco Product) 인증 획득</p>
-                        </li>
-                        <li>
-                            <h3 class="year_tit">9월</h3>
-                            <p class="yesr_com">2019 동반성장지수 평가 최우수 등급 획득(6년 연속)</p>
-                        </li>
-                        <li>
-                            <h3 class="year_tit">8월</h3>
-                            <p class="yesr_com">OLED TV 패널, 英 인터텍(Intertek)社 ‘화질 정확도(Accurate Picture Quality)’ 인증 획득</p>
-                        </li>
-                        <li>
-                            <h3 class="year_tit">7월</h3>
-                            <p class="yesr_com">중국 광저우 8.5세대 OLED 패널 양산</p>
-                        </li>
-                        <li>
-                            <h3 class="year_tit">6월</h3>
-                            <p class="yesr_com">
-                                최고의 디스플레이 솔루션 기업' 비전체계 재정립<br>
-                                산업통상자원부 추진, '스트레처블(Stretchable) 디스플레이 개발' 국책과제 총괄 주관 기업 선정
-                            </p>
-                        </li>
-                        <li>
-                            <h3 class="year_tit">4월</h3>
-                            <p class="yesr_com">2019 CDP Korea '탄소경영 아너스클럽', '물경영우수기업' 동시 선정</p>
-                        </li>
-                    </ul>
-                </div>
+                <div class="con_fr">
+                    <div class="page_aside">
+                        <h2 class="aside_tit">2020년</h2>
+                    </div>
+                    <div class="year_fr">
+                        <ul class="year_lst">
+                            <li>
+                                <h3 class="year_tit">12월</h3>
+                                <p class="yesr_com">
+                                    L88인치 8K OLED, 2020 대한민국 기술대상 ‘국무총리상’ 수상<br>
+                                    CSO(Cinematic Sound OLED), 국가기술표준원 제정 ‘소리 내는 디스플레이’ 국가표준(KS) 등재
+                                </p>
+                            </li>
+                            <li>
+                                <h3 class="year_tit">11월</h3>
+                                <p class="yesr_com">OLED TV 패널, 스위스 SGS社 친환경 제품(Eco Product) 인증 획득</p>
+                            </li>
+                            <li>
+                                <h3 class="year_tit">9월</h3>
+                                <p class="yesr_com">2019 동반성장지수 평가 최우수 등급 획득(6년 연속)</p>
+                            </li>
+                            <li>
+                                <h3 class="year_tit">8월</h3>
+                                <p class="yesr_com">OLED TV 패널, 英 인터텍(Intertek)社 ‘화질 정확도(Accurate Picture Quality)’ 인증 획득</p>
+                            </li>
+                            <li>
+                                <h3 class="year_tit">7월</h3>
+                                <p class="yesr_com">중국 광저우 8.5세대 OLED 패널 양산</p>
+                            </li>
+                            <li>
+                                <h3 class="year_tit">6월</h3>
+                                <p class="yesr_com">
+                                    최고의 디스플레이 솔루션 기업' 비전체계 재정립<br>
+                                    산업통상자원부 추진, '스트레처블(Stretchable) 디스플레이 개발' 국책과제 총괄 주관 기업 선정
+                                </p>
+                            </li>
+                            <li>
+                                <h3 class="year_tit">4월</h3>
+                                <p class="yesr_com">2019 CDP Korea '탄소경영 아너스클럽', '물경영우수기업' 동시 선정</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>  
+                <div class="con_fr">
+                    <div class="page_aside">
+                        <h2 class="aside_tit">2019년</h2>
+                    </div>
+                    <div class="year_fr">
+                        <ul class="year_lst">
+                            <li>
+                                <h3 class="year_tit">12월</h3>
+                                <p class="yesr_com">65인치 Rollable OLED, 2019 대한민국 기술대상 '대통령상' 수상</p>
+                            </li>
+                            <li>
+                                <h3 class="year_tit">8월</h3>
+                                <p class="yesr_com">중국 광저우 8.5세대 OLED 패널 공장 준공</p>
+                            </li>
+                            <li>
+                                <h3 class="year_tit">7월</h3>
+                                <p class="yesr_com">
+                                    2018년 CDP Korea '기후변화대응', '물경영' 평가<br>
+                                    국내 유일 리더쉽 A(최고등급)동시 획득
+                                </p>
+                            </li>
+                            <li>
+                                <h3 class="year_tit">7월</h3>
+                                <p class="yesr_com">파주 6세대 P-OLED 생산라인(E6) 양산</p>
+                            </li>
+                            <li>
+                                <h3 class="year_tit">1월</h3>
+                                <p class="yesr_com">세계 최초 65인치 8K OLED 및 65인치 UHD 크리스탈 모션 OLED 패널 개발</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>  
             </div>
         </section>
     </div>
@@ -322,7 +360,7 @@
                     <option value="invest.html#page1">투자정보</option>
                 </select> &gt; 
                 <select name="sel6" id="sel6" class="sel">
-                    <option selected>사업장 위치</option>
+                    <option value="" selected>사업장 위치</option>
                     <option value="company.html#page1">기업 개요</option>
                     <option value="company.html#page2">연혁</option>
                 </select>
@@ -331,22 +369,30 @@
         <section class="page">
             <div class="page_wrap">
                 <h2 class="page_title">사업장 위치</h2>
-                <h3 class="company_tit left">LG DISPLAY - 본사</h3>
-                <iframe class="left_map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12656.565236645683!2d126.9297206!3d37.5281661!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x72a26b898945bc92!2zTEcg65SU7Iqk7ZSM66CI7J20IOuzuOyCrA!5e0!3m2!1sko!2skr!4v1666146628311!5m2!1sko!2skr" 
-                width="450" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <ul class="map_lst">
+                    <li>
+                        <h3 class="company_tit left">LG DISPLAY - 본사</h3>
+                        <iframe class="left_map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12656.565236645683!2d126.9297206!3d37.5281661!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x72a26b898945bc92!2zTEcg65SU7Iqk7ZSM66CI7J20IOuzuOyCrA!5e0!3m2!1sko!2skr!4v1666146628311!5m2!1sko!2skr" 
+                        width="450" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </li>
+                    <li>
+                        <h3 class="company_tit left">LG DISPLAY - LG사이언스파크</h3>
+                        <iframe class="left_map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8916.231490033171!2d126.76820454436864!3d37.80494511695174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c8d4e342146e7%3A0xe0f639c9d6051050!2zTEfrlJTsiqTtlIzroIjsnbQo7KO8KQ!5e0!3m2!1sko!2skr!4v1666084877809!5m2!1sko!2skr" 
+                        width="450" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </li>
+                    <li>
 
-                <h3 class="company_tit left">LG DISPLAY - LG사이언스파크</h3>
-                <iframe class="left_map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8916.231490033171!2d126.76820454436864!3d37.80494511695174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c8d4e342146e7%3A0xe0f639c9d6051050!2zTEfrlJTsiqTtlIzroIjsnbQo7KO8KQ!5e0!3m2!1sko!2skr!4v1666084877809!5m2!1sko!2skr" 
-                width="450" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <h3 class="company_tit right">LG DISPLAY - 파주공장</h3>
+                        <iframe class="right_map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12649.539584019261!2d126.82301299021319!3d37.56955337675578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9c14541010d1%3A0xa6c2cd0160df8438!2zTEfsgqzsnbTslrjsiqTtjIztgaw!5e0!3m2!1sko!2skr!4v1666146757130!5m2!1sko!2skr" 
+                        width="450" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </li>
+                    <li>
 
-                <h3 class="company_tit right">LG DISPLAY - 파주공장</h3>
-                <iframe class="right_map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12649.539584019261!2d126.82301299021319!3d37.56955337675578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9c14541010d1%3A0xa6c2cd0160df8438!2zTEfsgqzsnbTslrjsiqTtjIztgaw!5e0!3m2!1sko!2skr!4v1666146757130!5m2!1sko!2skr" 
-                width="450" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-                <h3 class="company_tit right">LG DISPLAY - 구미공장</h3>
-                <iframe class="right_map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3223.2261484655105!2d128.40461033032457!3d36.11234781643312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3565c41a6730d05b%3A0x607eefd91f443857!2zTEfrlJTsiqTtlIzroIjsnbQg6rWs66-4MjPqs7XsnqU!5e0!3m2!1sko!2skr!4v1666146815606!5m2!1sko!2skr" 
-                width="450" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    
+                        <h3 class="company_tit right">LG DISPLAY - 구미공장</h3>
+                        <iframe class="right_map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3223.2261484655105!2d128.40461033032457!3d36.11234781643312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3565c41a6730d05b%3A0x607eefd91f443857!2zTEfrlJTsiqTtlIzroIjsnbQg6rWs66-4MjPqs7XsnqU!5e0!3m2!1sko!2skr!4v1666146815606!5m2!1sko!2skr" 
+                        width="450" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </li>
+                </ul>
             </div>
         </section>
     </div>
@@ -354,7 +400,7 @@
         var sel = document.getElementsByClassName("sel");
         for(var i=0;i<sel.length;i++){
             sel[i].addEventListener("change", function(){
-                location.href = this.value;
+                if(this.value!="") location.href = this.value;
             });
         }
     </script>

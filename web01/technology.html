@@ -44,14 +44,19 @@
     .to_top.on { visibility: visible; }
 
     /* content 2 */
-    .page_title { text-align: center; font-size: 70px; margin-bottom: 50px;}
+    .page_title { text-align: center; margin-bottom: 50px;
+    background-image: linear-gradient(90deg, red, orange, yellow, green, blue, navy, purple);
+    -webkit-background-clip: text; color: transparent; font-weight: bold; font-size: 80px; }
     .tec_img { float: left; position: relative; }
     .tec_img > img { width: 1200px; }
-    .tec_tit {  font-size: 50px; text-align: center; }
+    .tec_tit {  font-size: 50px; text-align: center; clear: both; }
     .tec_tit.purple { color: purple; }
+    .tec_tit.gray { color: gray; }
+    .tec_tit2 { font-size: 35px; text-align: center; color: gray;}
     .tec_tit.blue { color:deepskyblue; }
-    .tec_com {float: left; margin: 50px; font-size: 18px; text-align: left;}
-
+    .tec_com { margin: 50px; font-size: 18px; text-align: center; color: #868e9b}
+    .tec_com2 { text-align: center; clear: both; color: #868e9b; line-height: 30px; font-size: 20px; margin-bottom: 60px;}
+    .vs2 { margin-bottom: 50px; }
 
     </style>
     <link rel="stylesheet" href="footer.css">
@@ -151,6 +156,9 @@
         <section class="page">
             <div class="page_wrap">
                 <h2 class="page_title" selected>OLED Technology</h2>
+                <figure class="vs2">
+                    <video src="./lg_display_video/mainv.mp4" class="vdo" autoplay muted loop></video>
+                </figure>
                 <ul class="tec">
                     <li>
                         <div class="tec_img"><img src="./lg_display_picture/technology_oled1.png" alt=""></div>
@@ -204,29 +212,42 @@
         <section class="page">
             <div class="page_wrap">
                 <h2 class="page_title">LCD Technology</h2>
+                <figure class="vs2">
+                    <video src="./lg_display_video/tec.mp4" class="vdo" autoplay muted loop></video>
+                </figure>
                 <ul class="tec">
                     <li>
                         <div class="tec_img"><img src="./lg_display_picture/technology_lcd1.png" alt=""></div>
-                        <h3 class="tec_tit">변함없는 선명한 화질</h3>
+                        <h3 class="page_title">변함없는 선명한 화질</h3>
                         <p class="tec_com">
                             LG디스플레이의 IPS기술은 액정 분자가 수평으로 구동되는 원리를 바탕으로<br>
                             우수한 화질 및 저 소비전력, 안정적인 화면을 구현하는 기술입니다.<br><br>
-                            Technology of IPS<br>
-                            IPS는 수평 액정 배열 방식으로 어느 각도에서도 동일한 화면을 즐길 수 있는 광시야각 기술입니다.
+                            <h3 class="tec_tit2">Technology of IPS<br></h3>
+                            <p class="tec_com2">IPS는 수평 액정 배열 방식으로 어느 각도에서도 동일한 화면을 즐길 수 있는 광시야각 기술입니다.</p>
                         </p>
                     </li>
                     <li>
                         <div class="tec_img"><img src="./lg_display_picture/technology_lcd2.png" alt=""></div>
-                        <h3 class="tec_tit">모든 제품에 적용 가능한 "Oxide-TFT LCD" 기술</h3>
+                        <h3 class="page_title">모든 제품에 적용 가능한 "Oxide-TFT LCD" 기술</h3>
                         <p class="tec_com">
-                            <h3 class="tec_tit">Oxide TFT 기술</h3>은 모든 디스플레이 제품에 적용이 가능합니다. 기존 a-Si TFT 의 전자 이동도보다<br>
-                            50배 이상 높은 성능으로 모바일부터 노트북, 대형 TV에 이르기까지 전 제품군에 응용이 가능합니다.<br>
-                            
-                            <h3 class="tec_tit">선명한 화질</h3> 개별 화소를 구성하는 TFT의 크기를 줄이고 성능을 높여서 고해상도/풍부한 색상의 디스플레이 구현이 가능합니다.<br>
-                            <h3 class="tec_tit">디자인 혁신</h3> Oxide TFT를 적용하면 화면 외곽의 패널 구동 회로부 크기를 획기적으로 줄일 수 있어서 슬림한 디자인의 디스플레이를 만들 수 있습니다.<br>
-                            <h3 class="tec_tit">낮은 소비전력</h3> Oxide TFT는 화면이 작동하지 않는 시간에 누설 전류가 매우 작기 때문에 전력 효율이 좋아 노트북이나 패드 제품의 배터리 사용 시간을 늘릴 수 있습니다.<br>
-                            <h3 class="tec_tit">고속 구동</h3> LG디스플레이의 고성능 Oxide TFT는 하이엔드급 게이밍 모니터/노트북과 같은 고속 구동 제품 및 가변 주파수 제품에 최적화 되어 있습니다.<br>
-                            <h3 class="tec_tit">제품 수명 연장</h3> LG디스플레이는 Oxide TFT 기술을 가장 오랜 기간 연구 개발하여 업계 최초로 대량 양산에 성공한 선구자 입니다. 고객이 오랫동안 믿고 사용할 수 있는 제품 신뢰성을 보장합니다.
+                            <h3 class="tec_tit2">Oxide TFT 기술</h3>
+                            <p class="tec_com2">
+                            모든 디스플레이 제품에 적용이 가능합니다. 기존 a-Si TFT 의 전자 이동도보다
+                            50배 이상<br> 높은 성능으로 모바일부터 노트북, 대형 TV에 이르기까지 전 제품군에 응용이 가능합니다.
+                            </p>
+                            <h3 class="tec_tit2">선명한 화질</h3> 
+                            <p class="tec_com2">개별 화소를 구성하는 TFT의 크기를 줄이고 성능을 높여서<br> 고해상도/풍부한 색상의 디스플레이 구현이 가능합니다.</p>
+                            <h3 class="tec_tit2">디자인 혁신</h3> 
+                            <p class="tec_com2">Oxide TFT를 적용하면 화면 외곽의 패널 구동 회로부 크기를 획기적으로<br> 줄일 수 있어서 슬림한 디자인의 디스플레이를 만들 수 있습니다.</p>
+                            <h3 class="tec_tit2">낮은 소비전력</h3> 
+                            <p class="tec_com2">Oxide TFT는 화면이 작동하지 않는 시간에 누설 전류가 매우 작기 때문에<br> 전력 효율이 좋아 노트북이나 패드 제품의 배터리 사용 시간을 늘릴 수 있습니다.</p>
+                            <h3 class="tec_tit2">고속 구동</h3> 
+                            <p class="tec_com2">LG디스플레이의 고성능 Oxide TFT는 하이엔드급 게이밍 모니터/노트북과<br> 같은 고속 구동 제품 및 가변 주파수 제품에 최적화 되어 있습니다.</p>
+                            <h3 class="tec_tit2">제품 수명 연장</h3> 
+                            <p class="tec_com2 3">
+                                LG디스플레이는 Oxide TFT 기술을 가장 오랜 기간 연구 개발하여 업계 최초로 대량 양산에<br> 성공한
+                                선구자 입니다. 고객이 오랫동안 믿고 사용할 수 있는 제품 신뢰성을 보장합니다.
+                            </p>
                         </p>
                     </li>
                 </ul>
