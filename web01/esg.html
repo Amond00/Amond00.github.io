@@ -119,7 +119,7 @@
                     <li class="item4">
                         <a href="index.html" class="dp1">기업정보</a>
                         <ul class="sub">
-                            <li><a href="company.html#page1">기업 개요</a></li>
+                            <li><a href="company.html#page1">기업개요</a></li>
                             <li><a href="company.html#page2">연혁</a></li>
                             <li><a href="company.html#page3">사업장 위치</a></li>
                         </ul>
@@ -129,7 +129,7 @@
                         <ul class="sub">
                             <li><a href="invest.html#page1">재무정보</a></li>
                             <li><a href="invest.html#page2">주주총회</a></li>
-                            <li><a href="invest.html#page3">정기 보고서</a></li>
+                            <li><a href="invest.html#page3">공시정보</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -152,7 +152,7 @@
                     <option value="invest.html#page1">투자정보</option>
                 </select> &gt; 
                 <select name="sel2" id="sel2" class="sel">
-                    <option selected>환경</option>
+                    <option value="" selected>환경</option>
                     <option value="esg.html#page2">사회</option>
                     <option value="esg.html#page3">지배구조</option>
                 </select>
@@ -201,7 +201,7 @@
                     <option value="invest.html#page1">투자정보</option>
                 </select> &gt; 
                 <select name="sel4" id="sel4" class="sel">
-                    <option selected>사회</option>
+                    <option value="" selected>사회</option>
                     <option value="esg.html#page1">환경</option>
                     <option value="esg.html#page3">지배구조</option>
                 </select>
@@ -297,7 +297,7 @@
                     <option value="invest.html#page1">투자정보</option>
                 </select> &gt; 
                 <select name="sel6" id="sel6" class="sel">
-                    <option selected>지배구조</option>
+                    <option value="" selected>지배구조</option>
                     <option value="esg.html#page1">환경</option>
                     <option value="esg.html#page2">사회</option>
                 </select>
@@ -357,7 +357,7 @@
         var sel = document.getElementsByClassName("sel");
         for(var i=0;i<sel.length;i++){
             sel[i].addEventListener("change", function(){
-                location.href = this.value;
+                if(this.value!="") location.href = this.value;
             });
         }
     </script>
