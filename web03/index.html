@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>인천관광공사</title>
+        
+    <!-- bulma css, script -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
+    <!-- 파비콘 -->
+    <link rel="icon" href="https://www.ito.or.kr/main/img/contents/ci.gif">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="./css/reset2.css">
+    <link rel="stylesheet" type="text/css" href="./css/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+<style>
+.footer_ban {
+    margin-top: 50px;
+    border-radius: 20px;
+    background: #fff;
+}
+.footer_ban>ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    dpadding: 36px 0;
+}
+.footer_ban>ul>li {
+    font-size: 1.6rem;
+    width: 13.5%;
+}
+.footer_ban>ul>li>a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer_ban>ul>li img {
+    margin-bottom: 10px;
+    max-width: 120px;
+    max-height: 36px;
+}
+.footer_ban>ul>li span {
+    width: 100%;
+    text-align: center;
+    font-size: 1.0rem;
+}
+
+.footer_bcon {
+    position: relative;
+    margin-top: 60px;
+    padding-left: 230px;
+}
+.footer_etcLink {
+    position: absolute;
+    left: 10px;
+    top: 0;
+    width: 380px;
+    max-width: 50%;
+    overflow: hidden;
+}
+ul, li, dl, dd {
+    list-style-type: none;
+}
+.footer_etcLink li {
+    margin-bottom: 8px;
+}
+.footer_bcon a {
+    color: #fff;
+}
+.wrap {
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.sel_box { float:right; border-bottom:1px solid #fff;height: 44px; line-height: 44px; text-align:center; width: 140px; }
+#sel { border:none; outline: none; background-color: transparent; color:#fff; }
+#sel option { color:#333; }
+
+</style>
+<style>
+.slider-text {
+    position: absolute;
+    right: 0;
+    bottom: 0
+  }
+#slider .card-content{
+    max-width: 50%;
+  }
+#slider{
+    overflow: hidden;
+    /* height : 588px; */
+  }
+@media screen and (max-width: 1023px) {
+    #slider .card-content{
+      display: none;
+    }
+  }
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.item-slide img {
+  max-width: 1200px;
+}
+.caption-container {
+  color: white;
+}
+
+
+.mBan span {
+    display: block;
+}
+.mBan ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    text-align: center;
+    margin: 30px 0 55px;
+}
+.wrap {
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.quick {
+    position: fixed;
+    right: 5%;
+    top: 247px;
+    text-align: center;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+    z-index: 50;
+    overflow: hidden;
+}
+.quick_toggle {
+    padding: 15px 0;
+    color: #fff;
+    background: #002242;
+}
+.quick .top_btn {
+    display: block;
+    width: 51px;
+    height: 51px;
+    margin: 15px 20px;
+    padding: 10px 5px !important;
+    font-size: 1.2rem;
+    border-top: 0;
+    border-radius: 50%;
+    background: #f5f5f5;
+}	
+
+.wrap>li {
+    float: left;
+    width: 48%;
+}
+.contact a {
+    display: block;
+    text-align: center;
+    height: 75px;
+    line-height: 75px;
+    font-family: 'S-CoreDream-5Medium';
+    color: #fff;
+    font-size: 2.1rem;
+    border-radius: 75px;
+    max-width: 300px;
+}
+.contact a.l1{
+    background: #0092a2;
+}
+.contact a.l2 {
+    background: #003e67;
+}
+.contact a:hover span {
+    padding-left: 60px;
+}
+.contact a span {
+    display: inline-block;
+    padding-left: 20px;
+    transition: .5s;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    word-wrap: break-word;
+    word-break: keep-all;
+}
+
+.col_con {
+    width: 100%;
+}
+.pzone2_list {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.pzone2_list>li {
+    width: 27%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.pzone2_list>li>a img {
+    transition: .5s;
+    border-radius: 20px;
+    vertical-align: initial;
+}
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+</style>
+	
+</head>
+<body>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+        
+          <a class="navbar-item" href="index.html">
+            <img src="./index_files/logo.gif" width="152" height="58">
+          </a>
+      
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start" id="gnb">
+              <!-- ajax로 메뉴 로딩하여 추가하기 -->
+      
+                      <div class="navbar-item has-dropdown is-hoverable">
+                          <a href="TourListCateA.html" class="navbar-link">
+                                관광지
+                          </a>
+                          <div class="navbar-dropdown cate" id="cate01"><a href="TourDetailNo1.html">땅거미 전망대</a></div>
+                      </div>
+                      <div class="navbar-item has-dropdown is-hoverable">
+                          <a href="TourListCateB.html" class="navbar-link cate">
+                                자연
+                          </a> 
+                             <div class="navbar-dropdown cate" id="cate02"><a href="TourDetailNo2.html">석산곶</a></div>
+                      </div>
+                      <div class="navbar-item has-dropdown is-hoverable">
+                          <a href="TourListCateC.html" class="navbar-link cate">
+                                레포츠
+                          </a>
+                             <div class="navbar-dropdown cate" id="cate03"><a href="TourDetailNo3.html">교동도 난정저수지</a></div>
+                      </div>
+                      <div class="navbar-item has-dropdown is-hoverable">
+                          <a href="TourListCateD.html" class="navbar-link cate">
+                                쇼핑
+                          </a>
+                          <div class="navbar-dropdown cate" id="cate04"><a href="TourDetailNo4.html">소래포구종합어시장</a></div>
+                      </div>
+                      <div class="navbar-item has-dropdown is-hoverable">
+                          <a href="TourListCateE.html" class="navbar-link cate">
+                                음식
+                          </a>
+                          <div class="navbar-dropdown cate" id="cate05"><a href="TourDetailNo5.html">라봉</a></div>
+                      </div>	
+                      <div class="navbar-item has-dropdown is-hoverable">
+                          <a href="TourListCateF.html" class="navbar-link cate">
+                                숙박
+                          </a>
+                          <div class="navbar-dropdown cate" id="cate06"><a href="TourDetailNo6.html">남문한옥 대명헌</a></div>
+                      </div>
+                      <div class="navbar-item has-dropdown is-hoverable">
+                          <a href="TourListCateG.html" class="navbar-link cate">
+                                축제
+                          </a>
+                          <div class="navbar-dropdown cate" id="cate07"><a href="TourDetailNo7.html">인천 펜타포트 음악축제</a></div>
+                      </div>
+            
+            <div class="navbar-item has-dropdown is-hoverable single">
+              <a class="navbar-link">
+                    고객에게
+              </a>
+              <div class="navbar-dropdown">
+                   <a class="navbar-item" href="syoukai.html">
+                     소개
+                </a>
+                <hr class="navbar-divider">
+                <a class="navbar-item" href="notice.html">
+                      공지사항
+                </a>
+                <a class="navbar-item" href="qna.html">
+                      QnA
+                </a>
+              </div>
+            </div>
+            
+          </div>
+        </div>    
+          <script>
+          $(document).ready(function(){
+              $.ajax({
+                  url:"/pro03/MemuLoadCtrl.do",
+                  type:"POST",
+                  enctype:"UTF-8",
+                  datatype:"json",
+                  processData:false,
+                  contentType:false, 
+                  cache:false,
+                  success:function(data){
+                      $(".navbar-dropdown.cate").empty();
+                      var trans = $.parseJSON(data);
+                      $.each(trans, function(key, value){
+                          if(key=="data"){
+                              for(var i=0;i<value.length;i++){
+                                  if(value[i].cate=="A"){
+                                      $("#cate01").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+                                  } else if(value[i].cate=="B"){
+                                      $("#cate02").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+                                  } else if(value[i].cate=="C"){
+                                      $("#cate03").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+                                  } else if(value[i].cate=="D"){
+                                      $("#cate04").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+                                  } else if(value[i].cate=="E"){
+                                      $("#cate05").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+                                  } else if(value[i].cate=="F"){
+                                      $("#cate06").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+                                  } else if(value[i].cate=="G"){
+                                      $("#cate07").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+                                  }
+                              }
+                          }
+                      });
+                      
+                  }
+              });
+          });
+          </script>
+          
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">        
+              
+              
+                <a class="button is-primary" href="signup.html" style="margin:30px;">
+                  <strong>회원가입</strong>
+                </a>
+                <a class="button is-light" href="login.html">
+                          로그인	
+                </a>
+               
+               
+              </div>
+            </div>
+          </div>
+        
+    </nav>
+
+
+
+    <section>
+        <span style="position:absolute; font-size:40px; color:white; z-index:1;">
+                            시민의 행복을 추구하는<br>
+                            인천관광공사<br>
+                            INCHEON TOURISM ORGANIZATION
+        </span>
+        <div id="slider">
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-16by9 is-covered" >
+                        <img src="https://www.ito.or.kr/main/img/main/visual07.jpg" alt="비쥬얼1" />
+                    </figure>
+                </div>
+                <div class="card-content slider-text " >
+                    <p class="is-size-5 box">
+                            왕산 마리나
+                    </p>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-image">
+                    <figure class="image is-16by9 is-covered">
+                        <img src="https://www.ito.or.kr/main/img/main/visual09.jpg" alt="비쥬얼2" />
+                    </figure>
+                </div>
+                <div class="card-content slider-text " >
+                    <p class="is-size-5 box">
+                            왕산 마리나
+                    </p>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-image">
+                    <figure class="image is-16by9 is-covered">
+                        <img src="https://www.ito.or.kr/main/img/main/visual08.jpg" alt="비쥬얼3" />
+                    </figure>
+                </div>
+                <div class="card-content slider-text ">
+                    <p class=" is-size-5 box">
+                                강화도 고려산
+                    </p>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-image">
+                    <figure class="image is-16by9 is-covered">
+                        <img src="https://www.ito.or.kr/main/img/main/visual01.jpg" alt="비쥬얼4" />
+                    </figure>
+                </div>
+                <div class="card-content slider-text ">
+                    <p class=" is-size-5 box">
+                        옹진군 두무진
+                    </p>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-image">
+                    <figure class="image is-16by9 is-covered">
+                        <img src="https://www.ito.or.kr/main/img/main/visual02.jpg" alt="비쥬얼5" />
+                    </figure>
+                </div>
+                <div class="card-content slider-text ">
+                    <p class=" is-size-5 box">
+                            옹진군 선재도 목섬 야경
+                    </p>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-image">
+                    <figure class="image is-16by9 is-covered">
+                        <img src="https://www.ito.or.kr/main/img/main/visual03.jpg" alt="비쥬얼6" />
+                    </figure>
+                </div>
+                <div class="card-content slider-text ">
+                    <p class=" is-size-5 box">
+                                                                연수구 송도컨벤시아
+                    </p>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-image">
+                    <figure class="image is-16by9 is-covered">
+                        <img src="https://www.ito.or.kr/main/img/main/visual05.jpg" alt="비쥬얼7" />
+                    </figure>
+                </div>
+                <div class="card-content slider-text ">
+                    <p class=" is-size-5 box">
+                                                                강화군 고인돌
+                    </p>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-image">
+                    <figure class="image is-16by9 is-covered">
+                        <img src="https://www.ito.or.kr/main/img/main/visual06.jpg" alt="비쥬얼8" />
+                    </figure>
+                </div>
+                <div class="card-content slider-text ">
+                    <p class=" is-size-5 box">
+                                                                옹진군 굴업도
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+     <script>
+		bulmaCarousel.attach('#slider', {
+		    slidesToScroll: 1,
+		    slidesToShow: 1,
+		    infinite: true,
+		    autoplay: true,
+		});
+		var slideIndex = 1;
+		showSlides(slideIndex);
+		
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
+		
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+		
+		function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("item-slide");
+		  var captionText = document.getElementById("caption");
+		  if (n > slides.length) {slideIndex = 1}
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+		      slides[i].style.display = "none";
+		  }
+		}
+    </script>
+    <script>
+            function sel_link(sel){
+                location.href = sel.value;
+            }
+    </script>
+    <div class="wrap">
+		<div class="mBan">
+			<ul>
+				<li><a href="http://itour.incheon.go.kr/" target="_blank">
+					<img src="./index_files/ban01.gif" alt="새창열림 : itour 인천투어">
+					<span>인천관광</span></a>
+				</li>
+				
+				<li><a href="https://citytour.ito.or.kr/" target="_blank">
+					<img src="./index_files/ban02.gif" alt="새창열림 : Incheon City Tour">
+					<span>시티투어</span></a>
+				</li>
+				<li><a href="http://songdoconvensia.visitincheon.or.kr/" target="_blank">
+					<img src="./index_files/ban03.gif" alt="새창열림 : songdo CONVENSIA">
+					<span>송도컨벤시아</span></a>
+				</li>
+				<li><a href="http://cvb.visitincheon.or.kr/" target="_blank">
+					<img src="./index_files/ban04.gif" alt="새창열림 : 인천 세계에서 가장 가까운 스마트 마이스 도시">
+					<span>인천컨벤션뷰로</span></a>
+				</li>
+				<li><a href="https://www.harborparkhotel.com/" target="_blank">
+					<img src="./index_files/ban05.gif" alt="새창열림 : BW Best Western Harbor Park Hotel">
+					<span>하버파크호텔</span></a>
+				</li>
+				<li><a href="http://mtisicn.com/" target="_blank">
+					<img src="./index_files/ban06.gif" alt="새창열림 : MTIS">
+					<span>인천의료관광</span></a>
+				</li>
+				<li><a href="https://incheon.tourbiz.or.kr/" target="_blank">
+					<img src="./index_files/ban07.gif" alt="새창열림 : 인천관광기업지원센터">
+					<span>인천관광기업지원센터</span></a>
+				</li>
+				<li><a href="http://www.iisland.or.kr/" target="_blank">
+					<img src="./index_files/ban08.gif" alt="새창열림 : 섬발전지원센터">
+					<span>섬발전지원센터</span></a>
+				</li>
+				<li><a href="https://m.incheoneasy.com/" target="_blank">
+					<img src="./index_files/ban09.gif" alt="새창열림 : 인천e지">
+					<span>섬발전지원센터</span></a>
+				</li>
+			</ul>
+		</div>
+    </div>
+    
+    <section>
+	      <!-- Facebook -->
+	      <a class="btn btn-outline-light btn-floating m-1" href="https://mmcf.co.kr/index.html" target="_blank" role="button">
+	      <img src="./index_files/pop_221103.png" alt="" style="float:right; margin-right:300px;"></a>
+	  </section><table class="table" style="margin-left:300px;">
+      	
+	  <thead>
+	    <tr>
+	      <th>No</th>
+	      <th>Title</th>
+	    </tr>
+	  </thead>
+	   <tbody>
+	    <tr>
+	     <td>1</td>
+	     <td><a href="http://localhost:8090/pro03/GetNoticeCtrl.do?no=16">2022 인천의료뷰티관광 상품개발 공모 결과 발표</a></td>
+	    </tr>
+	    <tr>
+	     <td>2</td>
+	     <td><a href="http://localhost:8090/pro03/GetNoticeCtrl.do?no=15">2022 인천 마이스마켓 &amp; 커리어페어 참여기업 및 구직자 모집</a></td>
+	    </tr>
+	    <tr>
+	     <td>3</td>
+	     <td><a href="http://localhost:8090/pro03/GetNoticeCtrl.do?no=14">인천광역시 시민안전보험 운영 설문조사 참여</a></td>
+	    </tr>
+	    <tr>
+	     <td>4</td>
+	     <td><a href="http://localhost:8090/pro03/GetNoticeCtrl.do?no=13">「2022 인천 스마트관광 데이터 아이디어 공모전」 공고</a></td>
+	    </tr>
+	    <tr>
+	     <td>5</td>
+	     <td><a href="http://localhost:8090/pro03/GetNoticeCtrl.do?no=12">인천 웰니스관광 원데이클래스 참가자 모집</a></td>
+	    </tr>
+	  </tbody>
+	  
+	</table>
+	
+	<ul class="contact" style="margin-top: 80px; margin-bottom:100px;">
+		<li style="margin-left:300px;"><a class="l1" href="https://www.ito.or.kr/main/introduce/organization.jsp">
+		<img src="./index_files/contact01.gif" alt=""><span>부서안내</span></a></li>
+		<li style="float:right; margin-right:100px; margin-top:-75px; width: 300px;"><a class="l2" href="https://www.ito.or.kr/main/customer/inquiry.jsp" style=" margin-left:20px;">
+		<img src="./index_files/contact02.gif" alt=""><span>고객소리</span></a></li>
+	</ul>
+	
+	
+	<div class="quick">
+	<h2 class="quick_toggle">SNS</h2>
+		
+		<section class="bg-white mb-4">
+	      <!-- NaverBlog -->
+	      <a class="btn btn-outline-light btn-floating m-1" href="https://blog.naver.com/discoverincheon" target="_blank" role="button">
+	      <img style="margin-top:15px;" src="./index_files/sns_blog.gif" alt=""><i class="fab fa-facebook-f"></i></a>
+	    </section>
+		<section class="bg-white mb-4">
+	      <!-- Facebook -->
+	      <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/discoverincheon/" target="_blank" role="button">
+	      <img src="./index_files/sns_facebook.gif" alt=""><i class="fab fa-facebook-f"></i></a>
+	    </section>
+	    <section class="bg-white mb-4">
+	      <!-- Instagram -->
+	      <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/discoverIncheon/" target="_blank" role="button">
+	      <img src="./index_files/sns_insta.gif" alt=""><i class="fab fa-instagram"></i></a>
+	    </section>
+	    <section class="bg-white mb-4">
+	      <!-- Youtube -->
+	      <a class="btn btn-outline-light btn-floating m-1" href="https://www.youtube.com/discoverIncheon/" target="_blank" role="button">
+	      <img src="./index_files/sns_yutube.gif" alt=""><i class="fab fa-github"></i></a>
+	    </section>
+	    <section class="bg-white mb-4">
+	      <!-- TOP -->
+	      <a class="quick_link top_btn" href="http://localhost:8090/pro03/#" role="button">TOP</a>
+	    </section>
+    </div>
+    
+    <div class="col_con">
+			<div class="tab_con">
+				<ul id="pzone_list0" class="pzone2_list">
+					<li><a href="https://www.instagram.com/discoverIncheon/" target="_blank">
+						<img src="./index_files/pz_s1.jpg" alt="새창열림 : 인스타그램">
+						</a></li>
+					<li><a href="https://www.facebook.com/discoverincheon/" target="_blank">
+						<img src="./index_files/pz_s2.jpg" alt="새창열림 : 페이스북">
+						</a></li>
+					<li><a href="https://www.youtube.com/discoverIncheon/" target="_blank">
+						<img src="./index_files/pz_s3.jpg" alt="새창열림 : 유튜브">
+						</a></li>
+				</ul>
+			</div>
+		</div>
+    
+	
+
+<footer class="bg-white text-center text-white" style="height:419px; margin-top:200px; text-align:center; border-top:2px solid #333; 
+background:#0b0b0b url(&#39;https://www.ito.or.kr/main/img/inc/footer_bg.jpg&#39;) no-repeat center top; margin-top:400px;">
+	<div class="wrap">
+		<div class="footer_ban">				
+			<ul>
+				<li><a href="http://www.icren.kr/" target="_blank">
+						<img src="./index_files/icren_logo.png" style="width: 100%;" alt="새창열림: 인천시정연구네트워크">
+						<span>인천시정연구네트워크</span>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.visitincheon.or.kr/" target="_blank">
+						<img src="./index_files/etclink07.gif" alt="새창열림: Visit Incheon">
+						<span>스마트마이스 포털</span>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.redwhistle.org/report/report.asp?organ=7756&amp;RType=1" target="_blank">
+						<img src="./index_files/quick_report.gif" alt="새창열림: 인권청렴신고센터">
+						<span>인권청렴신고센터</span>
+					</a>
+					</li>
+				<li>
+					<a href="http://localhost:8090/main/information/closed.jsp">
+						<img src="./index_files/quick_private.gif" alt="페이지 이동: 비공개대상 기준 바로가기">
+						<span>비공개대상 기준</span>
+					</a>
+					</li>
+				<li>
+					<a href="http://localhost:8090/main/information/data.jsp">
+						<img src="./index_files/quick_info.gif" alt="페이지 이동: 사전정보공표 바로가기">
+						<span>사전정보공표</span>
+					</a>
+					</li>
+				<li>
+					<a href="http://localhost:8090/main/information/public_data.jsp">
+						<img src="./index_files/etclink10.gif" alt="페이지 이동: 공공데이터 바로가기">
+						<span>공공데이터</span>
+					</a>
+					</li>
+				<li>
+					<a href="https://www.clean.go.kr/menu.es?mid=a10207000000" target="_blank">
+						<img src="./index_files/etclink11.gif" alt="새창열림: 청렴신문고">
+						<span>청렴신문고</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="footer_bcon" style="margin-left: -350px;">
+			<div class="footer_etcLink">
+				<ul>
+					<li><a href="https://www.ito.or.kr/main/guidance/individual.jsp">개인정보처리방침</a></li>
+					<li><a href="https://www.ito.or.kr/main/guidance/email.jsp">이메일무단수집거부</a></li>
+					<li><a href="https://www.ito.or.kr/main/guidance/cctv.jsp">영상정보처리방침</a></li>
+					<li><a href="https://www.ito.or.kr/main/guidance/wa.jsp">웹접근성정책</a></li>
+					<li><a href="https://www.ito.or.kr/main/guidance/copyright.jsp">저작권보호정책</a></li>
+				</ul>	
+			</div>
+		</div>
+		<div class="sel_box">
+	        <select name="sel" id="sel" class="sel" onchange="sel_link(this)">
+	            <option value="">파트너 사이트</option>
+	            <option value="https://www.incheon.go.kr">인천광역시청</option>
+				<option value="https://www.ifez.go.kr/noti001">경제자유구역청</option>
+				<option value="https://www.mcst.go.kr/kor/main.jsp">문화체육관광부</option>
+				<option value="https://www.mois.go.kr/">행정안전부</option>
+				<option value="http://kto.visitkorea.or.kr/kor.kto">한국관광공사</option>
+				<option value="http://www.ih.co.kr">인천도시공사</option>
+				<option value="https://www.ictr.or.kr">인천교통공사</option>
+				<option value="https://www.eco-i.or.kr">인천환경공단</option>
+				<option value="http://www.insiseol.or.kr">인천시설공단</option>
+	        </select>
+        </div>
+	    <div class="container p-4">
+			<!-- <img src="https://www.ito.or.kr/main/img/inc/wa.png" alt="로고" style=" "> -->
+		    <section class="mb-4" style="color:white; ">
+		      <p>
+					인천관광공사
+					[21999] 인천광역시 연수구 갯벌로 12 미추홀타워 16F. 인천관광공사<br>
+					Tel.032-899-7300  Fax.032-899-7314  (평일 09:00 ~ 18:00)
+		      </p>
+		    </section>
+		 	<div class="text-center p-3" style="color:white; text-align:center; ">
+		    © Incheon Tourism Organization. All Rights Reserved.
+		    </div>
+	   </div>
+	  </div>
+</footer>
+
+</body></html>

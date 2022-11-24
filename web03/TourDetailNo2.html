@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)http://localhost:8090/pro03/GetTourDetailCtrl.do?no=2 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>장소 상세보기</title>
+    
+<!-- bulma css, script -->
+<link rel="stylesheet" href="./TourDetailNo2_files/bulma.min.css">
+<link rel="stylesheet" href="./TourDetailNo2_files/bulma-carousel.min.css">
+<script src="./TourDetailNo2_files/bulma-carousel.min.js.다운로드"></script>
+<link rel="stylesheet" href="./TourDetailNo2_files/common.css">
+<!-- 파비콘 -->
+<link rel="icon" href="https://www.ito.or.kr/main/img/contents/ci.gif">
+<!-- jquery -->
+<script src="./TourDetailNo2_files/jquery-latest.js.다운로드"></script>
+<link rel="stylesheet" href="./TourDetailNo2_files/reset2.css">
+<link rel="stylesheet" type="text/css" href="./TourDetailNo2_files/datatables.min.css">
+<script type="text/javascript" src="./TourDetailNo2_files/datatables.min.js.다운로드"></script>
+<link href="./TourDetailNo2_files/css2" rel="stylesheet">
+
+<style>
+.footer_ban {
+    margin-top: 50px;
+    border-radius: 20px;
+    background: #fff;
+}
+.footer_ban>ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    dpadding: 36px 0;
+}
+.footer_ban>ul>li {
+    font-size: 1.6rem;
+    width: 13.5%;
+}
+.footer_ban>ul>li>a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer_ban>ul>li img {
+    margin-bottom: 10px;
+    max-width: 120px;
+    max-height: 36px;
+}
+.footer_ban>ul>li span {
+    width: 100%;
+    text-align: center;
+    font-size: 1.0rem;
+}
+
+.footer_bcon {
+    position: relative;
+    margin-top: 60px;
+    padding-left: 230px;
+}
+.footer_etcLink {
+    position: absolute;
+    left: 10px;
+    top: 0;
+    width: 380px;
+    max-width: 50%;
+    overflow: hidden;
+}
+ul, li, dl, dd {
+    list-style-type: none;
+}
+.footer_etcLink li {
+    margin-bottom: 8px;
+}
+.footer_bcon a {
+    color: #fff;
+}
+.wrap {
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.sel_box { float:right; border-bottom:1px solid #fff;height: 44px; line-height: 44px; text-align:center; width: 140px; }
+#sel { border:none; outline: none; background-color: transparent; color:#fff; }
+#sel option { color:#333; }
+
+</style>
+  </head>
+  <body class="web guide" data-page_section="web" data-page_type="guide" data-title="Daum 지도 Web API 가이드">
+  
+
+
+
+
+
+
+
+	<nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+        
+          <a class="navbar-item" href="index.html">
+            <img src="./index_files/logo.gif" width="152" height="58">
+          </a>
+      
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start" id="gnb">
+              <!-- ajax로 메뉴 로딩하여 추가하기 -->
+      
+                      <div class="navbar-item has-dropdown is-hoverable">
+                          <a href="TourListCateA.html" class="navbar-link">
+                                관광지
+                          </a>
+                          <div class="navbar-dropdown cate" id="cate01"><a href="TourDetailNo1.html">땅거미 전망대</a></div>
+                      </div>
+                      <div class="navbar-item has-dropdown is-hoverable">
+                          <a href="TourListCateB.html" class="navbar-link cate">
+                                자연
+                          </a> 
+                             <div class="navbar-dropdown cate" id="cate02"><a href="TourDetailNo2.html">석산곶</a></div>
+                      </div>
+                      <div class="navbar-item has-dropdown is-hoverable">
+                          <a href="TourListCateC.html" class="navbar-link cate">
+                                레포츠
+                          </a>
+                             <div class="navbar-dropdown cate" id="cate03"><a href="TourDetailNo3.html">교동도 난정저수지</a></div>
+                      </div>
+                      <div class="navbar-item has-dropdown is-hoverable">
+                          <a href="TourListCateD.html" class="navbar-link cate">
+                                쇼핑
+                          </a>
+                          <div class="navbar-dropdown cate" id="cate04"><a href="TourDetailNo4.html">소래포구종합어시장</a></div>
+                      </div>
+                      <div class="navbar-item has-dropdown is-hoverable">
+                          <a href="TourListCateE.html" class="navbar-link cate">
+                                음식
+                          </a>
+                          <div class="navbar-dropdown cate" id="cate05"><a href="TourDetailNo5.html">라봉</a></div>
+                      </div>	
+                      <div class="navbar-item has-dropdown is-hoverable">
+                          <a href="TourListCateF.html" class="navbar-link cate">
+                                숙박
+                          </a>
+                          <div class="navbar-dropdown cate" id="cate06"><a href="TourDetailNo6.html">남문한옥 대명헌</a></div>
+                      </div>
+                      <div class="navbar-item has-dropdown is-hoverable">
+                          <a href="TourListCateG.html" class="navbar-link cate">
+                                축제
+                          </a>
+                          <div class="navbar-dropdown cate" id="cate07"><a href="TourDetailNo7.html">인천 펜타포트 음악축제</a></div>
+                      </div>
+            
+            <div class="navbar-item has-dropdown is-hoverable single">
+              <a class="navbar-link">
+                    고객에게
+              </a>
+              <div class="navbar-dropdown">
+                   <a class="navbar-item" href="syoukai.html">
+                     소개
+                </a>
+                <hr class="navbar-divider">
+                <a class="navbar-item" href="notice.html">
+                      공지사항
+                </a>
+                <a class="navbar-item" href="qna.html">
+                      QnA
+                </a>
+              </div>
+            </div>
+            
+          </div>
+        </div>    
+          <script>
+          $(document).ready(function(){
+              $.ajax({
+                  url:"/pro03/MemuLoadCtrl.do",
+                  type:"POST",
+                  enctype:"UTF-8",
+                  datatype:"json",
+                  processData:false,
+                  contentType:false, 
+                  cache:false,
+                  success:function(data){
+                      $(".navbar-dropdown.cate").empty();
+                      var trans = $.parseJSON(data);
+                      $.each(trans, function(key, value){
+                          if(key=="data"){
+                              for(var i=0;i<value.length;i++){
+                                  if(value[i].cate=="A"){
+                                      $("#cate01").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+                                  } else if(value[i].cate=="B"){
+                                      $("#cate02").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+                                  } else if(value[i].cate=="C"){
+                                      $("#cate03").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+                                  } else if(value[i].cate=="D"){
+                                      $("#cate04").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+                                  } else if(value[i].cate=="E"){
+                                      $("#cate05").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+                                  } else if(value[i].cate=="F"){
+                                      $("#cate06").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+                                  } else if(value[i].cate=="G"){
+                                      $("#cate07").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
+                                  }
+                              }
+                          }
+                      });
+                      
+                  }
+              });
+          });
+          </script>
+          
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">        
+              
+              
+                <a class="button is-primary" href="signup.html" style="margin:30px;">
+                  <strong>회원가입</strong>
+                </a>
+                <a class="button is-light" href="login.html">
+                          로그인	
+                </a>
+               
+               
+              </div>
+            </div>
+          </div>
+        
+    </nav>
+	<nav class="breadcrumb" aria-label="breadcrumbs" style="border-bottom:2px solid #ddd; padding-bottom:8px; min-height:48px; line-height:48px;">
+	  <ul style="float:right;">
+	    <li><a href="http://localhost:8090/pro03/">Home</a></li>
+	    <li><a href="http://localhost:8090/pro03/GetTourListCtrl.do">전체 장소</a></li>
+	    <li><a href="http://localhost:8090/pro03/GetTourCateListCtrl.do?cate=B">
+ 			 
+			
+			
+			<span>자연</span>
+			
+			
+			
+			
+			
+			
+			
+	    </a></li>
+	    <li class="is-active"><a href="http://localhost:8090/pro03/GetTourDetailCtrl.do?no=2#" aria-current="page">석산곶</a></li>
+	  </ul>
+	</nav>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">석산곶</h1>
+      	<div id="con">
+      		<table class="table">
+      			
+      			<tbody><tr>
+				
+				<td>
+					<img src="./TourDetailNo2_files/suk.jpg" class="lazy" onerror="this.style.display=&#39;none&#39;" alt="배너">
+					<!-- onerror="this.style.display='none'"  -->
+	      		</td>
+					
+		    	</tr>
+		    	
+				
+		  </tbody>
+		</table>
+      	</div>
+		<table class="table">
+		   <tbody>
+		    <tr>
+		      <th style="min-width:180px;">번호</th>
+		      <td>2</td>
+		    </tr>
+		    <tr>
+		      <th>분류</th>
+		      <td>
+   				 
+				
+				
+				<span>자연</span>
+				
+				
+				
+				
+				
+				
+				
+		      </td>
+		    </tr>
+		    <tr>
+		      <th>장소 번호</th>
+		      <td><p>B0002</p>
+		      	<input type="hidden" name="tourno" id="tourno" value="B0002">
+		      </td>
+		    </tr>
+		    <tr> 
+		      <th>장소명</th>
+		      <td>
+				석산곶
+		      </td>	
+		    </tr>
+		    <tr>
+		      <th>장소 주요 설명</th>
+		      <td><p>이용시간	상시 개방
+휴무일	연중무휴
+주차 안내	없음
+애완동물 동반가능	가능</p></td>
+		    </tr>
+		    <tr>
+		      <th>장소 상세 설명</th>
+		      <td><p>석산곶은 영종도 스카이72 골프장 앞 영종 해안도로에서 돌출된 곳이다. 이곳은 인천에서 멋진 일출을 볼 수 있는 곳으로 서해의 수평선과 영종대교의 구조물이 장관을 이룬다. 석산곶 앞으로는 군도들이 보이지 않아 넓게 펼쳐진 바다를 조망하기 좋으며 인천대교의 아름다움이 더욱 두드러져 보이는 최고의 전망지이다.</p></td>
+		    </tr>
+		    <tr>
+		    	<th>주소</th>
+		    	<td>
+		    		<input type="hidden" name="addr" class="addr" id="addr" value="">
+		    		<input type="hidden" name="place" id="place" value="석산곶">
+		    	</td>
+		    </tr>
+		  </tbody>
+		</table>
+		<div style="clear:both; margin-bottom:20px; padding-bottom:20px; ">
+			<div id="map" style="margin-left: 120px; margin-top: 50px; width: 800px; height: 600px; background: url(&quot;http://t1.daumcdn.net/mapjsapi/images/bg_tile.png&quot;); position: relative; overflow: hidden;"><div style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; touch-action: none; cursor: url(&quot;http://t1.daumcdn.net/mapjsapi/images/cursor/openhand.cur.ico&quot;) 7 5, url(&quot;http://t1.daumcdn.net/mapjsapi/images/cursor/openhand.cur.ico&quot;), default;"><div style="position: absolute;"><div style="position: absolute; z-index: 0;"></div><div style="position: absolute; z-index: 1; left: 0px; top: 0px;"><img src="./TourDetailNo2_files/51.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -69px; top: 437px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="./TourDetailNo2_files/52.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 187px; top: 437px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="./TourDetailNo2_files/53.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 443px; top: 437px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="./TourDetailNo2_files/54.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 699px; top: 437px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="./TourDetailNo2_files/55.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 955px; top: 437px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="./TourDetailNo2_files/51(1).png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -69px; top: 181px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="./TourDetailNo2_files/52(1).png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 187px; top: 181px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="./TourDetailNo2_files/53(1).png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 443px; top: 181px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="./TourDetailNo2_files/54(1).png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 699px; top: 181px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="./TourDetailNo2_files/55(1).png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 955px; top: 181px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="./TourDetailNo2_files/51(2).png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -69px; top: -75px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="./TourDetailNo2_files/52(2).png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 187px; top: -75px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="./TourDetailNo2_files/53(2).png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 443px; top: -75px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="./TourDetailNo2_files/54(2).png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 699px; top: -75px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="./TourDetailNo2_files/55(2).png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 955px; top: -75px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="./TourDetailNo2_files/51(3).png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -69px; top: -331px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="./TourDetailNo2_files/52(3).png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 187px; top: -331px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="./TourDetailNo2_files/53(3).png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 443px; top: -331px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="./TourDetailNo2_files/54(3).png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 699px; top: -331px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="./TourDetailNo2_files/55(3).png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 955px; top: -331px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"></div><div style="position: absolute; z-index: 1;"></div><div style="width: 800px; height: 600px; position: absolute; z-index: 1;"></div><div style="position: absolute; z-index: 1;"><svg version="1.1" style="stroke: none; stroke-dashoffset: 0.5; stroke-linejoin: round; fill: none; transform: translateZ(0px); position: absolute; width: 4000px; height: 3000px; left: -1600px; top: -1200px;" viewBox="0 0 4000 3000"><defs></defs></svg></div><div style="position: absolute; z-index: 1; width: 100%; height: 0px; transform: translateZ(0px);"></div></div></div><div style="position: absolute; cursor: default; z-index: 1; margin: 0px 6px; height: 19px; line-height: 14px; left: 0px; bottom: 0px; color: rgb(0, 0, 0);"><div style="color: rgb(0, 0, 0); text-align: center; font-size: 10px; float: left;"><div style="float: left; margin: 2px 3px 0px 4px; height: 6px; transition: width 0.1s ease 0s; border-top: none rgb(0, 0, 0); border-right: 2px solid rgb(0, 0, 0); border-bottom: 2px solid rgb(0, 0, 0); border-left: 2px solid rgb(0, 0, 0); border-image: initial; width: 58px;"></div><div style="float: left; margin: 0px 4px 0px 0px; font-family: AppleSDGothicNeo-Regular, 돋움, dotum, sans-serif; font-weight: bold; color: rgb(0, 0, 0);">1km</div></div><div style="margin: 0px 4px; float: left;"><a target="_blank" href="http://map.kakao.com/" title="Kakao 지도로 보시려면 클릭하세요." style="float: left; width: 32px; height: 10px;"><img src="./TourDetailNo2_files/m_bi_b.png" alt="Kakao 지도로 이동" style="float: left; width: 32px; height: 10px; border: none;"></a><div style="font: 11px / 11px Arial, Tahoma, Dotum, sans-serif; float: left;"></div></div></div><div style="cursor: auto; position: absolute; z-index: 2; left: 0px; top: 0px;"></div></div>
+			<script src="./TourDetailNo2_files/postcode.v2.js.다운로드"></script>
+			<!-- https://developers.kakao.com/ 회원가입 후 -> 내 애플리케이션 -> 애플리케이션 추가 -> 추가된 해당 앱을 클릭하면 발급받은  API키를 확인할 수 있음  -->			
+			<script type="text/javascript" src="./TourDetailNo2_files/sdk.js.다운로드"></script><script charset="UTF-8" src="./TourDetailNo2_files/kakao.js.다운로드"></script>
+			<script>
+			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+			    mapOption = { //128.433182, 34.8544227
+			        center: new kakao.maps.LatLng(37.697963, 126.845864), // 지도의 중심좌표
+			        level: 7 // 지도의 확대 레벨
+			    };  
+			
+			// 지도를 생성합니다    
+			var map = new kakao.maps.Map(mapContainer, mapOption); 
+			
+			// 주소-좌표 변환 객체를 생성합니다
+			var geocoder = new kakao.maps.services.Geocoder();
+			
+			// 주소로 좌표를 검색합니다
+			geocoder.addressSearch($(".addr").val(), function(result, status) {
+			
+			    // 정상적으로 검색이 완료됐으면 
+			     if (status === kakao.maps.services.Status.OK) {
+			
+			        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+			        // 결과값으로 받은 위치를 마커로 표시합니다
+			        var marker = new kakao.maps.Marker({
+			            map: map,
+			            position: coords
+			        });
+					
+			        // 인포윈도우로 장소에 대한 설명을 표시합니다
+			        var infowindow = new kakao.maps.InfoWindow({
+			            content: '<div style="width:150px;text-align:center;padding:6px 0;">'+$('#place').val()+'</div>'
+			        });
+			        infowindow.open(map, marker);
+			
+			        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+			        map.setCenter(coords);
+			    } 
+			});    
+			</script>
+		</div>
+		<div class="buttons">
+		  <a href="http://localhost:8090/pro03/GetTourListCtrl.do" class="button is-info">전체 목록</a>
+		  <a href="http://localhost:8090/pro03/GetTourCateListCtrl.do?cate=B" class="button is-info">카테고리 목록</a>
+		 
+		</div>
+    </div>
+  </section>
+  <script>
+  //image Lazy Loading : 실제로 사용자 화면에 보여질 필요가 있을 때까지 이미지 로딩을 지연하는 것으로 네트워크 대역폭을 줄이는 방법
+  /* document.addEventListener("DOMContentLoaded", function() {
+	  var lazyloadImages = document.querySelectorAll("img.lazy");    
+	  var lazyloadThrottleTimeout;
+	  
+	  function lazyload () {
+	    if(lazyloadThrottleTimeout) {
+	      clearTimeout(lazyloadThrottleTimeout);
+	    }    
+	    
+	    lazyloadThrottleTimeout = setTimeout(function() {
+	        var scrollTop = window.pageYOffset;
+	        lazyloadImages.forEach(function(img) {
+	            if(img.offsetTop < (window.innerHeight + scrollTop)) {
+	              img.src = img.dataset.src;
+	              img.classList.remove('lazy');
+	            }
+	        });
+	        if(lazyloadImages.length == 0) { 
+	          document.removeEventListener("scroll", lazyload);
+	          window.removeEventListener("resize", lazyload);
+	          window.removeEventListener("orientationChange", lazyload);
+	        }
+	    }, 20);
+	  }
+	  
+	  document.addEventListener("scroll", lazyload);
+	  window.addEventListener("resize", lazyload);
+	  window.addEventListener("orientationChange", lazyload);
+	}); */
+  </script>
+	
+  
+
+<footer class="bg-white text-center text-white" style="height:419px; margin-top:200px; text-align:center; border-top:2px solid #333; 
+background:#0b0b0b url(&#39;https://www.ito.or.kr/main/img/inc/footer_bg.jpg&#39;) no-repeat center top; margin-top:400px;">
+	<div class="wrap">
+		<div class="footer_ban">				
+			<ul>
+				<li><a href="http://www.icren.kr/" target="_blank">
+						<img src="./TourDetailNo2_files/icren_logo.png" style="width: 100%;" alt="새창열림: 인천시정연구네트워크">
+						<span>인천시정연구네트워크</span>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.visitincheon.or.kr/" target="_blank">
+						<img src="./TourDetailNo2_files/etclink07.gif" alt="새창열림: Visit Incheon">
+						<span>스마트마이스 포털</span>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.redwhistle.org/report/report.asp?organ=7756&amp;RType=1" target="_blank">
+						<img src="./TourDetailNo2_files/quick_report.gif" alt="새창열림: 인권청렴신고센터">
+						<span>인권청렴신고센터</span>
+					</a>
+					</li>
+				<li>
+					<a href="http://localhost:8090/main/information/closed.jsp">
+						<img src="./TourDetailNo2_files/quick_private.gif" alt="페이지 이동: 비공개대상 기준 바로가기">
+						<span>비공개대상 기준</span>
+					</a>
+					</li>
+				<li>
+					<a href="http://localhost:8090/main/information/data.jsp">
+						<img src="./TourDetailNo2_files/quick_info.gif" alt="페이지 이동: 사전정보공표 바로가기">
+						<span>사전정보공표</span>
+					</a>
+					</li>
+				<li>
+					<a href="http://localhost:8090/main/information/public_data.jsp">
+						<img src="./TourDetailNo2_files/etclink10.gif" alt="페이지 이동: 공공데이터 바로가기">
+						<span>공공데이터</span>
+					</a>
+					</li>
+				<li>
+					<a href="https://www.clean.go.kr/menu.es?mid=a10207000000" target="_blank">
+						<img src="./TourDetailNo2_files/etclink11.gif" alt="새창열림: 청렴신문고">
+						<span>청렴신문고</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="footer_bcon" style="margin-left: -350px;">
+			<div class="footer_etcLink">
+				<ul>
+					<li><a href="https://www.ito.or.kr/main/guidance/individual.jsp">개인정보처리방침</a></li>
+					<li><a href="https://www.ito.or.kr/main/guidance/email.jsp">이메일무단수집거부</a></li>
+					<li><a href="https://www.ito.or.kr/main/guidance/cctv.jsp">영상정보처리방침</a></li>
+					<li><a href="https://www.ito.or.kr/main/guidance/wa.jsp">웹접근성정책</a></li>
+					<li><a href="https://www.ito.or.kr/main/guidance/copyright.jsp">저작권보호정책</a></li>
+				</ul>	
+			</div>
+		</div>
+		<div class="sel_box">
+	        <select name="sel" id="sel" class="sel" onchange="sel_link(this)">
+	            <option value="">파트너 사이트</option>
+	            <option value="https://www.incheon.go.kr">인천광역시청</option>
+				<option value="https://www.ifez.go.kr/noti001">경제자유구역청</option>
+				<option value="https://www.mcst.go.kr/kor/main.jsp">문화체육관광부</option>
+				<option value="https://www.mois.go.kr/">행정안전부</option>
+				<option value="http://kto.visitkorea.or.kr/kor.kto">한국관광공사</option>
+				<option value="http://www.ih.co.kr">인천도시공사</option>
+				<option value="https://www.ictr.or.kr">인천교통공사</option>
+				<option value="https://www.eco-i.or.kr">인천환경공단</option>
+				<option value="http://www.insiseol.or.kr">인천시설공단</option>
+	        </select>
+        </div>
+	    <div class="container p-4">
+			<!-- <img src="https://www.ito.or.kr/main/img/inc/wa.png" alt="로고" style=" "> -->
+		    <section class="mb-4" style="color:white; ">
+		      <p>
+					인천관광공사
+					[21999] 인천광역시 연수구 갯벌로 12 미추홀타워 16F. 인천관광공사<br>
+					Tel.032-899-7300  Fax.032-899-7314  (평일 09:00 ~ 18:00)
+		      </p>
+		    </section>
+		 	<div class="text-center p-3" style="color:white; text-align:center; ">
+		    © Incheon Tourism Organization. All Rights Reserved.
+		    </div>
+	   </div>
+	  </div>
+</footer>
+  
+</body></html>
