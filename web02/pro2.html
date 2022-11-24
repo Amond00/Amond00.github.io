@@ -1,328 +1,331 @@
 <!DOCTYPE html>
 <!-- saved from url=(0059)http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=2 -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>제품 목록</title>
-<style>
-.title { padding-top:36px; padding-bottom:20px; }
-</style>
-<style>
-.in_container { clear:both; width:1400px; margin:0 auto; }
-.in_container:after { content:""; display:block; clear:both; }
-.card-title { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-.card-text {   overflow: hidden;  text-overflow: ellipsis;  display: -webkit-box;
-  -webkit-line-clamp: 2;  -webkit-box-orient: vertical; }
-ul{
-   list-style:none;
-   }
-</style>
-
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./pro2_files/common.css">
-    <link href="./pro2_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="./pro2_files/bootstrap.bundle.min.js.다운로드" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script> 
-	<script src="./pro2_files/jquery-latest.js.다운로드"></script>
-	<!-- 파비콘 -->
-	<link rel="icon" href="http://localhost:8090/pro02/img/favicon.ico">
-</head>
-<body>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>제품 목록</title>
+	<style>
+	.title { padding-top:36px; padding-bottom:20px; }
+	</style>
+	<style>
+	.in_container { clear:both; width:1400px; margin:0 auto; }
+	.in_container:after { content:""; display:block; clear:both; }
+	.card-title { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+	.card-text {   overflow: hidden;  text-overflow: ellipsis;  display: -webkit-box;
+	-webkit-line-clamp: 2;  -webkit-box-orient: vertical; }
+	ul{
+	list-style:none;
+	}
+	</style>
 
 
-<nav class="navbar navbar-expand-lg navbar-white bg-white" style="height:130px">
-<a href="http://localhost:8090/pro02/index.jsp" class="logo"><img src="./pro2_files/logo.png" alt="로고" style=" margin-top: -70px; margin-left:770px; position:absolute; "></a>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="./pro2_files/common.css">
+		<link href="./pro2_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+		<script src="./pro2_files/bootstrap.bundle.min.js.다운로드" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script> 
+		<script src="./pro2_files/jquery-latest.js.다운로드"></script>
+		<!-- 파비콘 -->
+		<link rel="icon" href="http://localhost:8090/pro02/img/favicon.ico">
+	</head>
+	<body>
 
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown" style="margin-left:40px;">
-	      <ul class="navbar-nav">
-	      
-	      	<li class="nav-item dropdown">
-	          <a class="nav-link dropdown-toggle" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=2#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-	            	심플로트 소개
-	          </a>
-	          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-	            <li><a class="dropdown-item" href="http://localhost:8090/pro02/subpage/sub1.jsp">브랜드</a></li>
-	            <li><a class="dropdown-item" href="http://localhost:8090/pro02/subpage/sub2.jsp">히스토리</a></li>
-	            <li><a class="dropdown-item" href="http://localhost:8090/pro02/subpage/sub3.jsp">찾아오시는 길</a></li>
-	          </ul>
-	        </li>
-	        <li class="nav-item dropdown">
-	          <a class="nav-link dropdown-toggle" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=2#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-	            	제품
-	          </a>
-	          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-	            <li><a class="dropdown-item" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=1">CONVENTIONAL</a></li>
-	            <li><a class="dropdown-item" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=2">CLEAR COATING</a></li>
-	            <li><a class="dropdown-item" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=3">Seasoned＆Battered</a></li>
-	            <li><a class="dropdown-item" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=4">Delivery+</a></li>
-	            <li><a class="dropdown-item" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=5">Specialty</a></li>
-	            <li><a class="dropdown-item" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=2#">---------------</a></li>
-	            <li><a class="dropdown-item" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=6">아보카도</a></li>
-	            <li><a class="dropdown-item" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=2#">---------------</a></li>
-	            <li><a class="dropdown-item" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=7">야채</a></li>
-	            <li><a class="dropdown-item" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=2#">---------------</a></li>
-	            <li><a class="dropdown-item" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=8">또띠아</a></li>
-	          </ul>
-	        </li>
-	        <li class="nav-item dropdown">
-	          <a class="nav-link dropdown-toggle" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=2#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-	            	레시피
-	          </a>
-	          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-	            <li><a class="dropdown-item" href="http://localhost:8090/pro02/subpage/sub4.jsp">캐쥬얼다이닝</a></li>
-	            <li><a class="dropdown-item" href="http://localhost:8090/pro02/subpage/sub5.jsp">파인다이닝</a></li>
-	            <li><a class="dropdown-item" href="http://localhost:8090/pro02/subpage/sub6.jsp">헬씨다이닝</a></li>
-	          </ul>
-	        </li>
-	        <li class="nav-item dropdown">
-	          <a class="nav-link dropdown-toggle" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=2#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-	            	고객센터
-	          </a>
-	          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-	            <li><a class="dropdown-item" href="http://localhost:8090/pro02/#">게시판</a></li>
-	            <li><a class="dropdown-item" href="http://localhost:8090/pro02/GetBoardListCtrl">공지사항</a></li>
-	            <li><a class="dropdown-item" href="http://localhost:8090/pro02/GetQnaListCtrl.do">Q&amp;A</a></li>
-	            <li><a class="dropdown-item" href="http://localhost:8090/pro02/#">NEW&amp;HOT&amp;BEST</a></li>
-	          </ul>
-	        </li>
-	        
-	      </ul>
-      
-      	<ul class="nav justify-content-end .text-secondary">
-		  
-			  <li class="nav-item">
-			    <a class="nav-link active" href="http://localhost:8090/pro02/custom/login.jsp" style="color:#555; margin-left:1250px;">로그인</a>
-			  </li>
-			  <li class="nav-item">
-			    <a class="nav-link" href="http://localhost:8090/pro02/custom/membership.jsp" style="color:#555;">회원가입</a>
-			  </li>
-		  
-		</ul>
-		
-		
-		
-		
-    </div>
-  </div>
-</nav>
-<hr class="featurette-divider" style="margin-bottom:50px;">
 
-<div class="content in_container" id="content">
-	<h2 class="title" style="text-align:center;">제품 목록</h2>
-	<img src="./pro2_files/product1.jpg" style="margin-bottom:40px; margin-left:100px;" alt="">
-	<ul class="row" id="best">
+	<nav class="navbar navbar-expand-lg navbar-white bg-white" style="height:130px">
+	<a href="http://localhost:8090/pro02/index.jsp" class="logo"><img src="./pro2_files/logo.png" alt="로고" style=" margin-top: -70px; margin-left:770px; position:absolute; "></a>
+
+	<div class="container-fluid">
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavDropdown" style="margin-left:40px;">
+			<ul class="navbar-nav">
+			
+				<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=2#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						심플로트 소개
+				</a>
+				<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<li><a class="dropdown-item" href="http://localhost:8090/pro02/subpage/sub1.jsp">브랜드</a></li>
+					<li><a class="dropdown-item" href="http://localhost:8090/pro02/subpage/sub2.jsp">히스토리</a></li>
+					<li><a class="dropdown-item" href="http://localhost:8090/pro02/subpage/sub3.jsp">찾아오시는 길</a></li>
+				</ul>
+				</li>
+				<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=2#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						제품
+				</a>
+				<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<li><a class="dropdown-item" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=1">CONVENTIONAL</a></li>
+					<li><a class="dropdown-item" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=2">CLEAR COATING</a></li>
+					<li><a class="dropdown-item" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=3">Seasoned＆Battered</a></li>
+					<li><a class="dropdown-item" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=4">Delivery+</a></li>
+					<li><a class="dropdown-item" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=5">Specialty</a></li>
+					<li><a class="dropdown-item" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=2#">---------------</a></li>
+					<li><a class="dropdown-item" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=6">아보카도</a></li>
+					<li><a class="dropdown-item" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=2#">---------------</a></li>
+					<li><a class="dropdown-item" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=7">야채</a></li>
+					<li><a class="dropdown-item" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=2#">---------------</a></li>
+					<li><a class="dropdown-item" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=8">또띠아</a></li>
+				</ul>
+				</li>
+				<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=2#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						레시피
+				</a>
+				<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<li><a class="dropdown-item" href="http://localhost:8090/pro02/subpage/sub4.jsp">캐쥬얼다이닝</a></li>
+					<li><a class="dropdown-item" href="http://localhost:8090/pro02/subpage/sub5.jsp">파인다이닝</a></li>
+					<li><a class="dropdown-item" href="http://localhost:8090/pro02/subpage/sub6.jsp">헬씨다이닝</a></li>
+				</ul>
+				</li>
+				<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=2#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						고객센터
+				</a>
+				<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<li><a class="dropdown-item" href="http://localhost:8090/pro02/#">게시판</a></li>
+					<li><a class="dropdown-item" href="http://localhost:8090/pro02/GetBoardListCtrl">공지사항</a></li>
+					<li><a class="dropdown-item" href="http://localhost:8090/pro02/GetQnaListCtrl.do">Q&amp;A</a></li>
+					<li><a class="dropdown-item" href="http://localhost:8090/pro02/#">NEW&amp;HOT&amp;BEST</a></li>
+				</ul>
+				</li>
+				
+			</ul>
 		
-		<li class="col-xl-3 col-lg-4 col-md-6 col-sm-12" style="margin-bottom:30px;">
-			<div class="card" style="width: 18rem;">
-			  <img src="./pro2_files/product8.jpg" class="card-img-top" alt="젠가 크리스피">
-			  <div class="card-body">
-			    <h5 class="card-title">젠가 크리스피</h5>
-			    <p class="card-text">Jenga</p>
-			    <p class="card-text"><strong style="color:red;">20000원</strong> (<del>20000)</del></p>
-			    <a href="http://localhost:8090/pro02/GetProductDetailCtrl?proNo=7" class="btn btn-primary" style=" border-radius:4em; margin-right:4px;">제품 상세보기</a>
-			  </div>
-			</div>
-		</li>
-		
-		<li class="col-xl-3 col-lg-4 col-md-6 col-sm-12" style="margin-bottom:30px;">
-			<div class="card" style="width: 18rem;">
-			  <img src="./pro2_files/product9.jpg" class="card-img-top" alt="메가크런치">
-			  <div class="card-body">
-			    <h5 class="card-title">메가크런치</h5>
-			    <p class="card-text">Mega Crunch</p>
-			    <p class="card-text"><strong style="color:red;">8000원</strong> (<del>10000)</del></p>
-			    <a href="http://localhost:8090/pro02/GetProductDetailCtrl?proNo=8" class="btn btn-primary" style=" border-radius:4em; margin-right:4px;">제품 상세보기</a>
-			  </div>
-			</div>
-		</li>
-		
-		<li class="col-xl-3 col-lg-4 col-md-6 col-sm-12" style="margin-bottom:30px;">
-			<div class="card" style="width: 18rem;">
-			  <img src="./pro2_files/product10.jpg" class="card-img-top" alt="울트라클리어 줄리엔컷">
-			  <div class="card-body">
-			    <h5 class="card-title">울트라클리어 줄리엔컷</h5>
-			    <p class="card-text">Ultra Clear</p>
-			    <p class="card-text"><strong style="color:red;">12000원</strong> (<del>20000)</del></p>
-			    <a href="http://localhost:8090/pro02/GetProductDetailCtrl?proNo=9" class="btn btn-primary" style=" border-radius:4em; margin-right:4px;">제품 상세보기</a>
-			  </div>
-			</div>
-		</li>
-		
-		<li class="col-xl-3 col-lg-4 col-md-6 col-sm-12" style="margin-bottom:30px;">
-			<div class="card" style="width: 18rem;">
-			  <img src="./pro2_files/product11.jpg" class="card-img-top" alt="울트라클리어 레귤러컷 스킨온">
-			  <div class="card-body">
-			    <h5 class="card-title">울트라클리어 레귤러컷 스킨온</h5>
-			    <p class="card-text">Ultra Clear</p>
-			    <p class="card-text"><strong style="color:red;">20097원</strong> (<del>20300)</del></p>
-			    <a href="http://localhost:8090/pro02/GetProductDetailCtrl?proNo=10" class="btn btn-primary" style=" border-radius:4em; margin-right:4px;">제품 상세보기</a>
-			  </div>
-			</div>
-		</li>
-		
-		<li class="col-xl-3 col-lg-4 col-md-6 col-sm-12" style="margin-bottom:30px;">
-			<div class="card" style="width: 18rem;">
-			  <img src="./pro2_files/product12.jpg" class="card-img-top" alt="콘퀘스트 스트레이트컷 스킨오프">
-			  <div class="card-body">
-			    <h5 class="card-title">콘퀘스트 스트레이트컷 스킨오프</h5>
-			    <p class="card-text">Conquest</p>
-			    <p class="card-text"><strong style="color:red;">9879원</strong> (<del>11100)</del></p>
-			    <a href="http://localhost:8090/pro02/GetProductDetailCtrl?proNo=11" class="btn btn-primary" style=" border-radius:4em; margin-right:4px;">제품 상세보기</a>
-			  </div>
-			</div>
-		</li>
-		
-		<li class="col-xl-3 col-lg-4 col-md-6 col-sm-12" style="margin-bottom:30px;">
-			<div class="card" style="width: 18rem;">
-			  <img src="./pro2_files/product13.jpg" class="card-img-top" alt="콘퀘스트 스트레이트컷 스킨온">
-			  <div class="card-body">
-			    <h5 class="card-title">콘퀘스트 스트레이트컷 스킨온</h5>
-			    <p class="card-text">Conquest</p>
-			    <p class="card-text"><strong style="color:red;">16112원</strong> (<del>21200)</del></p>
-			    <a href="http://localhost:8090/pro02/GetProductDetailCtrl?proNo=12" class="btn btn-primary" style=" border-radius:4em; margin-right:4px;">제품 상세보기</a>
-			  </div>
-			</div>
-		</li>
-	
-	
-	</ul>
-	<div class="btn-group">
-	
-	
+			<ul class="nav justify-content-end .text-secondary">
+			
+				<li class="nav-item">
+					<a class="nav-link active" href="http://localhost:8090/pro02/custom/login.jsp" style="color:#555; margin-left:1250px;">로그인</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="http://localhost:8090/pro02/custom/membership.jsp" style="color:#555;">회원가입</a>
+				</li>
+			
+			</ul>
+			
+			
+			
+			
+		</div>
 	</div>
-</div>
+	</nav>
+	<hr class="featurette-divider" style="margin-bottom:50px;">
 
- 
-<!-- Footer -->
-<footer class="bg-dark text-center text-white" style=" margin-top:200px;">
-  <!-- Grid container -->
-  <div class="container p-4">
-    <!-- Section: Social media -->
-    Follow us
-    <section class="mb-4">
-      <!-- Facebook -->
-      <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/SimplotFoods" target="_blank" role="button"><img src="./pro2_files/icon_facebook.png" alt=""><i class="fab fa-facebook-f"></i></a>
-      
-      <!-- Instagram -->
-      <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/simplot_kr/" target="_blank" role="button"><img src="./pro2_files/icon_instagram.png" alt=""><i class="fab fa-instagram"></i></a>
+	<div class="content in_container" id="content">
+		<h2 class="title" style="text-align:center;">제품 목록</h2>
+		<img src="./pro2_files/product1.jpg" style="margin-bottom:40px; margin-left:100px;" alt="">
+		<ul class="row" id="best">
+			
+			<li class="col-xl-3 col-lg-4 col-md-6 col-sm-12" style="margin-bottom:30px;">
+				<div class="card" style="width: 18rem;">
+				<img src="./pro2_files/product8.jpg" class="card-img-top" alt="젠가 크리스피">
+				<div class="card-body">
+					<h5 class="card-title">젠가 크리스피</h5>
+					<p class="card-text">Jenga</p>
+					<p class="card-text"><strong style="color:red;">20000원</strong> (<del>20000)</del></p>
+					<a href="http://localhost:8090/pro02/GetProductDetailCtrl?proNo=7" class="btn btn-primary" style=" border-radius:4em; margin-right:4px;">제품 상세보기</a>
+				</div>
+				</div>
+			</li>
+			
+			<li class="col-xl-3 col-lg-4 col-md-6 col-sm-12" style="margin-bottom:30px;">
+				<div class="card" style="width: 18rem;">
+				<img src="./pro2_files/product9.jpg" class="card-img-top" alt="메가크런치">
+				<div class="card-body">
+					<h5 class="card-title">메가크런치</h5>
+					<p class="card-text">Mega Crunch</p>
+					<p class="card-text"><strong style="color:red;">8000원</strong> (<del>10000)</del></p>
+					<a href="http://localhost:8090/pro02/GetProductDetailCtrl?proNo=8" class="btn btn-primary" style=" border-radius:4em; margin-right:4px;">제품 상세보기</a>
+				</div>
+				</div>
+			</li>
+			
+			<li class="col-xl-3 col-lg-4 col-md-6 col-sm-12" style="margin-bottom:30px;">
+				<div class="card" style="width: 18rem;">
+				<img src="./pro2_files/product10.jpg" class="card-img-top" alt="울트라클리어 줄리엔컷">
+				<div class="card-body">
+					<h5 class="card-title">울트라클리어 줄리엔컷</h5>
+					<p class="card-text">Ultra Clear</p>
+					<p class="card-text"><strong style="color:red;">12000원</strong> (<del>20000)</del></p>
+					<a href="http://localhost:8090/pro02/GetProductDetailCtrl?proNo=9" class="btn btn-primary" style=" border-radius:4em; margin-right:4px;">제품 상세보기</a>
+				</div>
+				</div>
+			</li>
+			
+			<li class="col-xl-3 col-lg-4 col-md-6 col-sm-12" style="margin-bottom:30px;">
+				<div class="card" style="width: 18rem;">
+				<img src="./pro2_files/product11.jpg" class="card-img-top" alt="울트라클리어 레귤러컷 스킨온">
+				<div class="card-body">
+					<h5 class="card-title">울트라클리어 레귤러컷 스킨온</h5>
+					<p class="card-text">Ultra Clear</p>
+					<p class="card-text"><strong style="color:red;">20097원</strong> (<del>20300)</del></p>
+					<a href="http://localhost:8090/pro02/GetProductDetailCtrl?proNo=10" class="btn btn-primary" style=" border-radius:4em; margin-right:4px;">제품 상세보기</a>
+				</div>
+				</div>
+			</li>
+			
+			<li class="col-xl-3 col-lg-4 col-md-6 col-sm-12" style="margin-bottom:30px;">
+				<div class="card" style="width: 18rem;">
+				<img src="./pro2_files/product12.jpg" class="card-img-top" alt="콘퀘스트 스트레이트컷 스킨오프">
+				<div class="card-body">
+					<h5 class="card-title">콘퀘스트 스트레이트컷 스킨오프</h5>
+					<p class="card-text">Conquest</p>
+					<p class="card-text"><strong style="color:red;">9879원</strong> (<del>11100)</del></p>
+					<a href="http://localhost:8090/pro02/GetProductDetailCtrl?proNo=11" class="btn btn-primary" style=" border-radius:4em; margin-right:4px;">제품 상세보기</a>
+				</div>
+				</div>
+			</li>
+			
+			<li class="col-xl-3 col-lg-4 col-md-6 col-sm-12" style="margin-bottom:30px;">
+				<div class="card" style="width: 18rem;">
+				<img src="./pro2_files/product13.jpg" class="card-img-top" alt="콘퀘스트 스트레이트컷 스킨온">
+				<div class="card-body">
+					<h5 class="card-title">콘퀘스트 스트레이트컷 스킨온</h5>
+					<p class="card-text">Conquest</p>
+					<p class="card-text"><strong style="color:red;">16112원</strong> (<del>21200)</del></p>
+					<a href="http://localhost:8090/pro02/GetProductDetailCtrl?proNo=12" class="btn btn-primary" style=" border-radius:4em; margin-right:4px;">제품 상세보기</a>
+				</div>
+				</div>
+			</li>
+		
+		
+		</ul>
+		<div class="btn-group">
+		
+		
+		</div>
+	</div>
 
-      <!-- Youtube -->
-      <a class="btn btn-outline-light btn-floating m-1" href="https://www.youtube.com/channel/UC3xY_n5scg-KBQeLBORl0dA!" target="_blank" role="button"><img src="./pro2_files/icon_youtube.png" alt=""><i class="fab fa-github"></i></a>
-    </section>
-    <!-- Section: Social media -->
+	
+	<!-- Footer -->
+	<footer class="bg-dark text-center text-white" style=" margin-top:200px;">
+	<!-- Grid container -->
+	<div class="container p-4">
+		<!-- Section: Social media -->
+		Follow us
+		<section class="mb-4">
+		<!-- Facebook -->
+		<a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/SimplotFoods" target="_blank" role="button"><img src="./pro2_files/icon_facebook.png" alt=""><i class="fab fa-facebook-f"></i></a>
+		
+		<!-- Instagram -->
+		<a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/simplot_kr/" target="_blank" role="button"><img src="./pro2_files/icon_instagram.png" alt=""><i class="fab fa-instagram"></i></a>
 
-    <!-- Section: Form -->
-	<img src="./pro2_files/ftlogo.png" alt="로고" style=" float:left; margin-top:-75px; margin-left:-250px;">
-    <!-- Section: Text -->
-    <section class="mb-4">
-      <p>
-        Simplot South Korea<br>
-		Tel. 02-561-4787<br>
-		E-mail. ski_info@simplot.com
-      </p>
-    </section>
-    <!-- Section: Text -->
+		<!-- Youtube -->
+		<a class="btn btn-outline-light btn-floating m-1" href="https://www.youtube.com/channel/UC3xY_n5scg-KBQeLBORl0dA!" target="_blank" role="button"><img src="./pro2_files/icon_youtube.png" alt=""><i class="fab fa-github"></i></a>
+		</section>
+		<!-- Section: Social media -->
 
-    <!-- Section: Links -->
-    <section class="">
-      <!--Grid row-->
-      <div class="row">
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">심플로트 소개</h5>
+		<!-- Section: Form -->
+		<img src="./pro2_files/ftlogo.png" alt="로고" style=" float:left; margin-top:-75px; margin-left:-250px;">
+		<!-- Section: Text -->
+		<section class="mb-4">
+		<p>
+			Simplot South Korea<br>
+			Tel. 02-561-4787<br>
+			E-mail. ski_info@simplot.com
+		</p>
+		</section>
+		<!-- Section: Text -->
 
-          <ul class="list-unstyled mb-0">
-            <li>
-              <a href="http://localhost:8090/pro02/subpage/sub1.jsp" class="text-white">브랜드</a>
-            </li>
-            <li>
-              <a href="http://localhost:8090/pro02/subpage/sub2.jsp" class="text-white">히스토리</a>
-            </li>
-            <li>
-              <a href="http://localhost:8090/pro02/subpage/sub3.jsp" class="text-white">찾아오시는 길</a>
-            </li>
-          </ul>
-        </div>
-        <!--Grid column-->
+		<!-- Section: Links -->
+		<section class="">
+		<!--Grid row-->
+		<div class="row">
+			<!--Grid column-->
+			<div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+			<h5 class="text-uppercase">심플로트 소개</h5>
 
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">제품</h5>
+			<ul class="list-unstyled mb-0">
+				<li>
+				<a href="http://localhost:8090/pro02/subpage/sub1.jsp" class="text-white">브랜드</a>
+				</li>
+				<li>
+				<a href="http://localhost:8090/pro02/subpage/sub2.jsp" class="text-white">히스토리</a>
+				</li>
+				<li>
+				<a href="http://localhost:8090/pro02/subpage/sub3.jsp" class="text-white">찾아오시는 길</a>
+				</li>
+			</ul>
+			</div>
+			<!--Grid column-->
 
-          <ul class="list-unstyled mb-0">
-            <li>
-              <a href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=1" class="text-white">냉동감자</a>
-            </li>
-            <li>
-              <a href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=6" class="text-white">아보카도</a>
-            </li>
-            <li>
-              <a href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=7" class="text-white">야채</a>
-            </li>
-            <li>
-              <a href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=8" class="text-white">또띠아</a>
-            </li>
-          </ul>
-        </div>
-        <!--Grid column-->
+			<!--Grid column-->
+			<div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+			<h5 class="text-uppercase">제품</h5>
 
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">레시피</h5>
+			<ul class="list-unstyled mb-0">
+				<li>
+				<a href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=1" class="text-white">냉동감자</a>
+				</li>
+				<li>
+				<a href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=6" class="text-white">아보카도</a>
+				</li>
+				<li>
+				<a href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=7" class="text-white">야채</a>
+				</li>
+				<li>
+				<a href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=8" class="text-white">또띠아</a>
+				</li>
+			</ul>
+			</div>
+			<!--Grid column-->
 
-          <ul class="list-unstyled mb-0">
-            <li>
-              <a href="http://localhost:8090/pro02/subpage/sub4.jsp" class="text-white">캐쥬얼 다이닝</a>
-            </li>
-            <li>
-              <a href="http://localhost:8090/pro02/subpage/sub5.jsp" class="text-white">파인 다이닝</a>
-            </li>
-            <li>
-              <a href="http://localhost:8090/pro02/subpage/sub6.jsp" class="text-white">헬씨 다이닝</a>
-            </li>
-          </ul>
-        </div>
-        <!--Grid column-->
+			<!--Grid column-->
+			<div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+			<h5 class="text-uppercase">레시피</h5>
 
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">고객센터</h5>
+			<ul class="list-unstyled mb-0">
+				<li>
+				<a href="http://localhost:8090/pro02/subpage/sub4.jsp" class="text-white">캐쥬얼 다이닝</a>
+				</li>
+				<li>
+				<a href="http://localhost:8090/pro02/subpage/sub5.jsp" class="text-white">파인 다이닝</a>
+				</li>
+				<li>
+				<a href="http://localhost:8090/pro02/subpage/sub6.jsp" class="text-white">헬씨 다이닝</a>
+				</li>
+			</ul>
+			</div>
+			<!--Grid column-->
 
-          <ul class="list-unstyled mb-0">
-          	<li>
-              <a href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=2#!" class="text-white">게시판</a>
-            </li>
-            <li>
-              <a href="http://localhost:8090/pro02/GetBoardListCtrl" class="text-white">공지사항</a>
-            </li>
-            <li>
-              <a href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=2#!" class="text-white">Q&amp;A</a>
-            </li>
-            <li>
-              <a href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=2#!" class="text-white">NEW&amp;HOT&amp;BEST</a>
-            </li>
-          </ul>
-        </div>
-        <!--Grid column-->
-      </div>
-      <!--Grid row-->
-    </section>
-    <!-- Section: Links -->
-  </div>
-  <!-- Grid container -->
+			<!--Grid column-->
+			<div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+			<h5 class="text-uppercase">고객센터</h5>
 
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2022 Simplot South Korea.All Right Resrved.
-    <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-  </div>
-  <!-- Copyright -->
-</footer>
-<!-- Footer -->
+			<ul class="list-unstyled mb-0">
+				<li>
+				<a href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=2#!" class="text-white">게시판</a>
+				</li>
+				<li>
+				<a href="http://localhost:8090/pro02/GetBoardListCtrl" class="text-white">공지사항</a>
+				</li>
+				<li>
+				<a href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=2#!" class="text-white">Q&amp;A</a>
+				</li>
+				<li>
+				<a href="http://localhost:8090/pro02/GetProductItemListCtrl?cateNo=2#!" class="text-white">NEW&amp;HOT&amp;BEST</a>
+				</li>
+			</ul>
+			</div>
+			<!--Grid column-->
+		</div>
+		<!--Grid row-->
+		</section>
+		<!-- Section: Links -->
+	</div>
+	<!-- Grid container -->
 
-</body></html>
+	<!-- Copyright -->
+	<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+		© 2022 Simplot South Korea.All Right Resrved.
+		<a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+	</div>
+	<!-- Copyright -->
+	</footer>
+	<!-- Footer -->
+
+	</body>
+</html>
