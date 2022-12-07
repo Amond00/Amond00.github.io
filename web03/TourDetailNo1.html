@@ -30,7 +30,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    dpadding: 36px 0;
 }
 .footer_ban>ul>li {
     font-size: 1.6rem;
@@ -87,32 +86,19 @@ ul, li, dl, dd {
 </style>
   </head>
   <body class="web guide" data-page_section="web" data-page_type="guide" data-title="Daum 지도 Web API 가이드">
-  
-
-
-
-
-
-
-
 	<nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-        
           <a class="navbar-item" href="index.html">
             <img src="./index_files/logo.gif" width="152" height="58">
           </a>
-      
           <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
           </a>
         </div>
-        
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start" id="gnb">
-              <!-- ajax로 메뉴 로딩하여 추가하기 -->
-      
                       <div class="navbar-item has-dropdown is-hoverable">
                           <a href="TourListCateA.html" class="navbar-link">
                                 관광지
@@ -161,78 +147,32 @@ ul, li, dl, dd {
                     고객에게
               </a>
               <div class="navbar-dropdown">
-                   <a class="navbar-item" href="syoukai.html">
+                   <a class="navbar-item" href="introduce.html">
                      소개
                 </a>
                 <hr class="navbar-divider">
                 <a class="navbar-item" href="notice.html">
                       공지사항
                 </a>
-                <a class="navbar-item" href="qna.html">
+                <a class="navbar-item" href="qnaList.html">
                       QnA
                 </a>
               </div>
             </div>
-            
           </div>
         </div>    
-          <script>
-          $(document).ready(function(){
-              $.ajax({
-                  url:"/pro03/MemuLoadCtrl.do",
-                  type:"POST",
-                  enctype:"UTF-8",
-                  datatype:"json",
-                  processData:false,
-                  contentType:false, 
-                  cache:false,
-                  success:function(data){
-                      $(".navbar-dropdown.cate").empty();
-                      var trans = $.parseJSON(data);
-                      $.each(trans, function(key, value){
-                          if(key=="data"){
-                              for(var i=0;i<value.length;i++){
-                                  if(value[i].cate=="A"){
-                                      $("#cate01").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  } else if(value[i].cate=="B"){
-                                      $("#cate02").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  } else if(value[i].cate=="C"){
-                                      $("#cate03").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  } else if(value[i].cate=="D"){
-                                      $("#cate04").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  } else if(value[i].cate=="E"){
-                                      $("#cate05").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  } else if(value[i].cate=="F"){
-                                      $("#cate06").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  } else if(value[i].cate=="G"){
-                                      $("#cate07").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  }
-                              }
-                          }
-                      });
-                      
-                  }
-              });
-          });
-          </script>
-          
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">        
-              
-              
                 <a class="button is-primary" href="signup.html" style="margin:30px;">
                   <strong>회원가입</strong>
                 </a>
                 <a class="button is-light" href="login.html">
                           로그인	
                 </a>
-               
-               
               </div>
             </div>
           </div>
-        
     </nav>
 	<nav class="breadcrumb" aria-label="breadcrumbs" style="border-bottom:2px solid #ddd; padding-bottom:8px; min-height:48px; line-height:48px;">
 	  <ul style="float:right;">
@@ -263,7 +203,7 @@ ul, li, dl, dd {
       			<tbody><tr>
 				
 				<td>
-					<img src="./TourDetailNo1_files/tour1.jpg" class="lazy" onerror="this.style.display=&#39;none&#39;" alt="배너">
+					<img src="./TourDetailNo1_files/tour1.jpg" class="lazy" alt="배너">
 					<!-- onerror="this.style.display='none'"  -->
 	      		</td>
 					
@@ -282,17 +222,8 @@ ul, li, dl, dd {
 		    <tr>
 		      <th>분류</th>
 		      <td>
-   				 
-				
-				<span>관광지</span>
-				
-				
-				
-				
-				
-				
-				
-				
+   			
+				<span>관광지</span>	
 		      </td>
 		    </tr>
 		    <tr>
@@ -377,8 +308,8 @@ ul, li, dl, dd {
 			</script>
 		</div>
 		<div class="buttons">
-		  <a href="http://localhost:8090/pro03/GetTourListCtrl.do" class="button is-info">전체 목록</a>
-		  <a href="http://localhost:8090/pro03/GetTourCateListCtrl.do?cate=A" class="button is-info">카테고리 목록</a>
+		  <a href="TourList.html" class="button is-info">전체 목록</a>
+		  <a href="TourListCateA.html" class="button is-info">카테고리 목록</a>
 		 
 		</div>
     </div>

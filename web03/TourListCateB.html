@@ -20,9 +20,6 @@
 <link href="./TourListCateB_files/css2" rel="stylesheet">
 
 <style>
-.content { display:none; }
-.content:target { display:block; }
-
 .footer_ban {
     margin-top: 50px;
     border-radius: 20px;
@@ -89,153 +86,94 @@ ul, li, dl, dd {
 </style>
   </head>
   <body>
-  
-
-
-
-
-
-
-
-	<nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-        
-          <a class="navbar-item" href="index.html">
-            <img src="./index_files/logo.gif" width="152" height="58">
-          </a>
-      
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-        
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start" id="gnb">
-              <!-- ajax로 메뉴 로딩하여 추가하기 -->
-      
-                      <div class="navbar-item has-dropdown is-hoverable">
-                          <a href="TourListCateA.html" class="navbar-link">
-                                관광지
-                          </a>
-                          <div class="navbar-dropdown cate" id="cate01"><a href="TourDetailNo1.html">땅거미 전망대</a></div>
-                      </div>
-                      <div class="navbar-item has-dropdown is-hoverable">
-                          <a href="TourListCateB.html" class="navbar-link cate">
-                                자연
-                          </a> 
-                             <div class="navbar-dropdown cate" id="cate02"><a href="TourDetailNo2.html">석산곶</a></div>
-                      </div>
-                      <div class="navbar-item has-dropdown is-hoverable">
-                          <a href="TourListCateC.html" class="navbar-link cate">
-                                레포츠
-                          </a>
-                             <div class="navbar-dropdown cate" id="cate03"><a href="TourDetailNo3.html">교동도 난정저수지</a></div>
-                      </div>
-                      <div class="navbar-item has-dropdown is-hoverable">
-                          <a href="TourListCateD.html" class="navbar-link cate">
-                                쇼핑
-                          </a>
-                          <div class="navbar-dropdown cate" id="cate04"><a href="TourDetailNo4.html">소래포구종합어시장</a></div>
-                      </div>
-                      <div class="navbar-item has-dropdown is-hoverable">
-                          <a href="TourListCateE.html" class="navbar-link cate">
-                                음식
-                          </a>
-                          <div class="navbar-dropdown cate" id="cate05"><a href="TourDetailNo5.html">라봉</a></div>
-                      </div>	
-                      <div class="navbar-item has-dropdown is-hoverable">
-                          <a href="TourListCateF.html" class="navbar-link cate">
-                                숙박
-                          </a>
-                          <div class="navbar-dropdown cate" id="cate06"><a href="TourDetailNo6.html">남문한옥 대명헌</a></div>
-                      </div>
-                      <div class="navbar-item has-dropdown is-hoverable">
-                          <a href="TourListCateG.html" class="navbar-link cate">
-                                축제
-                          </a>
-                          <div class="navbar-dropdown cate" id="cate07"><a href="TourDetailNo7.html">인천 펜타포트 음악축제</a></div>
-                      </div>
-            
-            <div class="navbar-item has-dropdown is-hoverable single">
-              <a class="navbar-link">
-                    고객에게
-              </a>
-              <div class="navbar-dropdown">
-                   <a class="navbar-item" href="syoukai.html">
-                     소개
-                </a>
-                <hr class="navbar-divider">
-                <a class="navbar-item" href="notice.html">
-                      공지사항
-                </a>
-                <a class="navbar-item" href="qna.html">
-                      QnA
-                </a>
-              </div>
-            </div>
-            
-          </div>
-        </div>    
-          <script>
-          $(document).ready(function(){
-              $.ajax({
-                  url:"/pro03/MemuLoadCtrl.do",
-                  type:"POST",
-                  enctype:"UTF-8",
-                  datatype:"json",
-                  processData:false,
-                  contentType:false, 
-                  cache:false,
-                  success:function(data){
-                      $(".navbar-dropdown.cate").empty();
-                      var trans = $.parseJSON(data);
-                      $.each(trans, function(key, value){
-                          if(key=="data"){
-                              for(var i=0;i<value.length;i++){
-                                  if(value[i].cate=="A"){
-                                      $("#cate01").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  } else if(value[i].cate=="B"){
-                                      $("#cate02").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  } else if(value[i].cate=="C"){
-                                      $("#cate03").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  } else if(value[i].cate=="D"){
-                                      $("#cate04").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  } else if(value[i].cate=="E"){
-                                      $("#cate05").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  } else if(value[i].cate=="F"){
-                                      $("#cate06").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  } else if(value[i].cate=="G"){
-                                      $("#cate07").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  }
-                              }
-                          }
-                      });
-                      
-                  }
-              });
-          });
-          </script>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="index.html">
+          <img src="./index_files/logo.gif" width="152" height="58">
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start" id="gnb">
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="TourListCateA.html" class="navbar-link">
+                              관광지
+                        </a>
+                        <div class="navbar-dropdown cate" id="cate01"><a href="TourDetailNo1.html">땅거미 전망대</a></div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="TourListCateB.html" class="navbar-link cate">
+                              자연
+                        </a> 
+                           <div class="navbar-dropdown cate" id="cate02"><a href="TourDetailNo2.html">석산곶</a></div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="TourListCateC.html" class="navbar-link cate">
+                              레포츠
+                        </a>
+                           <div class="navbar-dropdown cate" id="cate03"><a href="TourDetailNo3.html">교동도 난정저수지</a></div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="TourListCateD.html" class="navbar-link cate">
+                              쇼핑
+                        </a>
+                        <div class="navbar-dropdown cate" id="cate04"><a href="TourDetailNo4.html">소래포구종합어시장</a></div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="TourListCateE.html" class="navbar-link cate">
+                              음식
+                        </a>
+                        <div class="navbar-dropdown cate" id="cate05"><a href="TourDetailNo5.html">라봉</a></div>
+                    </div>	
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="TourListCateF.html" class="navbar-link cate">
+                              숙박
+                        </a>
+                        <div class="navbar-dropdown cate" id="cate06"><a href="TourDetailNo6.html">남문한옥 대명헌</a></div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="TourListCateG.html" class="navbar-link cate">
+                              축제
+                        </a>
+                        <div class="navbar-dropdown cate" id="cate07"><a href="TourDetailNo7.html">인천 펜타포트 음악축제</a></div>
+                    </div>
           
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">        
-              
-              
-                <a class="button is-primary" href="signup.html" style="margin:30px;">
-                  <strong>회원가입</strong>
-                </a>
-                <a class="button is-light" href="login.html">
-                          로그인	
-                </a>
-               
-               
-              </div>
+          <div class="navbar-item has-dropdown is-hoverable single">
+            <a class="navbar-link">
+                  고객에게
+            </a>
+            <div class="navbar-dropdown">
+                 <a class="navbar-item" href="introduce.html">
+                   소개
+              </a>
+              <hr class="navbar-divider">
+              <a class="navbar-item" href="notice.html">
+                    공지사항
+              </a>
+              <a class="navbar-item" href="qnaList.html">
+                    QnA
+              </a>
             </div>
           </div>
-        
-    </nav>
+        </div>
+      </div>    
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">        
+              <a class="button is-primary" href="signup.html" style="margin:30px;">
+                <strong>회원가입</strong>
+              </a>
+              <a class="button is-light" href="login.html">
+                        로그인	
+              </a>
+            </div>
+          </div>
+        </div>
+  </nav>
 	<nav class="breadcrumb" aria-label="breadcrumbs" style="border-bottom:2px solid #ddd; padding-bottom:8px; min-height:48px; line-height:48px;">
 	  <ul style="float:right;">
 	    <li><a href="http://localhost:8090/pro03/">Home</a></li>
@@ -284,7 +222,7 @@ ul, li, dl, dd {
 			          <div class="content" style="margin:10px;">
 			          	<p class="item_com">석산곶은 영종도 스카이72 골프장 앞 영종 해안도로에서 돌출된 곳이다. 이곳은 인천에서 멋진 일출을 볼 수 있는 곳으로 서해의 수평선과 영종대교의 구조물이 장관을 이룬다. 석산곶 앞으로는 군도들이 보이지 않아 넓게 펼쳐진 바다를 조망하기 좋으며 인천대교의 아름다움이 더욱 두드러져 보이는 최고의 전망지이다.</p>
 			          </div>
-			          <a href="http://localhost:8090/pro03/GetTourDetailCtrl.do?no=2" class="button is-primary">자세히 보기</a>
+			          <a href="TourDetailNo2.html" class="button is-primary">자세히 보기</a>
 			        </article>
 			      </div>
 					
@@ -293,7 +231,7 @@ ul, li, dl, dd {
 			</div>
       	</div>
 		<div class="buttons">
-		  <a href="http://localhost:8090/pro03/GetTourListCtrl.do" class="button is-info">전체 목록</a>
+		  <a href="TourList.html" class="button is-info">전체 목록</a>
 		</div>
     </div>
   </section>

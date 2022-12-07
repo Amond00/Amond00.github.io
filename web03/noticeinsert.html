@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<!-- saved from url=(0045)http://localhost:8090/pro03/sub/introduce.jsp -->
+<!-- saved from url=(0048)http://localhost:8090/pro03/notice/addNotice.jsp -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-<title>Insert title here</title>
-
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>공지사항 글 등록</title>
+    
 <!-- bulma css, script -->
-<link rel="stylesheet" href="./syoukai_files/bulma.min.css">
-<link rel="stylesheet" href="./syoukai_files/bulma-carousel.min.css">
-<script src="./syoukai_files/bulma-carousel.min.js.다운로드"></script>
-<link rel="stylesheet" href="./syoukai_files/common.css">
+<link rel="stylesheet" href="./noticeinsert_files/bulma.min.css">
+<link rel="stylesheet" href="./noticeinsert_files/bulma-carousel.min.css">
+<script src="./noticeinsert_files/bulma-carousel.min.js.다운로드"></script>
+<link rel="stylesheet" href="./noticeinsert_files/common.css">
 <!-- 파비콘 -->
 <link rel="icon" href="https://www.ito.or.kr/main/img/contents/ci.gif">
 <!-- jquery -->
-<script src="./syoukai_files/jquery-latest.js.다운로드"></script>
-<link rel="stylesheet" href="./syoukai_files/reset2.css">
-<link rel="stylesheet" type="text/css" href="./syoukai_files/datatables.min.css">
-<script type="text/javascript" src="./syoukai_files/datatables.min.js.다운로드"></script>
-<link href="./syoukai_files/css2" rel="stylesheet">
+<script src="./noticeinsert_files/jquery-latest.js.다운로드"></script>
+<link rel="stylesheet" href="./noticeinsert_files/reset2.css">
+<link rel="stylesheet" type="text/css" href="./noticeinsert_files/datatables.min.css">
+<script type="text/javascript" src="./noticeinsert_files/datatables.min.js.다운로드"></script>
+<link href="./noticeinsert_files/css2" rel="stylesheet">
 
 <style>
 .footer_ban {
@@ -29,7 +30,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    dpadding: 36px 0;
 }
 .footer_ban>ul>li {
     font-size: 1.6rem;
@@ -84,27 +84,21 @@ ul, li, dl, dd {
 #sel option { color:#333; }
 
 </style>
-</head>
-<body>
-
+  </head>
+  <body>
 	<nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-        
           <a class="navbar-item" href="index.html">
             <img src="./index_files/logo.gif" width="152" height="58">
           </a>
-      
           <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
           </a>
         </div>
-        
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start" id="gnb">
-              <!-- ajax로 메뉴 로딩하여 추가하기 -->
-      
                       <div class="navbar-item has-dropdown is-hoverable">
                           <a href="TourListCateA.html" class="navbar-link">
                                 관광지
@@ -153,90 +147,57 @@ ul, li, dl, dd {
                     고객에게
               </a>
               <div class="navbar-dropdown">
-                   <a class="navbar-item" href="syoukai.html">
+                   <a class="navbar-item" href="introduce.html">
                      소개
                 </a>
                 <hr class="navbar-divider">
                 <a class="navbar-item" href="notice.html">
                       공지사항
                 </a>
-                <a class="navbar-item" href="qna.html">
+                <a class="navbar-item" href="qnaList.html">
                       QnA
                 </a>
               </div>
             </div>
-            
           </div>
         </div>    
-          <script>
-          $(document).ready(function(){
-              $.ajax({
-                  url:"/pro03/MemuLoadCtrl.do",
-                  type:"POST",
-                  enctype:"UTF-8",
-                  datatype:"json",
-                  processData:false,
-                  contentType:false, 
-                  cache:false,
-                  success:function(data){
-                      $(".navbar-dropdown.cate").empty();
-                      var trans = $.parseJSON(data);
-                      $.each(trans, function(key, value){
-                          if(key=="data"){
-                              for(var i=0;i<value.length;i++){
-                                  if(value[i].cate=="A"){
-                                      $("#cate01").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  } else if(value[i].cate=="B"){
-                                      $("#cate02").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  } else if(value[i].cate=="C"){
-                                      $("#cate03").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  } else if(value[i].cate=="D"){
-                                      $("#cate04").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  } else if(value[i].cate=="E"){
-                                      $("#cate05").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  } else if(value[i].cate=="F"){
-                                      $("#cate06").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  } else if(value[i].cate=="G"){
-                                      $("#cate07").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  }
-                              }
-                          }
-                      });
-                      
-                  }
-              });
-          });
-          </script>
-          
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">        
-              
-              
                 <a class="button is-primary" href="signup.html" style="margin:30px;">
                   <strong>회원가입</strong>
                 </a>
                 <a class="button is-light" href="login.html">
                           로그인	
                 </a>
-               
-               
               </div>
             </div>
           </div>
-        
     </nav>
-<nav class="breadcrumb" aria-label="breadcrumbs" style="border-bottom:2px solid #ddd; padding-bottom:8px; min-height:48px; line-height:48px;">
-</nav>
-<section style="background-color:#d3d3d3; margin-top:100px; ">
-	<div>
-		<img src="./syoukai_files/sub2.jpg" alt="비쥬얼2" style="margin-top:100px; margin-left:500px">
-	</div>
-	<div>
-		<img src="./syoukai_files/sub1.jpg" alt="비쥬얼1" style="margin-bottom:100px; margin-left:500px">
-	</div>
-</section>
-
+  <section class="section">
+    <div class="container">
+      <h1 class="title">공지사항 등록</h1>
+      	<form action="http://localhost:8090/pro03/AddNoticeCtrl.do" method="post">
+			<table class="table">
+			   <tbody>
+			    <tr>
+			      <th><label for="title">제목</label></th>
+			      <td><input type="text" class="input" maxlength="120" name="title" id="title" placeholder="제목 입력" required=""></td>
+			    </tr>
+			    <tr>
+			      <th><label for="content">내용</label></th>
+			      <td><textarea rows="8" cols="100" name="content" id="content" class="textarea" required=""></textarea></td>
+			    </tr>
+			  </tbody>
+			</table>
+			<div class="buttons">
+			  <button type="submit" class="button is-info">등록</button>
+			  <a href="notice.html" class="button is-success">목록</a>
+			</div>
+		</form>
+    </div>
+  </section>
+  
 
 <footer class="bg-white text-center text-white" style="height:419px; margin-top:200px; text-align:center; border-top:2px solid #333; 
 background:#0b0b0b url(&#39;https://www.ito.or.kr/main/img/inc/footer_bg.jpg&#39;) no-repeat center top; margin-top:400px;">
@@ -244,43 +205,43 @@ background:#0b0b0b url(&#39;https://www.ito.or.kr/main/img/inc/footer_bg.jpg&#39
 		<div class="footer_ban">				
 			<ul>
 				<li><a href="http://www.icren.kr/" target="_blank">
-						<img src="./syoukai_files/icren_logo.png" style="width: 100%;" alt="새창열림: 인천시정연구네트워크">
+						<img src="./noticeinsert_files/icren_logo.png" style="width: 100%;" alt="새창열림: 인천시정연구네트워크">
 						<span>인천시정연구네트워크</span>
 					</a>
 				</li>
 				<li>
 					<a href="https://www.visitincheon.or.kr/" target="_blank">
-						<img src="./syoukai_files/etclink07.gif" alt="새창열림: Visit Incheon">
+						<img src="./noticeinsert_files/etclink07.gif" alt="새창열림: Visit Incheon">
 						<span>스마트마이스 포털</span>
 					</a>
 				</li>
 				<li>
 					<a href="https://www.redwhistle.org/report/report.asp?organ=7756&amp;RType=1" target="_blank">
-						<img src="./syoukai_files/quick_report.gif" alt="새창열림: 인권청렴신고센터">
+						<img src="./noticeinsert_files/quick_report.gif" alt="새창열림: 인권청렴신고센터">
 						<span>인권청렴신고센터</span>
 					</a>
 					</li>
 				<li>
 					<a href="http://localhost:8090/main/information/closed.jsp">
-						<img src="./syoukai_files/quick_private.gif" alt="페이지 이동: 비공개대상 기준 바로가기">
+						<img src="./noticeinsert_files/quick_private.gif" alt="페이지 이동: 비공개대상 기준 바로가기">
 						<span>비공개대상 기준</span>
 					</a>
 					</li>
 				<li>
 					<a href="http://localhost:8090/main/information/data.jsp">
-						<img src="./syoukai_files/quick_info.gif" alt="페이지 이동: 사전정보공표 바로가기">
+						<img src="./noticeinsert_files/quick_info.gif" alt="페이지 이동: 사전정보공표 바로가기">
 						<span>사전정보공표</span>
 					</a>
 					</li>
 				<li>
 					<a href="http://localhost:8090/main/information/public_data.jsp">
-						<img src="./syoukai_files/etclink10.gif" alt="페이지 이동: 공공데이터 바로가기">
+						<img src="./noticeinsert_files/etclink10.gif" alt="페이지 이동: 공공데이터 바로가기">
 						<span>공공데이터</span>
 					</a>
 					</li>
 				<li>
 					<a href="https://www.clean.go.kr/menu.es?mid=a10207000000" target="_blank">
-						<img src="./syoukai_files/etclink11.gif" alt="새창열림: 청렴신문고">
+						<img src="./noticeinsert_files/etclink11.gif" alt="새창열림: 청렴신문고">
 						<span>청렴신문고</span>
 					</a>
 				</li>
@@ -326,6 +287,5 @@ background:#0b0b0b url(&#39;https://www.ito.or.kr/main/img/inc/footer_bg.jpg&#39
 	   </div>
 	  </div>
 </footer>
-
-				
+  
 </body></html>

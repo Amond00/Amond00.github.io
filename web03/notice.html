@@ -30,7 +30,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    dpadding: 36px 0;
 }
 .footer_ban>ul>li {
     font-size: 1.6rem;
@@ -91,154 +90,95 @@ ul, li, dl, dd {
 	    } );
     </script>
   </head>
-  <body>
-  
-
-
-
-
-
-
-
-	<nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-        
-          <a class="navbar-item" href="index.html">
-            <img src="./index_files/logo.gif" width="152" height="58">
-          </a>
-      
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-        
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start" id="gnb">
-              <!-- ajax로 메뉴 로딩하여 추가하기 -->
-      
-                      <div class="navbar-item has-dropdown is-hoverable">
-                          <a href="TourListCateA.html" class="navbar-link">
-                                관광지
-                          </a>
-                          <div class="navbar-dropdown cate" id="cate01"><a href="TourDetailNo1.html">땅거미 전망대</a></div>
-                      </div>
-                      <div class="navbar-item has-dropdown is-hoverable">
-                          <a href="TourListCateB.html" class="navbar-link cate">
-                                자연
-                          </a> 
-                             <div class="navbar-dropdown cate" id="cate02"><a href="TourDetailNo2.html">석산곶</a></div>
-                      </div>
-                      <div class="navbar-item has-dropdown is-hoverable">
-                          <a href="TourListCateC.html" class="navbar-link cate">
-                                레포츠
-                          </a>
-                             <div class="navbar-dropdown cate" id="cate03"><a href="TourDetailNo3.html">교동도 난정저수지</a></div>
-                      </div>
-                      <div class="navbar-item has-dropdown is-hoverable">
-                          <a href="TourListCateD.html" class="navbar-link cate">
-                                쇼핑
-                          </a>
-                          <div class="navbar-dropdown cate" id="cate04"><a href="TourDetailNo4.html">소래포구종합어시장</a></div>
-                      </div>
-                      <div class="navbar-item has-dropdown is-hoverable">
-                          <a href="TourListCateE.html" class="navbar-link cate">
-                                음식
-                          </a>
-                          <div class="navbar-dropdown cate" id="cate05"><a href="TourDetailNo5.html">라봉</a></div>
-                      </div>	
-                      <div class="navbar-item has-dropdown is-hoverable">
-                          <a href="TourListCateF.html" class="navbar-link cate">
-                                숙박
-                          </a>
-                          <div class="navbar-dropdown cate" id="cate06"><a href="TourDetailNo6.html">남문한옥 대명헌</a></div>
-                      </div>
-                      <div class="navbar-item has-dropdown is-hoverable">
-                          <a href="TourListCateG.html" class="navbar-link cate">
-                                축제
-                          </a>
-                          <div class="navbar-dropdown cate" id="cate07"><a href="TourDetailNo7.html">인천 펜타포트 음악축제</a></div>
-                      </div>
-            
-            <div class="navbar-item has-dropdown is-hoverable single">
-              <a class="navbar-link">
-                    고객에게
-              </a>
-              <div class="navbar-dropdown">
-                   <a class="navbar-item" href="syoukai.html">
-                     소개
-                </a>
-                <hr class="navbar-divider">
-                <a class="navbar-item" href="notice.html">
-                      공지사항
-                </a>
-                <a class="navbar-item" href="qna.html">
-                      QnA
-                </a>
-              </div>
-            </div>
-            
-          </div>
-        </div>    
-          <script>
-          $(document).ready(function(){
-              $.ajax({
-                  url:"/pro03/MemuLoadCtrl.do",
-                  type:"POST",
-                  enctype:"UTF-8",
-                  datatype:"json",
-                  processData:false,
-                  contentType:false, 
-                  cache:false,
-                  success:function(data){
-                      $(".navbar-dropdown.cate").empty();
-                      var trans = $.parseJSON(data);
-                      $.each(trans, function(key, value){
-                          if(key=="data"){
-                              for(var i=0;i<value.length;i++){
-                                  if(value[i].cate=="A"){
-                                      $("#cate01").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  } else if(value[i].cate=="B"){
-                                      $("#cate02").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  } else if(value[i].cate=="C"){
-                                      $("#cate03").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  } else if(value[i].cate=="D"){
-                                      $("#cate04").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  } else if(value[i].cate=="E"){
-                                      $("#cate05").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  } else if(value[i].cate=="F"){
-                                      $("#cate06").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  } else if(value[i].cate=="G"){
-                                      $("#cate07").append("<a href='/pro03/GetTourDetailCtrl.do?no="+value[i].no+"'>"+value[i].place+"</a>");
-                                  }
-                              }
-                          }
-                      });
-                      
-                  }
-              });
-          });
-          </script>
+  <body>  
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="index.html">
+          <img src="./index_files/logo.gif" width="152" height="58">
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start" id="gnb">
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="TourListCateA.html" class="navbar-link">
+                              관광지
+                        </a>
+                        <div class="navbar-dropdown cate" id="cate01"><a href="TourDetailNo1.html">땅거미 전망대</a></div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="TourListCateB.html" class="navbar-link cate">
+                              자연
+                        </a> 
+                           <div class="navbar-dropdown cate" id="cate02"><a href="TourDetailNo2.html">석산곶</a></div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="TourListCateC.html" class="navbar-link cate">
+                              레포츠
+                        </a>
+                           <div class="navbar-dropdown cate" id="cate03"><a href="TourDetailNo3.html">교동도 난정저수지</a></div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="TourListCateD.html" class="navbar-link cate">
+                              쇼핑
+                        </a>
+                        <div class="navbar-dropdown cate" id="cate04"><a href="TourDetailNo4.html">소래포구종합어시장</a></div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="TourListCateE.html" class="navbar-link cate">
+                              음식
+                        </a>
+                        <div class="navbar-dropdown cate" id="cate05"><a href="TourDetailNo5.html">라봉</a></div>
+                    </div>	
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="TourListCateF.html" class="navbar-link cate">
+                              숙박
+                        </a>
+                        <div class="navbar-dropdown cate" id="cate06"><a href="TourDetailNo6.html">남문한옥 대명헌</a></div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="TourListCateG.html" class="navbar-link cate">
+                              축제
+                        </a>
+                        <div class="navbar-dropdown cate" id="cate07"><a href="TourDetailNo7.html">인천 펜타포트 음악축제</a></div>
+                    </div>
           
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">        
-              
-              
-                <a class="button is-primary" href="signup.html" style="margin:30px;">
-                  <strong>회원가입</strong>
-                </a>
-                <a class="button is-light" href="login.html">
-                          로그인	
-                </a>
-               
-               
-              </div>
+          <div class="navbar-item has-dropdown is-hoverable single">
+            <a class="navbar-link">
+                  고객에게
+            </a>
+            <div class="navbar-dropdown">
+                 <a class="navbar-item" href="introduce.html">
+                   소개
+              </a>
+              <hr class="navbar-divider">
+              <a class="navbar-item" href="notice.html">
+                    공지사항
+              </a>
+              <a class="navbar-item" href="qnaList.html">
+                    QnA
+              </a>
             </div>
           </div>
-        
-    </nav>
+        </div>
+      </div>    
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">        
+              <a class="button is-primary" href="signup.html" style="margin:30px;">
+                <strong>회원가입</strong>
+              </a>
+              <a class="button is-light" href="login.html">
+                        로그인	
+              </a>
+            </div>
+          </div>
+        </div>
+  </nav>
   <nav class="breadcrumb" aria-label="breadcrumbs" style="border-bottom:2px solid #ddd; padding-bottom:8px; min-height:48px; line-height:48px;">
   </nav>
   <section class="section">
@@ -249,50 +189,14 @@ ul, li, dl, dd {
 		    <tr><th style="background-color: rgb(51, 51, 51); color: white; width: 92px;" class="sorting sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="No: activate to sort column descending">No</th><th style="background-color: rgb(51, 51, 51); color: white; width: 958px;" class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Title: activate to sort column ascending">Title</th><th style="background-color: rgb(51, 51, 51); color: white; width: 187px;" class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="RegDate: activate to sort column ascending">RegDate</th></tr>
 		  </thead>
 		   <tbody>
-		   
-		    
-		    
-		    
-		    
-		    
-		    
-		    
-		    
-		    
-		    
 		  <tr class="odd">
 		      <td class="sorting_1">1</td>
 		      <td><a href="noticedetail.html">인천 웰니스관광 원데이클래스 참가자 모집</a></td>
-		      <td>
-		      	
-		      	2022-11-17
-		    </td></tr><tr class="even">
-		      <td class="sorting_1">2</td>
-		      <td><a href="">「2022 인천 스마트관광 데이터 아이디어 공모전」 공고</a></td>
-		      <td>
-		      	
-		      	2022-11-17
-		    </td></tr><tr class="odd">
-		      <td class="sorting_1">3</td>
-		      <td><a href="">인천광역시 시민안전보험 운영 설문조사 참여</a></td>
-		      <td>
-		      	
-		      	2022-11-17
-		    </td></tr><tr class="even">
-		      <td class="sorting_1">4</td>
-		      <td><a href="">2022 인천 마이스마켓 &amp; 커리어페어 참여기업 및 구직자 모집</a></td>
-		      <td>
-		      	
-		      	2022-11-17
-		    </td></tr><tr class="odd">
-		      <td class="sorting_1">5</td>
-		      <td><a href="">2022 인천의료뷰티관광 상품개발 공모 결과 발표</a></td>
-		      <td>
-		      	
+		      <td>	      	
 		      	2022-11-17
 		    </td></tr></tbody>
 		</table>
-		
+		<a href="noticeinsert.html" class="button is-success">글쓰기</a>
 	</div>
   </section>
   
