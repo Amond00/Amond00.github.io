@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://localhost:8098/board/edit.do?no=32 -->
+<html class="" lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 수정하기</title>
+
+
+
+
+
+  <script src="./noticeupdate_files/jquery-latest.js.다운로드"></script>
+  <link rel="stylesheet" href="./noticeupdate_files/foundation.min.css">
+  <script src="./noticeupdate_files/foundation.min.js.다운로드"></script>
+  <link rel="stylesheet" href="./noticeupdate_files/foundation.min.css">
+  <link rel="stylesheet" href="./noticeupdate_files/motion-ui.min.css">
+  <link rel="stylesheet" href="./noticeupdate_files/foundation-prototype.min.css">
+  <link href="./noticeupdate_files/foundation-icons.css" rel="stylesheet" type="text/css">
+  <script>
+    $(document).ready(function () {
+      $(document).foundation();
+    });
+  </script>
+  <!-- 파비콘 -->
+  <link rel="icon" href="https://www.ottogi.co.kr/images/favicon.ico">
+  <!-- data table -->
+  <link rel="stylesheet" type="text/css" href="./noticeupdate_files/jquery.dataTables.min.css">
+  <script type="text/javascript" src="./noticeupdate_files/datatables.min.js.다운로드"></script>
+  <script>
+    $(document).ready(function () {
+      $('.tb').DataTable();
+    });
+  </script>
+  <style>
+    .row.column.text-center {
+      margin-left: 350px;
+      width: 1200px;
+    }
+
+    th {
+      background-color: #333;
+      color: white;
+      text-align: center;
+    }
+  </style>
+  <meta class="foundation-mq">
+</head>
+
+<body>
+  <header id="header">
+    <div class="top-bar" id="responsive-menu" style="background-color:#fef100; height: 250px; margin-bottom:100px;">
+      <ul class="dropdown menu"
+        style="position:absolute; background-color:#fef100; margin-top:160px; margin-left: 500px;  font-weight:bolder;"
+        data-dropdown-menu="" role="menubar" data-e="awup39-e">
+        <li role="menuitem" class="is-dropdown-submenu-parent opens-right is-active" aria-haspopup="true"
+          aria-label="제품 소개">
+          <a href="#">제품 소개</a>
+          <ul class="menu submenu is-dropdown-submenu first-sub vertical js-dropdown-active" data-submenu=""
+            role="menu">
+            <li role="menuitem" class="is-submenu-item is-dropdown-submenu-item"><a href="sub1.html">신제품</a></li>
+            <li role="menuitem" class="is-submenu-item is-dropdown-submenu-item"><a href="sub2.html">라면</a></li>
+            <li role="menuitem" class="is-submenu-item is-dropdown-submenu-item"><a href="sub3.html">냉장/냉동식품</a></li>
+          </ul>
+        </li>
+        <li class="ns" style="color:black; margin-left: 40px; margin-right: 40px; margin-top: 5px;" role="menuitem">|
+        </li>
+        <li role="menuitem" class="is-dropdown-submenu-parent opens-right" aria-haspopup="true" aria-label="회사소개"><a
+            href="#">회사소개</a>
+          <ul class="menu submenu is-dropdown-submenu first-sub vertical" data-submenu="" role="menu">
+            <li role="menuitem" class="is-submenu-item is-dropdown-submenu-item"><a href="sub4.html">창업주 소개</a></li>
+            <li role="menuitem" class="is-submenu-item is-dropdown-submenu-item"><a href="sub5.html">CEO 인삿말</a></li>
+            <li role="menuitem" class="is-submenu-item is-dropdown-submenu-item"><a href="sub6.html">찾아오시는길</a></li>
+          </ul>
+        </li>
+        <li class="ns" style="color:black; margin-left: 40px; margin-right: 40px; margin-top: 5px;" role="menuitem">|
+        </li>
+        <li role="menuitem" class="is-dropdown-submenu-parent opens-right" aria-haspopup="true" aria-label="ESG경영"><a
+            href="#">ESG경영</a>
+          <ul class="menu submenu is-dropdown-submenu first-sub vertical" data-submenu="" role="menu">
+            <li role="menuitem" class="is-submenu-item is-dropdown-submenu-item"><a href="sub7.html">ESG경영 소개</a></li>
+            <li role="menuitem" class="is-submenu-item is-dropdown-submenu-item"><a href="sub8.html">지속가능경영 보고서</a></li>
+          </ul>
+        </li>
+        <li class="ns" style="color:black; margin-left: 40px; margin-right: 40px; margin-top: 5px;" role="menuitem">|
+        </li>
+        <li role="menuitem" class="is-dropdown-submenu-parent opens-right" aria-haspopup="true" aria-label="고객지원"><a
+            href="#">고객지원</a>
+          <ul class="menu submenu is-dropdown-submenu first-sub vertical" data-submenu="" role="menu">
+            <li role="menuitem" class="is-submenu-item is-dropdown-submenu-item"><a href="notice.html">공지사항</a></li>
+            <li role="menuitem" class="is-submenu-item is-dropdown-submenu-item"><a href="free.html">자유게시판</a></li>
+          </ul>
+        </li>
+        <li class="ns" style="color:black; margin-left: 40px; margin-right: 40px; margin-top: 5px;" role="menuitem">|
+        </li>
+        <li role="menuitem"><a href="http://ottogi.okitchen.co.kr/">O'Kitchen</a></li>
+        <li style="margin-top: 55px;" role="menuitem">
+          <a href="index.html"><img src="./index_files/logo.png" alt="logo"
+              style="position: absolute; margin-left: -500px; margin-top:-200px;"></a>
+        </li>
+      </ul>
+      <div class="top-bar-right">
+        <ul class="menu" style="background-color:#fef100;">
+          <li><a href="login.html" style="background-color:rgba(220, 44, 52); margin-right:10px; color:white; ">로그인</a>
+          </li>
+          <li><a href="agree.html" style="background-color:rgba(220, 44, 52); margin-right:10px; color:white; ">회원가입</a>
+          </li>
+          <li><a href="memberinfo.html" style="background-color:rgba(220, 44, 52); color:white; ">회원관리</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </header>
+
+  <div class="content" id="content">
+    <div class="row column text-center">
+      <h2 class="h1">공지사항 글 수정</h2>
+      <hr>
+      <div class="container">
+        <form action="http://localhost:8098/board/edit.do" method="post">
+          <table id="tb">
+            <tbody>
+              <tr>
+                <th style="background-color:#fef100;">글 제목</th>
+                <td>
+                  <input type="hidden" name="no" id="no" value="32">
+                  <input type="text" name="title" id="title" placeholder="제목 입력" value="소규모합병 종료에 따른 합병보고공고(오뚜기라면지주)"
+                    maxlength="98" required="">
+                </td>
+              </tr>
+              <tr>
+                <th style="background-color:#fef100;">글 내용</th>
+                <td>
+                  <textarea name="content" id="content" placeholder="내용 입력" rows="8" cols="100" maxlength="800"
+                    required="">소규모합병 종료에 따른 합병보고공고(오뚜기라면지주) 내용</textarea>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <input type="submit" class="submit success button" value="글 수정">
+                  <a class="button" href="notice.html">글 목록</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer id="footer" class="footer-nav row expanded collapse">
+
+
+
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Using Foundation CSS</title>
+    <style type="text/css">
+      body {
+        font-family: Nunito Sans;
+      }
+
+      footer {
+        background-color: #fef100;
+        padding-top: 20px;
+        padding-bottom: 40px;
+        margin-top: 50px;
+      }
+
+      li,
+      h3,
+      p,
+      label {
+        color: red;
+      }
+
+      .cell:nth-child(1) h3,
+      .cell:nth-child(4) h3 {
+        text-align: left;
+      }
+
+      h3 {
+        padding-top: 20px;
+
+      }
+
+      .pl-60 {
+        padding-left: 60px;
+      }
+
+      footer p {
+        padding-top: 20px;
+        padding-right: 10px;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0 5px;
+      }
+
+      footer li {
+        padding-top: 5px;
+        cursor: pointer;
+      }
+
+      li:hover {
+        color: #ddd;
+      }
+
+      .btn-custom {
+        background: yellow;
+      }
+
+      .btn-custom:hover {
+        background: yellow;
+      }
+
+      .bottom {
+        background: yellow;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      .bottom ul {
+        display: flex;
+
+      }
+
+      .bottom ul li {
+        padding-right: 25px;
+        cursor: pointer;
+      }
+
+      .bottom p {
+        margin: 0px;
+      }
+
+      @media(max-width: 1024px) {
+
+        .medium-6,
+        .cell:nth-child(1) h3,
+        .cell:nth-child(4) h3,
+        .bottom,
+        .bottom li {
+          text-align: center;
+        }
+      }
+
+      @media(max-width: 900px) {
+        .pl-60 {
+          padding-left: 30px;
+        }
+      }
+
+      @media(max-width: 768px) {
+        .pl-60 {
+          padding-left: 15px;
+        }
+
+        .bottom ul {
+          padding-top: 5px;
+          display: inline-flex;
+        }
+      }
+    </style>
+
+
+    <footer>
+      <div class="grid-x grid-container">
+        <div class="cell large-3 medium-6 small-12">
+          <h3>OTTOGI</h3>
+          <p><img src="./noticeupdate_files/logo.png" alt="í¸í°ë¡ê³ "></p>
+        </div>
+        <div class="cell large-3 medium-6 small-12">
+          <div class="pl-60">
+            <h3>OTTOGI</h3>
+            <ul>
+              <li>Copyright OTTOGI CORPORATION.,Ltd All Rights Reserved.</li>
+              <li>080-088-1212</li>
+            </ul>
+          </div>
+        </div>
+        <div class="cell large-3 medium-6 small-12" style="margin-left:180px;">
+          <h3>Subscribe</h3>
+          <div class="medium-12 cell">
+            <label>Email
+              <input type="text" placeholder="Enter Email*">
+            </label>
+          </div>
+          <div class="medium-4 cell">
+            <button type="button" class="button btn-custom">Subscribe</button>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+    <div class="bottom">
+      <div class="grid-x  grid-container">
+        <div class="cell medium-9 small-12">
+          <p>Â© 2020 Template by W3hubs.com</p>
+        </div>
+        <div class="cell large-3 medium-6 small-12">
+          <img src="./noticeupdate_files/2014_WA_mark2.gif" alt="" style="margin-left: -100px; margin-top: -50px;">
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
