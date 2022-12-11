@@ -12,15 +12,15 @@
 body {
 margin: 0;
 padding: 0;
-background-color: gray;
+background-color: #212121; 
 height: 100vh;
 }
 #login .container #login-row #login-column #login-box {
 margin-top: 120px;
 max-width: 600px;
 height: 320px;
-border: 1px solid #9C9C9C;
-background-color: #EAEAEA;
+border: 1px solid black;
+background-color: #191c24;;
 }
 #login .container #login-row #login-column #login-box #login-form {
 padding: 20px;
@@ -28,17 +28,16 @@ padding: 20px;
 #login .container #login-row #login-column #login-box #login-form #register-link {
 margin-top: -85px;
 }
-
 </style>
 </head>
 <body>
     <div id="login">
-        <h3 class="text-center text-white pt-5"><img src="../img/logo.png" alt="로고" style="width: 150px; height: 140px; margin-bottom: -60px;"></h3>
+        <h3 class="text-center text-white pt-5"><img src="./img/logo.png" alt="로고" style="width: 150px; height: 140px; margin-bottom: -80px; margin-top: 250px;"></h3>
         <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" action="login.do" method="post">
+                        <form id="login-form" class="form" action="" method="post">
                             <h3 class="text-center text-muted">Login</h3>
                             <div class="form-group">
                                 <label for="username" class="text-muted">Username:</label><br>
@@ -50,11 +49,9 @@ margin-top: -85px;
                             </div>
                             <div class="form-group">
                                 <label for="remember-me" class="text-muted"><span>Remember id</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-                                <input type="submit" name="submit" class="btn btn-muted btn-md" value="submit">
+                                <input type="submit" name="submit" class="btn btn btn-secondary btn-md" value="submit">
+                                <a href="index.html">임시 로그인</a>
                             </div>
-                            <!-- <div id="register-link" class="text-right">
-                                <a href="#" class="text-muted">Register here</a>
-                            </div> -->
                         </form>
                     </div>
                 </div>
