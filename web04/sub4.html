@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<!-- saved from url=(0033)http://localhost:8098/sub/sub1.do -->
-<html class="" lang="en">
-
+<html lang="ko">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Insert title here</title>
-  <link href="./sub4_files/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <title>sub4</title>
+  <link href="./sub4_files/style.css" type="text/css" rel="stylesheet">
   <style>
     .section {
       width: 1200px;
@@ -32,8 +29,7 @@
   <link rel="icon" href="https://www.ottogi.co.kr/images/favicon.ico">
   <!-- data table -->
   <link rel="stylesheet" type="text/css" href="./sub4_files/jquery.dataTables.min.css">
-  <script type="text/javascript" src="./sub4_files/datatables.min.js.다운로드"></script>
-  <meta class="foundation-mq">
+  <script src="./sub4_files/datatables.min.js.다운로드"></script>
   <script>
     (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -44,14 +40,117 @@
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
+<style>
+  body {
+    font-family: Nunito Sans;
+  }
+
+  footer {
+    background-color: #fef100;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    margin-top: 50px;
+  }
+
+  li,
+  h3,
+  p,
+  label {
+    color: red;
+  }
+
+  .cell:nth-child(1) h3,
+  .cell:nth-child(4) h3 {
+    text-align: left;
+  }
+
+  h3 {
+    padding-top: 20px;
+
+  }
+
+  .pl-60 {
+    padding-left: 60px;
+  }
+
+  footer p {
+    padding-top: 20px;
+    padding-right: 10px;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 5px;
+  }
+
+  footer li {
+    padding-top: 5px;
+    cursor: pointer;
+  }
+
+  li:hover {
+    color: #ddd;
+  }
+
+  .btn-custom {
+    background: yellow;
+  }
+
+  .btn-custom:hover {
+    background: yellow;
+  }
+
+  .bottom {
+    background: yellow;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .bottom ul {
+    display: flex;
+
+  }
+
+  .bottom ul li {
+    padding-right: 25px;
+    cursor: pointer;
+  }
+
+  .bottom p {
+    margin: 0px;
+  }
+
+  @media(max-width: 1024px) {
+
+    .medium-6,
+    .cell:nth-child(1) h3,
+    .cell:nth-child(4) h3,
+    .bottom,
+    .bottom li {
+      text-align: center;
+    }
+  }
+
+  @media(max-width: 900px) {
+    .pl-60 {
+      padding-left: 30px;
+    }
+  }
+
+  @media(max-width: 768px) {
+    .pl-60 {
+      padding-left: 15px;
+    }
+
+    .bottom ul {
+      padding-top: 5px;
+      display: inline-flex;
+    }
+  }
+</style>
 </head>
-
 <body>
-
-
-
-
-
   <header id="header">
     <div class="top-bar" id="responsive-menu" style="background-color:#fef100; height: 250px; margin-bottom:100px;">
       <ul class="dropdown menu"
@@ -118,6 +217,9 @@
 
   <div class="section">
     <div class="row">
+      <div class="bread">
+        <span style="float: right; margin-top: -70px;">회사소개 > 창업주 소개</span>
+      </div>
       <div class="tit_content">
         <h2 class="header center titbul">창업주 풍림 함태호 생애</h2>
       </div>
@@ -129,7 +231,7 @@
           <p>부친 함형준씨와 모친 이덕발 씨의 장남으로 태어난 소년 함태호는 경기고등학교에 입학하였고, 재학중에 1950년 한국전쟁이 발발하자 피난 대신 자원 입대했습니다. 자신의 안위보다 나라사랑이
             깊었던 함태호 명예회장은 한국전쟁 임시군사교육학교인 육군종합학교를 거쳐 소위로 임관하여 1957년까지 근무하였습니다.</p>
         </div>
-        <div class="right"><img src="./sub4_files/hamtaiho_01_2.jpg" alt=""></div>
+        <div class="right"><img src="./sub4_files/hamtaiho_01_2.jpg" alt="pic1"></div>
       </div>
       <div class="hamtaiho02">
         <h3>군문(軍門)을 나와 경영을 배우다</h3>
@@ -148,10 +250,10 @@
       </div>
       <div class="hamtaiho03">
         <div class="left">
-          <img src="./sub4_files/hamtaiho_02.jpg" class="ham_img" alt="(주) 오뚜기 창업주 함태호 명예회장(왼쪽 세번째)의 조흥화학 재직시절 모습">
+          <img src="./sub4_files/hamtaiho_02.jpg" class="ham_img" alt="pic2">
         </div>
         <div class="right">
-          <img src="./sub4_files/hamtaiho_02_2.jpg" class="ham_img" alt="(주) 오뚜기 창업주 함태호 명예회장(왼쪽 세번째)의 조흥화학 재직시절 모습">
+          <img src="./sub4_files/hamtaiho_02_2.jpg" class="ham_img" alt="pic3">
         </div>
       </div>
       <div class="hamtaiho04">
@@ -250,129 +352,11 @@
 
     </div>
   </div>
-
-
-
-
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Footer Using Foundation CSS</title>
-  <style type="text/css">
-    body {
-      font-family: Nunito Sans;
-    }
-
-    footer {
-      background-color: #fef100;
-      padding-top: 20px;
-      padding-bottom: 40px;
-      margin-top: 50px;
-    }
-
-    li,
-    h3,
-    p,
-    label {
-      color: red;
-    }
-
-    .cell:nth-child(1) h3,
-    .cell:nth-child(4) h3 {
-      text-align: left;
-    }
-
-    h3 {
-      padding-top: 20px;
-
-    }
-
-    .pl-60 {
-      padding-left: 60px;
-    }
-
-    footer p {
-      padding-top: 20px;
-      padding-right: 10px;
-    }
-
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0 5px;
-    }
-
-    footer li {
-      padding-top: 5px;
-      cursor: pointer;
-    }
-
-    li:hover {
-      color: #ddd;
-    }
-
-    .btn-custom {
-      background: yellow;
-    }
-
-    .btn-custom:hover {
-      background: yellow;
-    }
-
-    .bottom {
-      background: yellow;
-      padding-top: 10px;
-      padding-bottom: 10px;
-    }
-
-    .bottom ul {
-      display: flex;
-
-    }
-
-    .bottom ul li {
-      padding-right: 25px;
-      cursor: pointer;
-    }
-
-    .bottom p {
-      margin: 0px;
-    }
-
-    @media(max-width: 1024px) {
-
-      .medium-6,
-      .cell:nth-child(1) h3,
-      .cell:nth-child(4) h3,
-      .bottom,
-      .bottom li {
-        text-align: center;
-      }
-    }
-
-    @media(max-width: 900px) {
-      .pl-60 {
-        padding-left: 30px;
-      }
-    }
-
-    @media(max-width: 768px) {
-      .pl-60 {
-        padding-left: 15px;
-      }
-
-      .bottom ul {
-        padding-top: 5px;
-        display: inline-flex;
-      }
-    }
-  </style>
-
-
   <footer>
     <div class="grid-x grid-container">
       <div class="cell large-3 medium-6 small-12">
         <h3>OTTOGI</h3>
-        <p><img src="./sub4_files/logo.png" alt="í¸í°ë¡ê³ "></p>
+        <p><img src="./sub4_files/logo.png" alt="logo"></p>
       </div>
       <div class="cell large-3 medium-6 small-12">
         <div class="pl-60">
@@ -403,7 +387,7 @@
         <p>Â© 2020 Template by W3hubs.com</p>
       </div>
       <div class="cell large-3 medium-6 small-12">
-        <img src="./sub4_files/2014_WA_mark2.gif" alt="" style="margin-left: -100px; margin-top: -50px;">
+        <img src="./sub4_files/2014_WA_mark2.gif" alt="mark" style="margin-left: -100px; margin-top: -50px;">
       </div>
     </div>
   </div>

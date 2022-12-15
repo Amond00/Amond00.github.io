@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<!-- saved from url=(0022)http://localhost:8098/ -->
-<html class="" lang="en">
-
+<html lang="ko">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
@@ -13,7 +11,7 @@
   <link rel="stylesheet" href="./index_files/foundation.min.css">
   <link rel="stylesheet" href="./index_files/motion-ui.min.css">
   <link rel="stylesheet" href="./index_files/foundation-prototype.min.css">
-  <link href="./index_files/foundation-icons.css" rel="stylesheet" type="text/css">
+  <link href="./index_files/foundation-icons.css" rel="stylesheet">
   <script>
     $(document).ready(function () {
       $(document).foundation();
@@ -23,9 +21,9 @@
   <link rel="icon" href="https://www.ottogi.co.kr/images/favicon.ico">
   <!-- data table -->
   <link rel="stylesheet" type="text/css" href="./index_files/jquery.dataTables.min.css">
-  <script type="text/javascript" src="./index_files/datatables.min.js.다운로드"></script>
+  <script src="./index_files/datatables.min.js.다운로드"></script>
   <style>
-    $white: #fefefe;
+    #fefefe
 
     body {
       padding: 2rem 1rem;
@@ -33,23 +31,8 @@
 
     .docs-example-orbit-slide {
       padding: 2rem 4rem;
-      color: $white;
+      color: #fefefe;
 
-      .orbit-slide:nth-of-type(1) & {
-        background: dodgerblue;
-      }
-
-      .orbit-slide:nth-of-type(2) & {
-        background: rebeccapurple;
-      }
-
-      .orbit-slide:nth-of-type(3) & {
-        background: darkgoldenrod;
-      }
-
-      .orbit-slide:nth-of-type(4) & {
-        background: lightseagreen;
-      }
     }
 
     h2 {
@@ -323,8 +306,115 @@
       white-space: nowrap;
       text-overflow: ellipsis;
     }
+
+    body {
+      font-family: Nunito Sans;
+    }
+
+    footer {
+      background-color: #fef100;
+      padding-top: 20px;
+      padding-bottom: 40px;
+      margin-top: 50px;
+    }
+
+    li,
+    h3,
+    p,
+    label {
+      color: red;
+    }
+
+    .cell:nth-child(1) h3,
+    .cell:nth-child(4) h3 {
+      text-align: left;
+    }
+
+    h3 {
+      padding-top: 20px;
+
+    }
+
+    .pl-60 {
+      padding-left: 60px;
+    }
+
+    footer p {
+      padding-top: 20px;
+      padding-right: 10px;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0 5px;
+    }
+
+    footer li {
+      padding-top: 5px;
+      cursor: pointer;
+    }
+
+    li:hover {
+      color: #ddd;
+    }
+
+    .btn-custom {
+      background: yellow;
+    }
+
+    .btn-custom:hover {
+      background: yellow;
+    }
+
+    .bottom {
+      background: yellow;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .bottom ul {
+      display: flex;
+
+    }
+
+    .bottom ul li {
+      padding-right: 25px;
+      cursor: pointer;
+    }
+
+    .bottom p {
+      margin: 0px;
+    }
+
+    @media(max-width: 1024px) {
+
+      .medium-6,
+      .cell:nth-child(1) h3,
+      .cell:nth-child(4) h3,
+      .bottom,
+      .bottom li {
+        text-align: center;
+      }
+    }
+
+    @media(max-width: 900px) {
+      .pl-60 {
+        padding-left: 30px;
+      }
+    }
+
+    @media(max-width: 768px) {
+      .pl-60 {
+        padding-left: 15px;
+      }
+
+      .bottom ul {
+        padding-top: 5px;
+        display: inline-flex;
+      }
+    }
   </style>
-  <meta class="foundation-mq">
   <script>
     (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -406,9 +496,10 @@
     <div class="columns">
       <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit="" data-resize="v8qxmp-orbit"
         id="v8qxmp-orbit" data-e="ldrosw-e" data-events="resize">
+        <button class="orbit-previous" tabindex="0"><span class="show-for-sr">Previous Slide</span>◀︎</button>
+        <button class="orbit-next" tabindex="0"><span class="show-for-sr">Next Slide</span>▶︎</button>
         <ul class="orbit-container" tabindex="0" style="height: 522.547px;">
-          <button class="orbit-previous" tabindex="0"><span class="show-for-sr">Previous Slide</span>◀︎</button>
-          <button class="orbit-next" tabindex="0"><span class="show-for-sr">Next Slide</span>▶︎</button>
+          <!-- 버튼 자리 -->
           <li class="orbit-slide" data-slide="0" style="display: none; position: relative;">
             <img class="orbit-image" src="./index_files/img_visual51.jpg" alt="Space">
           </li>
@@ -442,7 +533,7 @@
     </div>
   </div>
 
-  <div class="wrap" style="margin-bottom:500px;">
+  <div class="wrap" style="margin-bottom:500px; list-style: none;">
     <section class="page" id="page2" style="background-color:#fef100;">
       <div class="page_wrap">
         <h1 class="page_tit" style="color:black; font-weight:bolder;">오뚜기 인기상품<br></h1>
@@ -450,7 +541,7 @@
         <ul class="pic_lst">
           <li>
             <a href="http://localhost:8098/">
-              <img src="./index_files/2021-04-20_671244888[7].jpg" alt="" class="pic">
+              <img src="./index_files/2021-04-20_671244888.jpg" alt="스파게뤼" class="pic">
               <div class="hv_box">
                 <h3 class="pic_tit">프레스코 미트 스파게티소스</h3>
                 <p class="pic_com">진한 풍미 가득한 미트 스파게티소스</p>
@@ -459,7 +550,7 @@
           </li>
           <li>
             <a href="http://localhost:8098/">
-              <img src="./index_files/2022-03-17_367582465[3].jpg" alt="OLED로 만들어낸 미래도시" class="pic">
+              <img src="./index_files/2022-03-17_367582465.jpg" alt="불고기" class="pic">
               <div class="hv_box">
                 <h3 class="pic_tit">시그니처익스트림_콘크러스트_피자 530G</h3>
                 <p class="pic_com">킬바사 소시지와 불고기가 듬뿍!</p>
@@ -468,8 +559,8 @@
           </li>
           <li>
             <a href="http://localhost:8098/">
-              <img src="./index_files/2021-06-24_391242475[1].jpg"
-                alt="OLED Shelf, 2022 레드닷 디자인 어워드 디자인 컨셉 부문 Winner 수상" class="pic">
+              <img src="./index_files/2021-06-24_391242475.jpg"
+                alt="게살" class="pic">
               <div class="hv_box">
                 <h3 class="pic_tit">오즈키친 게살크래미주먹밥</h3>
                 <p class="pic_com">게살크래미와 스크램블에그가 듬뿍!</p>
@@ -478,7 +569,7 @@
           </li>
           <li>
             <a href="http://localhost:8098/">
-              <img src="./index_files/2020-03-18_82503302[5].jpg" alt="제 2회 OLEDs Go!" class="pic">
+              <img src="./index_files/2020-03-18_82503302.jpg" alt="제 2회 OLEDs Go!" class="pic">
               <div class="hv_box">
                 <h3 class="pic_tit">뚜기네 분식집 라볶이</h3>
                 <p class="pic_com">매콤한 소스에 오뚜기 라면사리와 쌀떡이 쏙!</p>
@@ -487,7 +578,7 @@
           </li>
           <li>
             <a href="http://localhost:8098/">
-              <img src="./index_files/2022-02-03_327063180[1].jpg" alt="투명 OLED로 변화하는 오피스 인테리어" class="pic">
+              <img src="./index_files/2022-02-03_3270631801.jpg" alt="투명 OLED로 변화하는 오피스 인테리어" class="pic">
               <div class="hv_box">
                 <h3 class="pic_tit">오늘밥상 제육볶음양념</h3>
                 <p class="pic_com">한국인의 No.1 소울푸드!!</p>
@@ -496,7 +587,7 @@
           </li>
           <li>
             <a href="http://localhost:8098/">
-              <img src="./index_files/2022-02-03_327063180[3].jpg" alt="오늘밥상 춘천식 철판닭갈비양념" class="pic">
+              <img src="./index_files/2022-02-03_3270631803.jpg" alt="오늘밥상 춘천식 철판닭갈비양념" class="pic">
               <div class="hv_box">
                 <h3 class="pic_tit">오늘밥상 춘천식 철판닭갈비양념</h3>
                 <p class="pic_com">정통 춘천닭갈비의 매콤한 맛 그대로!</p>
@@ -505,7 +596,7 @@
           </li>
           <li>
             <a href="http://localhost:8098/">
-              <img src="./index_files/2020-03-18_82503302[5].jpg" alt="제 2회 OLEDs Go!" class="pic">
+              <img src="./index_files/2020-03-18_82503302.jpg" alt="제 2회 OLEDs Go!" class="pic">
               <div class="hv_box">
                 <h3 class="pic_tit">뚜기네 분식집 라볶이</h3>
                 <p class="pic_com">매콤한 소스에 오뚜기 라면사리와 쌀떡이 쏙!</p>
@@ -514,7 +605,7 @@
           </li>
           <li>
             <a href="http://localhost:8098/">
-              <img src="./index_files/2020-10-07_526529153[3].jpg" alt="투명 OLED로 변화하는 오피스 인테리어" class="pic">
+              <img src="./index_files/2020-10-07_526529153.jpg" alt="투명 OLED로 변화하는 오피스 인테리어" class="pic">
               <div class="hv_box">
                 <h3 class="pic_tit">중국식 18mm 넓은 당면</h3>
                 <p class="pic_com">바로 삶아 먹는 쫄깃한 중국당면</p>
@@ -542,22 +633,20 @@
         <div class="columns">
           <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit="" data-resize="gke303-orbit"
             id="gke303-orbit" data-e="nuhoj8-e" data-events="resize">
+            <button class="orbit-previous" tabindex="0"><span class="show-for-sr">Previous Slide</span>◀︎</button>
+            <button class="orbit-next" tabindex="0"><span class="show-for-sr">Next Slide</span>▶︎</button>
             <ul class="orbit-container" tabindex="0" style="height: 245px;">
-              <button class="orbit-previous" tabindex="0"><span class="show-for-sr">Previous Slide</span>◀︎</button>
-              <button class="orbit-next" tabindex="0"><span class="show-for-sr">Next Slide</span>▶︎</button>
+              <!-- 버튼 자리 -->
               <li class="orbit-slide" data-slide="0" style="display: none; position: relative; top: 0px;">
-                <img class="orbit-image" src="./index_files/2021-05-27_805369006[5].jpg" alt="Space">
-                <figcaption class="orbit-caption">이벤트</figcaption>
+                <img class="orbit-image" src="./index_files/2021-05-27_805369006.jpg" alt="Space">
               </li>
               <li class="orbit-slide slide-out-left mui-leave mui-leave-active" data-slide="1"
                 style="position: relative; top: 0px; display: block;" aria-live="polite">
                 <img class="orbit-image" src="./index_files/2022-10-28_417285700.jpg" alt="Space">
-                <figcaption class="orbit-caption">이벤트</figcaption>
               </li>
               <li class="orbit-slide is-active slide-in-right mui-enter mui-enter-active" data-slide="2"
                 style="position: absolute; top: 0px; display: block;">
                 <img class="orbit-image" src="./index_files/2022-11-03_267296674.jpg" alt="Space">
-                <figcaption class="orbit-caption">이벤트</figcaption>
               </li>
             </ul>
             <nav class="orbit-bullets">
@@ -575,22 +664,20 @@
         <div class="columns">
           <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit="" data-resize="n8upy3-orbit"
             id="n8upy3-orbit" data-e="plv89k-e" data-events="resize">
+            <button class="orbit-previous" tabindex="0"><span class="show-for-sr">Previous Slide</span>◀︎</button>
+            <button class="orbit-next" tabindex="0"><span class="show-for-sr">Next Slide</span>▶︎</button>
             <ul class="orbit-container" tabindex="0" style="height: 290px;">
-              <button class="orbit-previous" tabindex="0"><span class="show-for-sr">Previous Slide</span>◀︎</button>
-              <button class="orbit-next" tabindex="0"><span class="show-for-sr">Next Slide</span>▶︎</button>
+              <!-- 버튼 자리 -->
               <li class="orbit-slide" data-slide="0" style="display: none; position: relative; top: 0px;">
-                <img class="orbit-image" src="./index_files/2022-10-13_858980330[1].jpg" alt="Space">
-                <figcaption class="orbit-caption">신제품 소개</figcaption>
+                <img class="orbit-image" src="./index_files/2022-10-13_8589803301.jpg" alt="Space">
               </li>
               <li class="orbit-slide slide-out-left mui-leave mui-leave-active" data-slide="1"
                 style="position: relative; top: 0px; display: block;" aria-live="polite">
-                <img class="orbit-image" src="./index_files/2022-10-13_858980330[2].jpg" alt="Space">
-                <figcaption class="orbit-caption">신제품 소개</figcaption>
+                <img class="orbit-image" src="./index_files/2022-10-13_8589803302.jpg" alt="Space">
               </li>
               <li class="orbit-slide is-active slide-in-right mui-enter mui-enter-active" data-slide="2"
                 style="position: absolute; top: 0px; display: block;">
                 <img class="orbit-image" src="./index_files/2022-10-13_858980330.jpg" alt="Space">
-                <figcaption class="orbit-caption">신제품 소개</figcaption>
               </li>
             </ul>
             <nav class="orbit-bullets">
@@ -604,168 +691,47 @@
       </div>
     </section>
   </div>
-  <footer id="footer" class="footer-nav row expanded collapse">
-
-
-
-
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Footer Using Foundation CSS</title>
-    <style type="text/css">
-      body {
-        font-family: Nunito Sans;
-      }
-
-      footer {
-        background-color: #fef100;
-        padding-top: 20px;
-        padding-bottom: 40px;
-        margin-top: 50px;
-      }
-
-      li,
-      h3,
-      p,
-      label {
-        color: red;
-      }
-
-      .cell:nth-child(1) h3,
-      .cell:nth-child(4) h3 {
-        text-align: left;
-      }
-
-      h3 {
-        padding-top: 20px;
-
-      }
-
-      .pl-60 {
-        padding-left: 60px;
-      }
-
-      footer p {
-        padding-top: 20px;
-        padding-right: 10px;
-      }
-
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0 5px;
-      }
-
-      footer li {
-        padding-top: 5px;
-        cursor: pointer;
-      }
-
-      li:hover {
-        color: #ddd;
-      }
-
-      .btn-custom {
-        background: yellow;
-      }
-
-      .btn-custom:hover {
-        background: yellow;
-      }
-
-      .bottom {
-        background: yellow;
-        padding-top: 10px;
-        padding-bottom: 10px;
-      }
-
-      .bottom ul {
-        display: flex;
-
-      }
-
-      .bottom ul li {
-        padding-right: 25px;
-        cursor: pointer;
-      }
-
-      .bottom p {
-        margin: 0px;
-      }
-
-      @media(max-width: 1024px) {
-
-        .medium-6,
-        .cell:nth-child(1) h3,
-        .cell:nth-child(4) h3,
-        .bottom,
-        .bottom li {
-          text-align: center;
-        }
-      }
-
-      @media(max-width: 900px) {
-        .pl-60 {
-          padding-left: 30px;
-        }
-      }
-
-      @media(max-width: 768px) {
-        .pl-60 {
-          padding-left: 15px;
-        }
-
-        .bottom ul {
-          padding-top: 5px;
-          display: inline-flex;
-        }
-      }
-    </style>
-
-
-    <footer>
-      <div class="grid-x grid-container">
-        <div class="cell large-3 medium-6 small-12">
-          <h3>OTTOGI</h3>
-          <p><img src="./index_files/logo.png" alt="í¸í°ë¡ê³ "></p>
-        </div>
-        <div class="cell large-3 medium-6 small-12">
-          <div class="pl-60">
-            <h3>OTTOGI</h3>
-            <ul>
-              <li>Copyright OTTOGI CORPORATION.,Ltd All Rights Reserved.</li>
-              <li>080-088-1212</li>
-            </ul>
-          </div>
-        </div>
-        <div class="cell large-3 medium-6 small-12" style="margin-left:180px;">
-          <h3>Subscribe</h3>
-          <div class="medium-12 cell">
-            <label>Email
-              <input type="text" placeholder="Enter Email*">
-            </label>
-          </div>
-          <div class="medium-4 cell">
-            <button type="button" class="button btn-custom">Subscribe</button>
-          </div>
-        </div>
-      </div>
-
+  <section class="footerc" style="background-color: #fef100;">
+    <footer id="footer" class="footer-nav row expanded collapse" style="background-color: #fef100;">
     </footer>
-    <div class="bottom">
-      <div class="grid-x  grid-container">
-        <div class="cell medium-9 small-12">
-          <p>Â© 2020 Template by W3hubs.com</p>
+        <div class="grid-x grid-container">
+          <div class="cell large-3 medium-6 small-12">
+            <h3>OTTOGI</h3>
+            <p><img src="./index_files/logo.png" alt="푸터로고"></p>
+          </div>
+          <div class="cell large-3 medium-6 small-12">
+            <div class="pl-60">
+              <h3>OTTOGI</h3>
+              <ul>
+                <li>Copyright OTTOGI CORPORATION.,Ltd All Rights Reserved.</li>
+                <li>080-088-1212</li>
+              </ul>
+            </div>
+          </div>
+          <div class="cell large-3 medium-6 small-12" style="margin-left:180px;">
+            <h3>Subscribe</h3>
+            <div class="medium-12 cell">
+              <label>Email
+                <input type="text" placeholder="Enter Email*">
+              </label>
+            </div>
+            <div class="medium-4 cell">
+              <button type="button" class="button btn-custom">Subscribe</button>
+            </div>
+          </div>
         </div>
-        <div class="cell large-3 medium-6 small-12">
-          <img src="./index_files/2014_WA_mark2.gif" alt="" style="margin-left: -100px; margin-top: -50px;">
+    <footer>
+      <div class="bottom" style="background-color: #fef100;">
+        <div class="grid-x  grid-container">
+          <div class="cell medium-9 small-12">
+            <p>Â© 2020 Template by W3hubs.com</p>
+          </div>
+          <div class="cell large-3 medium-6 small-12">
+            <img src="./index_files/2014_WA_mark2.gif" alt="마크" style="margin-left: -100px; margin-top: -50px;">
+          </div>
         </div>
       </div>
-    </div>
-
-
-  </footer>
-
+    </footer>
+  </section>
 </body>
-
 </html>
