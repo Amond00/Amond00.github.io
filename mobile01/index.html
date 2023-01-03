@@ -16,6 +16,10 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <meta name="application-name" content="DRM">
 <meta name="keyworks" content="신발, 패션">
 <meta name="description" content="닥터 마틴(Dr. Martens)은 1947년 독일에서 처음 개발되어 현재는 영국에서 생산되고 있는 신발 브랜드이다.">
+<!-- video -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+<link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
 <!-- jquery mobile -->
 <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 <script src="https://code.jquery.com/jquery-latest.js"></script>
@@ -23,7 +27,9 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <!-- boot strap css js jq-->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
+<!-- app1 -->
+<script src="./manifest.json"></script>
+<script src="./service-worker.js"></script>
 <!-- 오픈 그래프 -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://amond00.github.io/mobile01/">
@@ -38,24 +44,25 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <meta name="twitter:description" content="닥터마틴 스토어">
 <meta name="twitter:image" content="siteimage.jpg">
 
-<!-- 파비콘 -->
-<link rel="apple-touch-icon" sizes="57x57" href="/static/img/favicon/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/static/img/favicon/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/static/img/favicon/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/static/img/favicon/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/static/img/favicon/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/static/img/favicon/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/static/img/favicon/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/static/img/favicon/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicon/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/static/img/favicon/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/static/img/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/static/img/favicon/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicon/favicon-16x16.png">
-<link rel="manifest" href="/static/img/favicon/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+<!-- 파비콘, 앱아이콘 -->
+<link rel="icon" type="image/png" sizes="32x32" href="/asstes/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/asstes/img/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/asstes/img/favicon/favicon-16x16.png">
+<link rel="manifest" href="/asstes/img/favicon/manifest.json">
+<!-- 해상도 및 브라우저와 기기별 앱 아이콘 및 바로가기 아이콘 설정 -->
+<link rel="shortcut icon" href="/asstes/img/favicon/favicon.ico">
+<!-- 안드로이드 -->
+<link rel="icon" type="image/png" sizes="192x192"  href="/asstes/img/favicon/android-icon-192x192.png">
+<!-- 애플사의 기기 아이콘 설정 -->
+<meta name="apple-mobile-web-app-title" content="DRM">
+<link rel="apple-touch-icon-precomposed" href="/asstes/img/favicon/apple-icon.png">
+<!-- 애플사 기기의 URL바나 UI바 보이게 -->
+<meta name="apple-mobile-web-app-capable" href="yes">
+<!-- 상태바의 색상 설정 -->
+<meta name="apple-mobile-web-app-status-bar-style" href="black-translucent">
+<!-- MS 사의 기기에 대한 아이콘 설정-->
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="/asstes/img/favicon/ms-icon-144x144.png">
 <!-- data tables -->
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"/>
 <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
@@ -218,6 +225,14 @@ background-color: #F9F9F9;
 /* page2 */
 .agree_fr { width: 80%px; white-space:pre-wrap; margin: 0 auto; padding: 24px; border:2px solid #eee; height:300px; overflow-y:auto; }
 #ck_item1, #ck_item2 { display: none;}
+/* page3 */
+.hth-video-player { clear:both; }
+.hth-video-player::after { content:""; display:block; clear:both;}
+.vdo1-dimensions { width:200px; margin: 0; padding: 0; min-width:320px;  min-height:300px; }
+.vdo1-dimensions::after { content:""; clear:both; display:block; }
+.video-js .vjs-tech { display:block; width:auto; min-width:320px; min-height:300px;}
+/* page4 */
+.imgs { width: 570px; height: auto; }
 </style>
 </head>
 <body class="ui-mobile-viewport ui-overlay-b">
@@ -311,16 +326,16 @@ background-color: #F9F9F9;
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="./static/img/slide1.jfif" class="d-block w-100" alt="...">     
+        <img src="./asstes/img/slide1.jfif" class="d-block w-100" alt="...">     
       </div>
       <div class="carousel-item active">
-        <img src="./static/img/slide2.jfif" class="d-block w-100" alt="...">     
+        <img src="./asstes/img/slide2.jfif" class="d-block w-100" alt="...">     
       </div>
       <div class="carousel-item active">
-        <img src="./static/img/slide3.jfif" class="d-block w-100" alt="...">     
+        <img src="./asstes/img/slide3.jfif" class="d-block w-100" alt="...">     
       </div>
       <div class="carousel-item active">
-        <img src="./static/img/slide4.jfif" class="d-block w-100" alt="...">     
+        <img src="./asstes/img/slide4.jfif" class="d-block w-100" alt="...">     
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev" style="width: 10px;">
@@ -2260,14 +2275,38 @@ background-color: #F9F9F9;
   <hr>
   <div data-role="content" class="ui-content">
       <div class="player">
-          <div class="kkt-video-player">
+          <div class="hth-video-player">
+              <video id="vdo1" class="video-js" controls preload="auto" data-setup="{}" autoplay style="width: 400px; height: auto 0;">
+                  <source src="./asstes/vidieo/video1.mp4" type="video/mp4" />
+              </video>
+              <div class="btn_lst" id="btn_lst">
+              <ul style="list-style: none; color:#007bb7;">
+                  <li><span data-val="./asstes/vidieo/video1.mp4">비디오1</span></li>
+                  <li><span data-val="./asstes/vidieo/video2.mp4">비디오2</span></li>
+                  <a href="#page3" class="button is-fullwidth">뒤로 가기</a>
+              </ul>
+          </div>
+          <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+          <script>
+          $(document).ready(function(){
+              $("#btn_lst li span").click(function(){
+                  $("#vdo1_html5_api").attr("src", $(this).attr("data-val"));
+              });
+          });  
+          </script>
+          </div>
+        </div>
+  </div>
+  <!-- <div data-role="content" class="ui-content">
+      <div class="player">
+          <div class="hth-video-player">
               <video id="vdo1" class="video-js" controls preload="auto" data-setup="{}" autoplay style="width: 480px; height: auto 0;">
-                  <source src="./static/vidieo/video.mp4" type="video/mp4" />
+                  <source src="./asstes/vidieo/video1.mp4" type="video/mp4" />
               </video>
           </div>
         </div>
       <a href="#page0" class="button is-fullwidth">메인으로</a>
-  </div>
+  </div> -->
   <footer class="mainfooter text-center text-light bg-dark" role="contentinfo">
     <div class="footer-middle">
       <div class="container">
@@ -2466,9 +2505,24 @@ background-color: #F9F9F9;
     </div>
   </nav>
   <hr>
-  <img src="./static/img/img1.png" alt="회사소개" style="width: 480px; height: auto 0;">
-  <img src="./static/img/img2.png" alt="회사소개" style="width: 480px; height: auto 0;">
-  <img src="./static/img/img3.png" alt="회사소개" style="width: 480px; height: auto 0;">
+  <img srcset="./asstes/img/img1_960.png 960w,
+    ./asstes/img/img1_575.png 575w"
+    sizes="(min-width: 960px) 50vw,
+    (min-width: 575px) 75vw,
+    100vw"
+    src="./asstes/img/img1_575.png" class="imgs" alt="people1">
+  <img srcset="./asstes/img/img2_960.png 960w,
+    ./asstes/img/img2_575.png 575w"
+    sizes="(min-width: 960px) 50vw,
+    (min-width: 575px) 75vw,
+    100vw"
+    src="./asstes/img/img2_575.png" class="imgs" alt="people2">
+  <img srcset="./asstes/img/img3_960.png 960w,
+    ./asstes/img/img3_575.png 575w"
+    sizes="(min-width: 960px) 50vw,
+    (min-width: 575px) 75vw,
+    100vw"
+    src="./asstes/img/img3_575.png" class="imgs" alt="people3">
   <footer class="mainfooter text-center text-light bg-dark" role="contentinfo">
     <div class="footer-middle">
       <div class="container">
@@ -2672,42 +2726,42 @@ background-color: #F9F9F9;
     <ul class="ui-listview ui-listview-inset ui-corner-all ui-shadow" data-inset="true" data-role="listview" data-filter="true" data-filter-placeholder="Search Station...">
         <li class="ui-li-has-thumb ui-first-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
@@ -2917,42 +2971,42 @@ background-color: #F9F9F9;
     <ul class="ui-listview ui-listview-inset ui-corner-all ui-shadow" data-inset="true" data-role="listview" data-filter="true" data-filter-placeholder="Search Station...">
         <li class="ui-li-has-thumb ui-first-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
@@ -3162,42 +3216,42 @@ background-color: #F9F9F9;
     <ul class="ui-listview ui-listview-inset ui-corner-all ui-shadow" data-inset="true" data-role="listview" data-filter="true" data-filter-placeholder="Search Station...">
         <li class="ui-li-has-thumb ui-first-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
@@ -3407,42 +3461,42 @@ background-color: #F9F9F9;
     <ul class="ui-listview ui-listview-inset ui-corner-all ui-shadow" data-inset="true" data-role="listview" data-filter="true" data-filter-placeholder="Search Station...">
         <li class="ui-li-has-thumb ui-first-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
@@ -3652,42 +3706,42 @@ background-color: #F9F9F9;
     <ul class="ui-listview ui-listview-inset ui-corner-all ui-shadow" data-inset="true" data-role="listview" data-filter="true" data-filter-placeholder="Search Station...">
         <li class="ui-li-has-thumb ui-first-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
@@ -3897,42 +3951,42 @@ background-color: #F9F9F9;
     <ul class="ui-listview ui-listview-inset ui-corner-all ui-shadow" data-inset="true" data-role="listview" data-filter="true" data-filter-placeholder="Search Station...">
         <li class="ui-li-has-thumb ui-first-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
@@ -4142,42 +4196,42 @@ background-color: #F9F9F9;
     <ul class="ui-listview ui-listview-inset ui-corner-all ui-shadow" data-inset="true" data-role="listview" data-filter="true" data-filter-placeholder="Search Station...">
         <li class="ui-li-has-thumb ui-first-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
@@ -4387,42 +4441,42 @@ background-color: #F9F9F9;
     <ul class="ui-listview ui-listview-inset ui-corner-all ui-shadow" data-inset="true" data-role="listview" data-filter="true" data-filter-placeholder="Search Station...">
         <li class="ui-li-has-thumb ui-first-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
@@ -4632,42 +4686,42 @@ background-color: #F9F9F9;
     <ul class="ui-listview ui-listview-inset ui-corner-all ui-shadow" data-inset="true" data-role="listview" data-filter="true" data-filter-placeholder="Search Station...">
         <li class="ui-li-has-thumb ui-first-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
@@ -4877,42 +4931,42 @@ background-color: #F9F9F9;
     <ul class="ui-listview ui-listview-inset ui-corner-all ui-shadow" data-inset="true" data-role="listview" data-filter="true" data-filter-placeholder="Search Station...">
         <li class="ui-li-has-thumb ui-first-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
@@ -5122,42 +5176,42 @@ background-color: #F9F9F9;
     <ul class="ui-listview ui-listview-inset ui-corner-all ui-shadow" data-inset="true" data-role="listview" data-filter="true" data-filter-placeholder="Search Station...">
         <li class="ui-li-has-thumb ui-first-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
         </li>
         <li class="ui-li-has-thumb ui-last-child">
             <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-                <img src="static/img/product.jpg">
+                <img src="asstes/img/product.jpg">
                 <h2>신발1</h2>
                 <p>100$</p>
             </a>
